@@ -1,0 +1,321 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Formatis\\Documents\\GitHub\\indev-back-1\\Web\\indev-back-web\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{0B11EC38-480E-45BD-A3A1-CA10D78F6273}|indev-back-web.csproj|c:\\users\\formatis\\documents\\github\\indev-back-1\\web\\indev-back-web\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{0B11EC38-480E-45BD-A3A1-CA10D78F6273}|indev-back-web.csproj|solutionrelative:properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0B11EC38-480E-45BD-A3A1-CA10D78F6273}|indev-back-web.csproj|c:\\users\\formatis\\documents\\github\\indev-back-1\\web\\indev-back-web\\indev-back-web.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{0B11EC38-480E-45BD-A3A1-CA10D78F6273}|indev-back-web.csproj|solutionrelative:indev-back-web.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0B11EC38-480E-45BD-A3A1-CA10D78F6273}|indev-back-web.csproj|c:\\users\\formatis\\documents\\github\\indev-back-1\\web\\indev-back-web\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0B11EC38-480E-45BD-A3A1-CA10D78F6273}|indev-back-web.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0B11EC38-480E-45BD-A3A1-CA10D78F6273}|indev-back-web.csproj|c:\\users\\formatis\\documents\\github\\indev-back-1\\web\\indev-back-web\\pipeline\\middlewares\\guestusermiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0B11EC38-480E-45BD-A3A1-CA10D78F6273}|indev-back-web.csproj|solutionrelative:pipeline\\middlewares\\guestusermiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0B11EC38-480E-45BD-A3A1-CA10D78F6273}|indev-back-web.csproj|c:\\users\\formatis\\documents\\github\\indev-back-1\\web\\indev-back-web\\program configuration\\identityrolesseeding.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0B11EC38-480E-45BD-A3A1-CA10D78F6273}|indev-back-web.csproj|solutionrelative:program configuration\\identityrolesseeding.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0B11EC38-480E-45BD-A3A1-CA10D78F6273}|indev-back-web.csproj|c:\\users\\formatis\\documents\\github\\indev-back-1\\web\\indev-back-web\\controllers\\autorization\\customerautorizationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0B11EC38-480E-45BD-A3A1-CA10D78F6273}|indev-back-web.csproj|solutionrelative:controllers\\autorization\\customerautorizationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0B11EC38-480E-45BD-A3A1-CA10D78F6273}|indev-back-web.csproj|c:\\users\\formatis\\documents\\github\\indev-back-1\\web\\indev-back-web\\controllers\\autorization\\models\\loginrequestmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0B11EC38-480E-45BD-A3A1-CA10D78F6273}|indev-back-web.csproj|solutionrelative:controllers\\autorization\\models\\loginrequestmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0B11EC38-480E-45BD-A3A1-CA10D78F6273}|indev-back-web.csproj|c:\\users\\formatis\\documents\\github\\indev-back-1\\web\\indev-back-web\\core\\identity\\user\\baseapplicationuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0B11EC38-480E-45BD-A3A1-CA10D78F6273}|indev-back-web.csproj|solutionrelative:core\\identity\\user\\baseapplicationuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0B11EC38-480E-45BD-A3A1-CA10D78F6273}|indev-back-web.csproj|c:\\users\\formatis\\documents\\github\\indev-back-1\\web\\indev-back-web\\infrastructure\\dbcontext\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0B11EC38-480E-45BD-A3A1-CA10D78F6273}|indev-back-web.csproj|solutionrelative:infrastructure\\dbcontext\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0B11EC38-480E-45BD-A3A1-CA10D78F6273}|indev-back-web.csproj|c:\\users\\formatis\\documents\\github\\indev-back-1\\web\\indev-back-web\\core\\identity\\role\\applicationrole.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0B11EC38-480E-45BD-A3A1-CA10D78F6273}|indev-back-web.csproj|solutionrelative:core\\identity\\role\\applicationrole.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0B11EC38-480E-45BD-A3A1-CA10D78F6273}|indev-back-web.csproj|c:\\users\\formatis\\documents\\github\\indev-back-1\\web\\indev-back-web\\controllers\\autorization\\models\\registrationrequestmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0B11EC38-480E-45BD-A3A1-CA10D78F6273}|indev-back-web.csproj|solutionrelative:controllers\\autorization\\models\\registrationrequestmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0B11EC38-480E-45BD-A3A1-CA10D78F6273}|indev-back-web.csproj|c:\\users\\formatis\\documents\\github\\indev-back-1\\web\\indev-back-web\\infrastructure\\repositories\\mediastorage\\filestoragerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0B11EC38-480E-45BD-A3A1-CA10D78F6273}|indev-back-web.csproj|solutionrelative:infrastructure\\repositories\\mediastorage\\filestoragerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0B11EC38-480E-45BD-A3A1-CA10D78F6273}|indev-back-web.csproj|c:\\users\\formatis\\documents\\github\\indev-back-1\\web\\indev-back-web\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{0B11EC38-480E-45BD-A3A1-CA10D78F6273}|indev-back-web.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0B11EC38-480E-45BD-A3A1-CA10D78F6273}|indev-back-web.csproj|c:\\users\\formatis\\documents\\github\\indev-back-1\\web\\indev-back-web\\infrastructure\\services\\mediastorage\\mediastorageservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0B11EC38-480E-45BD-A3A1-CA10D78F6273}|indev-back-web.csproj|solutionrelative:infrastructure\\services\\mediastorage\\mediastorageservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0B11EC38-480E-45BD-A3A1-CA10D78F6273}|indev-back-web.csproj|c:\\users\\formatis\\documents\\github\\indev-back-1\\web\\indev-back-web\\infrastructure\\repositories\\mediastorage\\mediafilerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0B11EC38-480E-45BD-A3A1-CA10D78F6273}|indev-back-web.csproj|solutionrelative:infrastructure\\repositories\\mediastorage\\mediafilerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0B11EC38-480E-45BD-A3A1-CA10D78F6273}|indev-back-web.csproj|c:\\users\\formatis\\documents\\github\\indev-back-1\\web\\indev-back-web\\core\\data entities\\media\\mediafileentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0B11EC38-480E-45BD-A3A1-CA10D78F6273}|indev-back-web.csproj|solutionrelative:core\\data entities\\media\\mediafileentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0B11EC38-480E-45BD-A3A1-CA10D78F6273}|indev-back-web.csproj|c:\\users\\formatis\\documents\\github\\indev-back-1\\web\\indev-back-web\\core\\enums\\sexenum.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0B11EC38-480E-45BD-A3A1-CA10D78F6273}|indev-back-web.csproj|solutionrelative:core\\enums\\sexenum.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 294,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\Users\\Formatis\\Documents\\GitHub\\indev-back-1\\Web\\indev-back-web\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "Properties\\launchSettings.json",
+              "ToolTip": "C:\\Users\\Formatis\\Documents\\GitHub\\indev-back-1\\Web\\indev-back-web\\Properties\\launchSettings.json",
+              "RelativeToolTip": "Properties\\launchSettings.json",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAAB0AAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-10-10T10:24:57.173Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "GuestUserMiddleware.cs",
+              "DocumentMoniker": "C:\\Users\\Formatis\\Documents\\GitHub\\indev-back-1\\Web\\indev-back-web\\Pipeline\\Middlewares\\GuestUserMiddleware.cs",
+              "RelativeDocumentMoniker": "Pipeline\\Middlewares\\GuestUserMiddleware.cs",
+              "ToolTip": "C:\\Users\\Formatis\\Documents\\GitHub\\indev-back-1\\Web\\indev-back-web\\Pipeline\\Middlewares\\GuestUserMiddleware.cs",
+              "RelativeToolTip": "Pipeline\\Middlewares\\GuestUserMiddleware.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAYwCQAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-10T10:12:40.383Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "RegistrationRequestModel.cs",
+              "DocumentMoniker": "C:\\Users\\Formatis\\Documents\\GitHub\\indev-back-1\\Web\\indev-back-web\\Controllers\\Autorization\\Models\\RegistrationRequestModel.cs",
+              "RelativeDocumentMoniker": "Controllers\\Autorization\\Models\\RegistrationRequestModel.cs",
+              "ToolTip": "C:\\Users\\Formatis\\Documents\\GitHub\\indev-back-1\\Web\\indev-back-web\\Controllers\\Autorization\\Models\\RegistrationRequestModel.cs",
+              "RelativeToolTip": "Controllers\\Autorization\\Models\\RegistrationRequestModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-10T09:41:58.075Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "LoginRequestModel.cs",
+              "DocumentMoniker": "C:\\Users\\Formatis\\Documents\\GitHub\\indev-back-1\\Web\\indev-back-web\\Controllers\\Autorization\\Models\\LoginRequestModel.cs",
+              "RelativeDocumentMoniker": "Controllers\\Autorization\\Models\\LoginRequestModel.cs",
+              "ToolTip": "C:\\Users\\Formatis\\Documents\\GitHub\\indev-back-1\\Web\\indev-back-web\\Controllers\\Autorization\\Models\\LoginRequestModel.cs",
+              "RelativeToolTip": "Controllers\\Autorization\\Models\\LoginRequestModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-10T09:41:41.799Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "IdentityRolesSeeding.cs",
+              "DocumentMoniker": "C:\\Users\\Formatis\\Documents\\GitHub\\indev-back-1\\Web\\indev-back-web\\Program Configuration\\IdentityRolesSeeding.cs",
+              "RelativeDocumentMoniker": "Program Configuration\\IdentityRolesSeeding.cs",
+              "ToolTip": "C:\\Users\\Formatis\\Documents\\GitHub\\indev-back-1\\Web\\indev-back-web\\Program Configuration\\IdentityRolesSeeding.cs",
+              "RelativeToolTip": "Program Configuration\\IdentityRolesSeeding.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABwAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-10T09:39:19.535Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "CustomerAutorizationController.cs",
+              "DocumentMoniker": "C:\\Users\\Formatis\\Documents\\GitHub\\indev-back-1\\Web\\indev-back-web\\Controllers\\Autorization\\CustomerAutorizationController.cs",
+              "RelativeDocumentMoniker": "Controllers\\Autorization\\CustomerAutorizationController.cs",
+              "ToolTip": "C:\\Users\\Formatis\\Documents\\GitHub\\indev-back-1\\Web\\indev-back-web\\Controllers\\Autorization\\CustomerAutorizationController.cs",
+              "RelativeToolTip": "Controllers\\Autorization\\CustomerAutorizationController.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAApwCEAAABHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-10T09:36:05.793Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "MediaStorageService.cs",
+              "DocumentMoniker": "C:\\Users\\Formatis\\Documents\\GitHub\\indev-back-1\\Web\\indev-back-web\\Infrastructure\\Services\\MediaStorage\\MediaStorageService.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Services\\MediaStorage\\MediaStorageService.cs",
+              "ToolTip": "C:\\Users\\Formatis\\Documents\\GitHub\\indev-back-1\\Web\\indev-back-web\\Infrastructure\\Services\\MediaStorage\\MediaStorageService.cs",
+              "RelativeToolTip": "Infrastructure\\Services\\MediaStorage\\MediaStorageService.cs",
+              "ViewState": "AgIAAEAAAAAAAAAAAAAhwFQAAABAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-10T09:28:35.549Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "MediaFileRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Formatis\\Documents\\GitHub\\indev-back-1\\Web\\indev-back-web\\Infrastructure\\Repositories\\MediaStorage\\MediaFileRepository.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Repositories\\MediaStorage\\MediaFileRepository.cs",
+              "ToolTip": "C:\\Users\\Formatis\\Documents\\GitHub\\indev-back-1\\Web\\indev-back-web\\Infrastructure\\Repositories\\MediaStorage\\MediaFileRepository.cs",
+              "RelativeToolTip": "Infrastructure\\Repositories\\MediaStorage\\MediaFileRepository.cs",
+              "ViewState": "AgIAACgAAAAAAAAAAAAkwDwAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-10T09:22:25.342Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "FileStorageRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Formatis\\Documents\\GitHub\\indev-back-1\\Web\\indev-back-web\\Infrastructure\\Repositories\\MediaStorage\\FileStorageRepository.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Repositories\\MediaStorage\\FileStorageRepository.cs",
+              "ToolTip": "C:\\Users\\Formatis\\Documents\\GitHub\\indev-back-1\\Web\\indev-back-web\\Infrastructure\\Repositories\\MediaStorage\\FileStorageRepository.cs",
+              "RelativeToolTip": "Infrastructure\\Repositories\\MediaStorage\\FileStorageRepository.cs",
+              "ViewState": "AgIAABcAAAAAAAAAAAAgwAgAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-10T09:20:41.819Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\Formatis\\Documents\\GitHub\\indev-back-1\\Web\\indev-back-web\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\Users\\Formatis\\Documents\\GitHub\\indev-back-1\\Web\\indev-back-web\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-10-10T09:05:47.691Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "MediaFileEntity.cs",
+              "DocumentMoniker": "C:\\Users\\Formatis\\Documents\\GitHub\\indev-back-1\\Web\\indev-back-web\\Core\\Data Entities\\Media\\MediaFileEntity.cs",
+              "RelativeDocumentMoniker": "Core\\Data Entities\\Media\\MediaFileEntity.cs",
+              "ToolTip": "C:\\Users\\Formatis\\Documents\\GitHub\\indev-back-1\\Web\\indev-back-web\\Core\\Data Entities\\Media\\MediaFileEntity.cs",
+              "RelativeToolTip": "Core\\Data Entities\\Media\\MediaFileEntity.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-10T09:03:34.985Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "SexEnum.cs",
+              "DocumentMoniker": "C:\\Users\\Formatis\\Documents\\GitHub\\indev-back-1\\Web\\indev-back-web\\Core\\Enums\\SexEnum.cs",
+              "RelativeDocumentMoniker": "Core\\Enums\\SexEnum.cs",
+              "ToolTip": "C:\\Users\\Formatis\\Documents\\GitHub\\indev-back-1\\Web\\indev-back-web\\Core\\Enums\\SexEnum.cs",
+              "RelativeToolTip": "Core\\Enums\\SexEnum.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-10T08:58:59.507Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "BaseApplicationUser.cs",
+              "DocumentMoniker": "C:\\Users\\Formatis\\Documents\\GitHub\\indev-back-1\\Web\\indev-back-web\\Core\\Identity\\User\\BaseApplicationUser.cs",
+              "RelativeDocumentMoniker": "Core\\Identity\\User\\BaseApplicationUser.cs",
+              "ToolTip": "C:\\Users\\Formatis\\Documents\\GitHub\\indev-back-1\\Web\\indev-back-web\\Core\\Identity\\User\\BaseApplicationUser.cs",
+              "RelativeToolTip": "Core\\Identity\\User\\BaseApplicationUser.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAkAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-10T08:58:05.835Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ApplicationRole.cs",
+              "DocumentMoniker": "C:\\Users\\Formatis\\Documents\\GitHub\\indev-back-1\\Web\\indev-back-web\\Core\\Identity\\Role\\ApplicationRole.cs",
+              "RelativeDocumentMoniker": "Core\\Identity\\Role\\ApplicationRole.cs",
+              "ToolTip": "C:\\Users\\Formatis\\Documents\\GitHub\\indev-back-1\\Web\\indev-back-web\\Core\\Identity\\Role\\ApplicationRole.cs",
+              "RelativeToolTip": "Core\\Identity\\Role\\ApplicationRole.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAkAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-10T08:57:46.178Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "indev-back-web",
+              "DocumentMoniker": "C:\\Users\\Formatis\\Documents\\GitHub\\indev-back-1\\Web\\indev-back-web\\indev-back-web.csproj",
+              "RelativeDocumentMoniker": "indev-back-web.csproj",
+              "ToolTip": "C:\\Users\\Formatis\\Documents\\GitHub\\indev-back-1\\Web\\indev-back-web\\indev-back-web.csproj",
+              "RelativeToolTip": "indev-back-web.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-10-10T08:56:57.836Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\Formatis\\Documents\\GitHub\\indev-back-1\\Web\\indev-back-web\\Infrastructure\\DbContext\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\DbContext\\ApplicationDbContext.cs",
+              "ToolTip": "C:\\Users\\Formatis\\Documents\\GitHub\\indev-back-1\\Web\\indev-back-web\\Infrastructure\\DbContext\\ApplicationDbContext.cs",
+              "RelativeToolTip": "Infrastructure\\DbContext\\ApplicationDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-10T08:45:03.33Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Formatis\\Documents\\GitHub\\indev-back-1\\Web\\indev-back-web\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\Formatis\\Documents\\GitHub\\indev-back-1\\Web\\indev-back-web\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAACcAAAAAAAAAAAAIwDoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-10T08:39:06.044Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{13b12e3e-c1b4-4539-9371-4fe9a0d523fc}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:130:0:{13b12e3e-c1b4-4539-9371-4fe9a0d523fc}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

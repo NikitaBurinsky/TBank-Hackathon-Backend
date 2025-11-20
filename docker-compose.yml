@@ -1,0 +1,68 @@
+services:
+  postgres:
+    image: postgres:15
+    container_name: postgres-db
+    environment:
+      POSTGRES_DB: dbase
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: redbull
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./init-scripts:/docker-entrypoint-initdb.d
+    networks:
+      - tbank-network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d dbase"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+ # micser-2:
+  #  image: ghcr.io/nikitaburinsky/tbank-micser-2:latest
+   # ports:
+    #  - "5000:5000"
+    #networks:
+    #  - tbank-network
+
+  micser-1:
+    image: ghcr.io/nikitaburinsky/tbank-micser-1:main
+    ports:
+      - "5000:5000"
+    environment:
+      - ConnectionStrings__DefaultConnection=Host=postgres;Port=5432;Database=dbase;Username=postgres;Password=redbull
+      - ASPNETCORE_ENVIRONMENT=Development
+    depends_on:
+  #    - micser-2
+      - postgres
+    networks:
+      tbank-network:
+        aliases:
+           - service
+           - micser-1
+           - backend
+    restart: unless-stopped
+ 
+  nginx:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: nginx_proxy
+    ports:
+      - "80:80"
+      - "443:443"
+    depends_on:
+      - micser-1
+    networks:
+      - tbank-network
+    volumes:
+      - /etc/letsencrypt:/etc/letsencrypt
+
+volumes:
+  postgres_data:
+
+networks:
+  tbank-network:
+    driver: bridge

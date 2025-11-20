@@ -1,0 +1,307 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Formatis\\Documents\\GitHub\\TBank-Hackathon-Backend\\Micser-ASP\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Sdks\\Microsoft.Docker.Sdk\\build\\Microsoft.VisualStudio.Docker.Compose.targets||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{36365CDB-03FA-4582-B3B5-47EF256C5D5E}|indev-back-web\\indev-back-web.csproj|c:\\users\\formatis\\documents\\github\\tbank-hackathon-backend\\micser-asp\\indev-back-web\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{36365CDB-03FA-4582-B3B5-47EF256C5D5E}|indev-back-web\\indev-back-web.csproj|solutionrelative:indev-back-web\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{36365CDB-03FA-4582-B3B5-47EF256C5D5E}|indev-back-web\\indev-back-web.csproj|c:\\users\\formatis\\documents\\github\\tbank-hackathon-backend\\micser-asp\\indev-back-web\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{36365CDB-03FA-4582-B3B5-47EF256C5D5E}|indev-back-web\\indev-back-web.csproj|solutionrelative:indev-back-web\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{36365CDB-03FA-4582-B3B5-47EF256C5D5E}|indev-back-web\\indev-back-web.csproj|c:\\users\\formatis\\documents\\github\\tbank-hackathon-backend\\micser-asp\\indev-back-web\\program configuration\\startup\\identityrolesseeding.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{36365CDB-03FA-4582-B3B5-47EF256C5D5E}|indev-back-web\\indev-back-web.csproj|solutionrelative:indev-back-web\\program configuration\\startup\\identityrolesseeding.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{36365CDB-03FA-4582-B3B5-47EF256C5D5E}|indev-back-web\\indev-back-web.csproj|c:\\users\\formatis\\documents\\github\\tbank-hackathon-backend\\micser-asp\\indev-back-web\\controllers\\autorization\\customerautorizationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{36365CDB-03FA-4582-B3B5-47EF256C5D5E}|indev-back-web\\indev-back-web.csproj|solutionrelative:indev-back-web\\controllers\\autorization\\customerautorizationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{36365CDB-03FA-4582-B3B5-47EF256C5D5E}|indev-back-web\\indev-back-web.csproj|c:\\users\\formatis\\documents\\github\\tbank-hackathon-backend\\micser-asp\\indev-back-web\\controllers\\autorization\\models\\registrationrequestmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{36365CDB-03FA-4582-B3B5-47EF256C5D5E}|indev-back-web\\indev-back-web.csproj|solutionrelative:indev-back-web\\controllers\\autorization\\models\\registrationrequestmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{36365CDB-03FA-4582-B3B5-47EF256C5D5E}|indev-back-web\\indev-back-web.csproj|c:\\users\\formatis\\documents\\github\\tbank-hackathon-backend\\micser-asp\\indev-back-web\\controllers\\autorization\\models\\loginrequestmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{36365CDB-03FA-4582-B3B5-47EF256C5D5E}|indev-back-web\\indev-back-web.csproj|solutionrelative:indev-back-web\\controllers\\autorization\\models\\loginrequestmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{36365CDB-03FA-4582-B3B5-47EF256C5D5E}|indev-back-web\\indev-back-web.csproj|c:\\users\\formatis\\documents\\github\\tbank-hackathon-backend\\micser-asp\\indev-back-web\\core\\identity\\user\\baseapplicationuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{36365CDB-03FA-4582-B3B5-47EF256C5D5E}|indev-back-web\\indev-back-web.csproj|solutionrelative:indev-back-web\\core\\identity\\user\\baseapplicationuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{36365CDB-03FA-4582-B3B5-47EF256C5D5E}|indev-back-web\\indev-back-web.csproj|c:\\users\\formatis\\documents\\github\\tbank-hackathon-backend\\micser-asp\\indev-back-web\\infrastructure\\dbcontext\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{36365CDB-03FA-4582-B3B5-47EF256C5D5E}|indev-back-web\\indev-back-web.csproj|solutionrelative:indev-back-web\\infrastructure\\dbcontext\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{36365CDB-03FA-4582-B3B5-47EF256C5D5E}|indev-back-web\\indev-back-web.csproj|c:\\users\\formatis\\documents\\github\\tbank-hackathon-backend\\micser-asp\\indev-back-web\\pipeline\\middlewares\\guestusermiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{36365CDB-03FA-4582-B3B5-47EF256C5D5E}|indev-back-web\\indev-back-web.csproj|solutionrelative:indev-back-web\\pipeline\\middlewares\\guestusermiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{36365CDB-03FA-4582-B3B5-47EF256C5D5E}|indev-back-web\\indev-back-web.csproj|c:\\users\\formatis\\documents\\github\\tbank-hackathon-backend\\micser-asp\\indev-back-web\\core\\primitives\\operationresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{36365CDB-03FA-4582-B3B5-47EF256C5D5E}|indev-back-web\\indev-back-web.csproj|solutionrelative:indev-back-web\\core\\primitives\\operationresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{36365CDB-03FA-4582-B3B5-47EF256C5D5E}|indev-back-web\\indev-back-web.csproj|c:\\users\\formatis\\documents\\github\\tbank-hackathon-backend\\micser-asp\\indev-back-web\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{36365CDB-03FA-4582-B3B5-47EF256C5D5E}|indev-back-web\\indev-back-web.csproj|solutionrelative:indev-back-web\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{36365CDB-03FA-4582-B3B5-47EF256C5D5E}|indev-back-web\\indev-back-web.csproj|c:\\users\\formatis\\documents\\github\\tbank-hackathon-backend\\micser-asp\\indev-back-web\\infrastructure\\repositories\\mediastorage\\mediafilerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{36365CDB-03FA-4582-B3B5-47EF256C5D5E}|indev-back-web\\indev-back-web.csproj|solutionrelative:indev-back-web\\infrastructure\\repositories\\mediastorage\\mediafilerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{36365CDB-03FA-4582-B3B5-47EF256C5D5E}|indev-back-web\\indev-back-web.csproj|c:\\users\\formatis\\documents\\github\\tbank-hackathon-backend\\micser-asp\\indev-back-web\\infrastructure\\services\\mediastorage\\mediastorageservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{36365CDB-03FA-4582-B3B5-47EF256C5D5E}|indev-back-web\\indev-back-web.csproj|solutionrelative:indev-back-web\\infrastructure\\services\\mediastorage\\mediastorageservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{36365CDB-03FA-4582-B3B5-47EF256C5D5E}|indev-back-web\\indev-back-web.csproj|c:\\users\\formatis\\documents\\github\\tbank-hackathon-backend\\micser-asp\\indev-back-web\\indev-back-web.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{36365CDB-03FA-4582-B3B5-47EF256C5D5E}|indev-back-web\\indev-back-web.csproj|solutionrelative:indev-back-web\\indev-back-web.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{36365CDB-03FA-4582-B3B5-47EF256C5D5E}|indev-back-web\\indev-back-web.csproj|c:\\users\\formatis\\documents\\github\\tbank-hackathon-backend\\micser-asp\\indev-back-web\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{36365CDB-03FA-4582-B3B5-47EF256C5D5E}|indev-back-web\\indev-back-web.csproj|solutionrelative:indev-back-web\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 10,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{13b12e3e-c1b4-4539-9371-4fe9a0d523fc}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:130:0:{13b12e3e-c1b4-4539-9371-4fe9a0d523fc}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "IdentityRolesSeeding.cs",
+              "DocumentMoniker": "C:\\Users\\Formatis\\Documents\\GitHub\\TBank-Hackathon-Backend\\Micser-ASP\\indev-back-web\\Program Configuration\\Startup\\IdentityRolesSeeding.cs",
+              "RelativeDocumentMoniker": "indev-back-web\\Program Configuration\\Startup\\IdentityRolesSeeding.cs",
+              "ToolTip": "C:\\Users\\Formatis\\Documents\\GitHub\\TBank-Hackathon-Backend\\Micser-ASP\\indev-back-web\\Program Configuration\\Startup\\IdentityRolesSeeding.cs",
+              "RelativeToolTip": "indev-back-web\\Program Configuration\\Startup\\IdentityRolesSeeding.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-20T13:58:30.106Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Formatis\\Documents\\GitHub\\TBank-Hackathon-Backend\\Micser-ASP\\indev-back-web\\Program.cs",
+              "RelativeDocumentMoniker": "indev-back-web\\Program.cs",
+              "ToolTip": "C:\\Users\\Formatis\\Documents\\GitHub\\TBank-Hackathon-Backend\\Micser-ASP\\indev-back-web\\Program.cs",
+              "RelativeToolTip": "indev-back-web\\Program.cs",
+              "ViewState": "AgIAACUAAAAAAAAAAAAQwCwAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-11T07:30:31.211Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "CustomerAutorizationController.cs",
+              "DocumentMoniker": "C:\\Users\\Formatis\\Documents\\GitHub\\TBank-Hackathon-Backend\\Micser-ASP\\indev-back-web\\Controllers\\Autorization\\CustomerAutorizationController.cs",
+              "RelativeDocumentMoniker": "indev-back-web\\Controllers\\Autorization\\CustomerAutorizationController.cs",
+              "ToolTip": "C:\\Users\\Formatis\\Documents\\GitHub\\TBank-Hackathon-Backend\\Micser-ASP\\indev-back-web\\Controllers\\Autorization\\CustomerAutorizationController.cs",
+              "RelativeToolTip": "indev-back-web\\Controllers\\Autorization\\CustomerAutorizationController.cs",
+              "ViewState": "AgIAACkAAAAAAAAAAAAAAB8AAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-11T10:53:17.264Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "RegistrationRequestModel.cs",
+              "DocumentMoniker": "C:\\Users\\Formatis\\Documents\\GitHub\\TBank-Hackathon-Backend\\Micser-ASP\\indev-back-web\\Controllers\\Autorization\\Models\\RegistrationRequestModel.cs",
+              "RelativeDocumentMoniker": "indev-back-web\\Controllers\\Autorization\\Models\\RegistrationRequestModel.cs",
+              "ToolTip": "C:\\Users\\Formatis\\Documents\\GitHub\\TBank-Hackathon-Backend\\Micser-ASP\\indev-back-web\\Controllers\\Autorization\\Models\\RegistrationRequestModel.cs",
+              "RelativeToolTip": "indev-back-web\\Controllers\\Autorization\\Models\\RegistrationRequestModel.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAuwAgAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-11T10:52:18.117Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\Formatis\\Documents\\GitHub\\TBank-Hackathon-Backend\\Micser-ASP\\indev-back-web\\appsettings.json",
+              "RelativeDocumentMoniker": "indev-back-web\\appsettings.json",
+              "ToolTip": "C:\\Users\\Formatis\\Documents\\GitHub\\TBank-Hackathon-Backend\\Micser-ASP\\indev-back-web\\appsettings.json",
+              "RelativeToolTip": "indev-back-web\\appsettings.json",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAACIAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-10-10T13:44:45.59Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "LoginRequestModel.cs",
+              "DocumentMoniker": "C:\\Users\\Formatis\\Documents\\GitHub\\TBank-Hackathon-Backend\\Micser-ASP\\indev-back-web\\Controllers\\Autorization\\Models\\LoginRequestModel.cs",
+              "RelativeDocumentMoniker": "indev-back-web\\Controllers\\Autorization\\Models\\LoginRequestModel.cs",
+              "ToolTip": "C:\\Users\\Formatis\\Documents\\GitHub\\TBank-Hackathon-Backend\\Micser-ASP\\indev-back-web\\Controllers\\Autorization\\Models\\LoginRequestModel.cs",
+              "RelativeToolTip": "indev-back-web\\Controllers\\Autorization\\Models\\LoginRequestModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-20T14:20:58.992Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Microsoft.VisualStudio.Docker.Compose.targets",
+              "DocumentMoniker": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Sdks\\Microsoft.Docker.Sdk\\build\\Microsoft.VisualStudio.Docker.Compose.targets",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Sdks\\Microsoft.Docker.Sdk\\build\\Microsoft.VisualStudio.Docker.Compose.targets",
+              "ToolTip": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Sdks\\Microsoft.Docker.Sdk\\build\\Microsoft.VisualStudio.Docker.Compose.targets",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Sdks\\Microsoft.Docker.Sdk\\build\\Microsoft.VisualStudio.Docker.Compose.targets",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAALcBAABMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003801|",
+              "WhenOpened": "2025-10-10T10:43:27.451Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\Formatis\\Documents\\GitHub\\TBank-Hackathon-Backend\\Micser-ASP\\indev-back-web\\Infrastructure\\DbContext\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "indev-back-web\\Infrastructure\\DbContext\\ApplicationDbContext.cs",
+              "ToolTip": "C:\\Users\\Formatis\\Documents\\GitHub\\TBank-Hackathon-Backend\\Micser-ASP\\indev-back-web\\Infrastructure\\DbContext\\ApplicationDbContext.cs",
+              "RelativeToolTip": "indev-back-web\\Infrastructure\\DbContext\\ApplicationDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-20T13:56:04.828Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "BaseApplicationUser.cs",
+              "DocumentMoniker": "C:\\Users\\Formatis\\Documents\\GitHub\\TBank-Hackathon-Backend\\Micser-ASP\\indev-back-web\\Core\\Identity\\User\\BaseApplicationUser.cs",
+              "RelativeDocumentMoniker": "indev-back-web\\Core\\Identity\\User\\BaseApplicationUser.cs",
+              "ToolTip": "C:\\Users\\Formatis\\Documents\\GitHub\\TBank-Hackathon-Backend\\Micser-ASP\\indev-back-web\\Core\\Identity\\User\\BaseApplicationUser.cs",
+              "RelativeToolTip": "indev-back-web\\Core\\Identity\\User\\BaseApplicationUser.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAoAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-11T11:02:16.327Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "GuestUserMiddleware.cs",
+              "DocumentMoniker": "C:\\Users\\Formatis\\Documents\\GitHub\\TBank-Hackathon-Backend\\Micser-ASP\\indev-back-web\\Pipeline\\Middlewares\\GuestUserMiddleware.cs",
+              "RelativeDocumentMoniker": "indev-back-web\\Pipeline\\Middlewares\\GuestUserMiddleware.cs",
+              "ToolTip": "C:\\Users\\Formatis\\Documents\\GitHub\\TBank-Hackathon-Backend\\Micser-ASP\\indev-back-web\\Pipeline\\Middlewares\\GuestUserMiddleware.cs",
+              "RelativeToolTip": "indev-back-web\\Pipeline\\Middlewares\\GuestUserMiddleware.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-20T13:57:31.666Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "OperationResult.cs",
+              "DocumentMoniker": "C:\\Users\\Formatis\\Documents\\GitHub\\TBank-Hackathon-Backend\\Micser-ASP\\indev-back-web\\Core\\Primitives\\OperationResult.cs",
+              "RelativeDocumentMoniker": "indev-back-web\\Core\\Primitives\\OperationResult.cs",
+              "ToolTip": "C:\\Users\\Formatis\\Documents\\GitHub\\TBank-Hackathon-Backend\\Micser-ASP\\indev-back-web\\Core\\Primitives\\OperationResult.cs",
+              "RelativeToolTip": "indev-back-web\\Core\\Primitives\\OperationResult.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-20T13:57:24.228Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "MediaStorageService.cs",
+              "DocumentMoniker": "C:\\Users\\Formatis\\Documents\\GitHub\\TBank-Hackathon-Backend\\Micser-ASP\\indev-back-web\\Infrastructure\\Services\\MediaStorage\\MediaStorageService.cs",
+              "RelativeDocumentMoniker": "indev-back-web\\Infrastructure\\Services\\MediaStorage\\MediaStorageService.cs",
+              "ToolTip": "C:\\Users\\Formatis\\Documents\\GitHub\\TBank-Hackathon-Backend\\Micser-ASP\\indev-back-web\\Infrastructure\\Services\\MediaStorage\\MediaStorageService.cs",
+              "RelativeToolTip": "indev-back-web\\Infrastructure\\Services\\MediaStorage\\MediaStorageService.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAADwvy0AAAA7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-11T09:55:27.072Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "MediaFileRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Formatis\\Documents\\GitHub\\TBank-Hackathon-Backend\\Micser-ASP\\indev-back-web\\Infrastructure\\Repositories\\MediaStorage\\MediaFileRepository.cs",
+              "RelativeDocumentMoniker": "indev-back-web\\Infrastructure\\Repositories\\MediaStorage\\MediaFileRepository.cs",
+              "ToolTip": "C:\\Users\\Formatis\\Documents\\GitHub\\TBank-Hackathon-Backend\\Micser-ASP\\indev-back-web\\Infrastructure\\Repositories\\MediaStorage\\MediaFileRepository.cs",
+              "RelativeToolTip": "indev-back-web\\Infrastructure\\Repositories\\MediaStorage\\MediaFileRepository.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAABRwBsAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-11T08:17:29.306Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\Users\\Formatis\\Documents\\GitHub\\TBank-Hackathon-Backend\\Micser-ASP\\indev-back-web\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "indev-back-web\\Properties\\launchSettings.json",
+              "ToolTip": "C:\\Users\\Formatis\\Documents\\GitHub\\TBank-Hackathon-Backend\\Micser-ASP\\indev-back-web\\Properties\\launchSettings.json",
+              "RelativeToolTip": "indev-back-web\\Properties\\launchSettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-10-10T16:11:02.383Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Dockerfile",
+              "DocumentMoniker": "C:\\Users\\Formatis\\Documents\\GitHub\\TBank-Hackathon-Backend\\Micser-ASP\\indev-back-web\\Dockerfile",
+              "RelativeDocumentMoniker": "indev-back-web\\Dockerfile",
+              "ToolTip": "C:\\Users\\Formatis\\Documents\\GitHub\\TBank-Hackathon-Backend\\Micser-ASP\\indev-back-web\\Dockerfile",
+              "RelativeToolTip": "indev-back-web\\Dockerfile",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-10-10T13:52:49.003Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "indev-back-web.csproj",
+              "DocumentMoniker": "C:\\Users\\Formatis\\Documents\\GitHub\\TBank-Hackathon-Backend\\Micser-ASP\\indev-back-web\\indev-back-web.csproj",
+              "RelativeDocumentMoniker": "indev-back-web\\indev-back-web.csproj",
+              "ToolTip": "C:\\Users\\Formatis\\Documents\\GitHub\\TBank-Hackathon-Backend\\Micser-ASP\\indev-back-web\\indev-back-web.csproj",
+              "RelativeToolTip": "indev-back-web\\indev-back-web.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAD4vzMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-10-10T10:35:15.46Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
