@@ -1,0 +1,101 @@
+## ASP.NET Core и Visual Studio
+## https://github.com/github/gitignore/blob/main/VisualStudio.gitignore
+
+# Библиотеки и зависимости
+**/bin/
+**/obj/
+*.dll
+*.pdb
+*.exe
+
+# Файлы пользовательских настроек
+*.user
+*.userosscache
+*.sln.docstates
+
+# Файлы резервных копий
+*.backup
+*.bak
+*.tmp
+
+# Результаты тестов
+TestResults/
+*.trx
+*.TMP
+
+# Файлы публикации
+publish/
+**/app.publish/
+
+# Файлы пакетов NuGet
+**/packages/
+*.nupkg
+*.snupkg
+
+# Файлы кэша Rider
+.idea/
+
+# Файлы кэша VS Code
+.vscode/
+*.swp
+*.swo
+
+# Файлы окружения
+.env
+*.env.local
+*.env.*.local
+
+# Локальные файлы настроек
+appsettings.Development.json
+appsettings.Local.json
+appsettings.Production.local.json
+
+# Файлы логов
+*.log
+logs/
+**/Logs/
+
+# Файлы данных приложения
+*.db
+*.db-shm
+*.db-wal
+*.mdf
+*.ldf
+
+# Файлы покрытия кода
+coverage.json
+coverage.cobertura.xml
+**/coverage/
+*.coverlet
+
+# Файлы сборки Docker
+Dockerfile.local
+docker-compose.override.yml
+
+# Файлы временных данных
+temp/
+tmp/
+
+# Файлы клиентских библиотек (если используете)
+wwwroot/lib/
+**/bower_components/
+**/node_modules/
+
+# Файлы специфичные для macOS
+.DS_Store
+
+# Файлы специфичные для Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Файлы специфичные для Linux
+*~
+
+## Исключения (не игнорировать важные файлы конфигурации)
+!appsettings.json
+!appsettings.*.json
+!.env.example
+!Dockerfile
+!docker-compose.yml
+!nginx.conf
