@@ -1,0 +1,44 @@
+[
+  {
+    "ContainingType": "ZooStores.Web.Area.Identity.Autorization.CustomerAutorizationController",
+    "Method": "Login",
+    "RelativePath": "accounts/login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "requestModel",
+        "Type": "ZooStores.Web.Area.Identity.Autorization.Models.LoginRequestModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ZooStores.Web.Area.Identity.Autorization.CustomerAutorizationController",
+    "Method": "Logout",
+    "RelativePath": "accounts/logout",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ZooStores.Web.Area.Identity.Autorization.CustomerAutorizationController",
+    "Method": "Registration",
+    "RelativePath": "accounts/registration",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "registrationRequest",
+        "Type": "ZooStores.Web.Area.Identity.Autorization.Models.RegistrationRequestModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

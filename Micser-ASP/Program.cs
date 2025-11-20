@@ -83,7 +83,7 @@ internal class Program
 		static void ConfigureCors(IServiceCollection services)
 		{
 			//продакшн
-			services.AddCors(options =>
+/*			services.AddCors(options =>
 			{
 				options.AddPolicy("StrictPolicy", policy =>
 				{
@@ -93,12 +93,12 @@ internal class Program
 						  .AllowCredentials();
 				});
 			});
-			//дев
+	*/		//дев
 			services.AddCors(options =>
 			{
 				options.AddPolicy("AllowAllPolicy", policy =>
 				{
-					policy.AllowAnyOrigin()   // Принимает от любого домена
+					policy.SetIsOriginAllowed(e => true)   // Принимает от любого домена
 						  .AllowAnyMethod()   // Разрешает любые HTTP-методы
 						  .AllowAnyHeader()   // Разрешает любые заголовки
 						  .AllowCredentials(); // Разрешает учетные данные
@@ -108,7 +108,7 @@ internal class Program
 
 		static void AddGrpsSystems(IServiceCollection services, IConfiguration configuration)
 		{
-			services.AddGrpcClient<AnalysisServiceClient>(options =>
+			/*services.AddGrpcClient<AnalysisServiceClient>(options =>
 			{
 				options.Address = new Uri("http://micser-2:5000");
 			})
@@ -118,7 +118,7 @@ internal class Program
 				handler.ServerCertificateCustomValidationCallback =
 					HttpClientHandler.DangerousAcceptAnyServerCertificateValidator;
 				return handler;
-			});
+			});*/
 		}
 
 		static void ConfigureCookies(IServiceCollection services)
@@ -161,15 +161,15 @@ internal class Program
 			using (var scope = app.Services.CreateScope())
 			{
 				var services = scope.ServiceProvider;
+				var logger = services.GetRequiredService<ILogger<Program>>();
 				try
 				{
 					var context = services.GetRequiredService<ApplicationDbContext>();
 					context.Database.MigrateAsync();
-					Console.WriteLine("Миграции успешно применены");
+					logger.LogInformation("Миграции успешно применены");
 				}
 				catch (Exception ex)
 				{
-					var logger = services.GetRequiredService<ILogger<Program>>();
 					logger.LogError(ex, "Произошла ошибка при применении миграций");
 				}
 			}
