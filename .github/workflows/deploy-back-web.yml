@@ -48,7 +48,7 @@ jobs:
         labels: ${{ steps.meta.outputs.labels }}
 
   deploy-micser-ASP:
-    needs: build-and-push-docker
+    needs: build-and-push-micser-ASP
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main'
     
