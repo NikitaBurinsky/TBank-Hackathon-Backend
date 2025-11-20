@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package calc;
+
+// Сообщение запроса: два числа
+message AddRequest {
+  double a = 1;
+  double b = 2;
+}
+
+// Сообщение ответа: результат
+message AddReply {
+  double result = 1;
+}
+
+// Описание сервиса
+service Calculator {
+  rpc Add (AddRequest) returns (AddReply);
+}
