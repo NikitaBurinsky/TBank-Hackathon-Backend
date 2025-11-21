@@ -23,7 +23,6 @@ jobs:
     steps:
     - name: Debug - Check files in context
       run: |
-        echo "=== All files recursively ==="
         find ./ -type f
 
     - name: Checkout code
@@ -51,7 +50,7 @@ jobs:
     - name: Build and push gRPC Docker image
       uses: docker/build-push-action@v4
       with:
-        context: ./Micser-Python
+        context: Micser-Python
         file: Dockerfile ##
         push: true
         tags: ${{ steps.meta-grpc.outputs.tags }}
