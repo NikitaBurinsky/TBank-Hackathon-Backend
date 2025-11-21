@@ -13,7 +13,7 @@ jobs:
   ### BUILD AND PUSH DOCKER ###
 
 ### PY ###
-    build-and-push-micser-Py:
+  build-and-push-micser-Py:
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -56,146 +56,146 @@ jobs:
 
 
 ### ASP ###
-    build-and-push-micser-ASP:
-      runs-on: ubuntu-latest
-      permissions:
-        contents: read
-        packages: write
-      if: github.ref == 'refs/heads/main'
-      
-      steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
+  build-and-push-micser-ASP:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    if: github.ref == 'refs/heads/main'
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
 
-      - name: Log in to Container Registry
-        uses: docker/login-action@v2
-        with:
-          registry: ${{ env.REGISTRY }}
-          username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
+    - name: Log in to Container Registry
+      uses: docker/login-action@v2
+      with:
+        registry: ${{ env.REGISTRY }}
+        username: ${{ github.actor }}
+        password: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Extract metadata for Docker
-        id: meta
-        uses: docker/metadata-action@v4
-        with:
-          images: ${{ env.REGISTRY }}/${{ github.repository_owner }}/${{ env.ASP_IMAGE_NAME }}
-          tags: |
-            type=ref,event=branch
-            type=ref,event=pr
-            type=semver,pattern={{version}}
-            type=semver,pattern={{major}}.{{minor}}
-            type=sha,prefix={{branch}}-
+    - name: Extract metadata for Docker
+      id: meta
+      uses: docker/metadata-action@v4
+      with:
+        images: ${{ env.REGISTRY }}/${{ github.repository_owner }}/${{ env.ASP_IMAGE_NAME }}
+        tags: |
+          type=ref,event=branch
+          type=ref,event=pr
+          type=semver,pattern={{version}}
+          type=semver,pattern={{major}}.{{minor}}
+          type=sha,prefix={{branch}}-
 
-      - name: Build and push Docker image
-        uses: docker/build-push-action@v4
-        with:
-          context: ./Micser-ASP
-          push: true
-          tags: ${{ steps.meta.outputs.tags }}
-          labels: ${{ steps.meta.outputs.labels }}
+    - name: Build and push Docker image
+      uses: docker/build-push-action@v4
+      with:
+        context: ./Micser-ASP
+        push: true
+        tags: ${{ steps.meta.outputs.tags }}
+        labels: ${{ steps.meta.outputs.labels }}
 
 
 ### DEPLOYMENT ###
-    deploy-micser-ASP:
-      needs: build-and-push-micser-ASP
-      runs-on: ubuntu-latest
-      if: github.ref == 'refs/heads/main'
-      
-      steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-        with:
-          sparse-checkout: |
-            docker-compose.yml
-            .env.example
+  deploy-micser-ASP:
+    needs: build-and-push-micser-ASP
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      with:
+        sparse-checkout: |
+          docker-compose.yml
+          .env.example
 
-      - name: Setup SSH
-        uses: webfactory/ssh-agent@v0.8.0
-        with:
-          ssh-private-key: ${{ secrets.SERVER_SSH_KEY }}
+    - name: Setup SSH
+      uses: webfactory/ssh-agent@v0.8.0
+      with:
+        ssh-private-key: ${{ secrets.SERVER_SSH_KEY }}
 
-      - name: Add server to known hosts
-        run: |
-          mkdir -p ~/.ssh
-          ssh-keyscan -H ${{ secrets.SERVER_HOST }} >> ~/.ssh/known_hosts
+    - name: Add server to known hosts
+      run: |
+        mkdir -p ~/.ssh
+        ssh-keyscan -H ${{ secrets.SERVER_HOST }} >> ~/.ssh/known_hosts
 
-      - name: Test SSH connection
-        run: |
-          ssh ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }} "echo 'SSH connection successful!'"
+    - name: Test SSH connection
+      run: |
+        ssh ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }} "echo 'SSH connection successful!'"
 
-      - name: Create app directory on server
-        run: |
-          ssh ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }} "
-          mkdir -p ~/app
-          echo 'App directory created successfully'
-          "
-      - name: Create wwwroot directory on server
-        run: |
-          ssh ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }} "
-          mkdir -p ~/app/wwwroot
-          echo 'App directory created successfully'
-          "
+    - name: Create app directory on server
+      run: |
+        ssh ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }} "
+        mkdir -p ~/app
+        echo 'App directory created successfully'
+        "
+    - name: Create wwwroot directory on server
+      run: |
+        ssh ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }} "
+        mkdir -p ~/app/wwwroot
+        echo 'App directory created successfully'
+        "
 
-      - name: Create Image directory on server
-        run: |
-          ssh ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }} "
-          mkdir -p ~/app/wwwroot/Image
-          echo 'App directory created successfully'
-          "
-      - name: Create NONE directory on server
-        run: |
-          ssh ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }} "
-          mkdir -p ~/app/wwwroot/NONE
-          echo 'App directory created successfully'
-          "
+    - name: Create Image directory on server
+      run: |
+        ssh ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }} "
+        mkdir -p ~/app/wwwroot/Image
+        echo 'App directory created successfully'
+        "
+    - name: Create NONE directory on server
+      run: |
+        ssh ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }} "
+        mkdir -p ~/app/wwwroot/NONE
+        echo 'App directory created successfully'
+        "
 
 
-      - name: Copy nginx-dockerfile
-        run: |
-          scp Dockerfile ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }}:~/app/
+    - name: Copy nginx-dockerfile
+      run: |
+        scp Dockerfile ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }}:~/app/
+        
+    - name: Copy nginx-conf
+      run: |
+        scp nginx.conf ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }}:~/app/        
+
+    - name: Copy docker-compose.yml to server
+      run: |
+        scp docker-compose.yml ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }}:~/app/
+
+    - name: Copy environment file if exists
+      run: |
+        if [ -f ".env.example" ]; then
+          scp .env.example ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }}:~/app/
+        fi
+
+    - name: Deploy with Docker Compose
+      run: |
+        ssh ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }} "
+          cd ~/app
           
-      - name: Copy nginx-conf
-        run: |
-          scp nginx.conf ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }}:~/app/        
-
-      - name: Copy docker-compose.yml to server
-        run: |
-          scp docker-compose.yml ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }}:~/app/
-
-      - name: Copy environment file if exists
-        run: |
-          if [ -f ".env.example" ]; then
-            scp .env.example ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }}:~/app/
+          # Login to GitHub Container Registry
+          echo 'Logging in to GitHub Container Registry...'
+          echo '${{ secrets.GITHUB_TOKEN }}' | docker login ${{ env.REGISTRY }} -u '${{ github.actor }}' --password-stdin
+          
+          # Create .env file from example if it doesn't exist
+          if [ ! -f .env ] && [ -f .env.example ]; then
+            cp .env.example .env
+            echo 'Created .env file from example'
           fi
-
-      - name: Deploy with Docker Compose
-        run: |
-          ssh ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }} "
-            cd ~/app
-            
-            # Login to GitHub Container Registry
-            echo 'Logging in to GitHub Container Registry...'
-            echo '${{ secrets.GITHUB_TOKEN }}' | docker login ${{ env.REGISTRY }} -u '${{ github.actor }}' --password-stdin
-            
-            # Create .env file from example if it doesn't exist
-            if [ ! -f .env ] && [ -f .env.example ]; then
-              cp .env.example .env
-              echo 'Created .env file from example'
-            fi
-            
-            # Pull the latest images
-            echo 'Pulling latest Docker images...'
-            docker compose pull
-            
-            # Start services with Docker Compose
-            echo 'Starting services with Docker Compose...'
-            docker compose up -d
-            
-            # Check service status
-            echo 'Checking service status...'
-            docker compose ps
-            
-            # Clean up unused images
-            echo 'Cleaning up...'
-            docker image prune -f
-          "
+          
+          # Pull the latest images
+          echo 'Pulling latest Docker images...'
+          docker compose pull
+          
+          # Start services with Docker Compose
+          echo 'Starting services with Docker Compose...'
+          docker compose up -d
+          
+          # Check service status
+          echo 'Checking service status...'
+          docker compose ps
+          
+          # Clean up unused images
+          echo 'Cleaning up...'
+          docker image prune -f
+        "
