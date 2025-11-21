@@ -47,7 +47,7 @@ services:
  
   nginx:
     build:
-      context: /Micser-Proxy
+      context: .
       dockerfile: Dockerfile
     container_name: nginx_proxy
     ports:
