@@ -1,7 +1,8 @@
 name: VPSPipeline
 on: push
 env:
-  IMAGE_NAME: tbank-micser-1
+  ASP_IMAGE_NAME: tbank-micser-1
+  PY_IMAGE_NAME: tbank-micser-2
   REGISTRY: ghcr.io
   SERVER_SSH_KEY: ${{ secrets.SERVER_SSH_KEY }}
   SERVER_USER: ${{ secrets.SERVER_USER }}
@@ -9,6 +10,52 @@ env:
   COMPOSE_PROJECT_NAME: tbank-app
 
 jobs:
+  ### BUILD AND PUSH DOCKER ###
+
+### PY ###
+    build-and-push-micser-Py:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    if: github.ref == 'refs/heads/main'
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Log in to Container Registry
+      uses: docker/login-action@v2
+      with:
+        registry: ${{ env.REGISTRY }}
+        username: ${{ github.actor }}
+        password: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Extract metadata for Docker
+      id: meta-grpc
+      uses: docker/metadata-action@v4
+      with:
+        images: ${{ env.REGISTRY }}/${{ github.repository_owner }}/${{ env.PY_IMAGE_NAME }}
+        tags: |
+          type=ref,event=branch
+          type=ref,event=pr
+          type=semver,pattern={{version}}
+          type=semver,pattern={{major}}.{{minor}}
+          type=sha,prefix={{branch}}-
+
+    - name: Build and push gRPC Docker image
+      uses: docker/build-push-action@v4
+      with:
+        context: ./Grpc_test ##
+        file: ./Grpc_test/Dockerfile ##
+        push: true
+        tags: ${{ steps.meta-grpc.outputs.tags }}
+        labels: ${{ steps.meta-grpc.outputs.labels }}
+        cache-from: type=gha
+        cache-to: type=gha,mode=max
+
+
+### ASP ###
   build-and-push-micser-ASP:
     runs-on: ubuntu-latest
     permissions:
@@ -31,7 +78,7 @@ jobs:
       id: meta
       uses: docker/metadata-action@v4
       with:
-        images: ${{ env.REGISTRY }}/${{ github.repository_owner }}/${{ env.IMAGE_NAME }}
+        images: ${{ env.REGISTRY }}/${{ github.repository_owner }}/${{ env.ASP_IMAGE_NAME }}
         tags: |
           type=ref,event=branch
           type=ref,event=pr
@@ -47,6 +94,8 @@ jobs:
         tags: ${{ steps.meta.outputs.tags }}
         labels: ${{ steps.meta.outputs.labels }}
 
+
+### DEPLOYMENT ###
   deploy-micser-ASP:
     needs: build-and-push-micser-ASP
     runs-on: ubuntu-latest

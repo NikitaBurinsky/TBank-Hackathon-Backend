@@ -20,12 +20,12 @@ services:
       timeout: 10s
       retries: 3
 
- # micser-2:
-  #  image: ghcr.io/nikitaburinsky/tbank-micser-2:latest
-   # ports:
-    #  - "5000:5000"
-    #networks:
-    #  - tbank-network
+  micser-2:
+    image: ghcr.io/nikitaburinsky/tbank-micser-2:latest
+    ports:
+      - "5000:5000"
+    networks:
+      - tbank-network
 
   micser-1:
     image: ghcr.io/nikitaburinsky/tbank-micser-1:main
@@ -35,7 +35,7 @@ services:
       - ConnectionStrings__DefaultConnection=Host=postgres;Port=5432;Database=dbase;Username=postgres;Password=redbull
       - ASPNETCORE_ENVIRONMENT=Development
     depends_on:
-  #    - micser-2
+      - micser-2
       - postgres
     networks:
       tbank-network:
