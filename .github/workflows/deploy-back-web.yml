@@ -24,9 +24,9 @@ jobs:
     - name: Debug - Check files in context
       run: |
         echo "=== Files in Grpc_test folder ==="
-        ls -la Micser-Py/Grpc_test/
+        ls -la Micser-Py/Grpc_test
         echo "=== All files recursively ==="
-        find Micser-Py/Grpc_test/ -type f
+        find Micser-Py/Grpc_test -type f
 
     - name: Checkout code
       uses: actions/checkout@v4
