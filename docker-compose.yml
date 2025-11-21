@@ -21,7 +21,7 @@ services:
       retries: 3
 
   micser-2:
-    image: ghcr.io/nikitaburinsky/tbank-micser-2:latest
+    image: ghcr.io/nikitaburinsky/tbank-micser-2:main
     ports:
       - "5000:5000"
     networks:
