@@ -1,5 +1,12 @@
 name: Deploy Micser-1-ASP
 on:
+ workflow_call:  
+    inputs:
+      image-tag:
+        description: 'Image tag to deploy'
+        required: true
+        type: string
+        default: 'latest'
   workflow_dispatch:
     inputs:
       image-tag:
