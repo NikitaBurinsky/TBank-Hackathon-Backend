@@ -47,7 +47,7 @@ jobs:
       uses: docker/build-push-action@v4
       with:
         context: ./Micser-Py/Grpc_test
-        file: Micser-Py/Grpc_test/Dockerfile ##
+       # file: Micser-Py/Grpc_test/Dockerfile ##
         push: true
         tags: ${{ steps.meta-grpc.outputs.tags }}
         labels: ${{ steps.meta-grpc.outputs.labels }}
