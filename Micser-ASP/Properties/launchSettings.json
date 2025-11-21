@@ -24,9 +24,9 @@
       "launchUrl": "{Scheme}://{ServiceHost}:{ServicePort}/swagger",
       "environmentVariables": {
         "ASPNETCORE_HTTPS_PORTS": "8081",
-        "ASPNETCORE_HTTP_PORTS": "4000"
+        "ASPNETCORE_HTTP_PORTS": "8000"
       },
-      "DockerfileRunArguments": "--add-host=host.docker.internal:host-gateway -e ASPNETCORE_ENVIRONMENT=Development -p 4000:4000",
+      "DockerfileRunArguments": "--add-host=host.docker.internal:host-gateway -e ASPNETCORE_ENVIRONMENT=Development -p 8000:8000",
       "publishAllPorts": true,
       "useSSL": true
     }
