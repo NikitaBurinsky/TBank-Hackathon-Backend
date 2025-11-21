@@ -46,8 +46,8 @@ jobs:
     - name: Build and push gRPC Docker image
       uses: docker/build-push-action@v4
       with:
-        context: ./Grpc_test ##
-        file: ./Grpc_test/Dockerfile ##
+        context: ./Micser-Py/Grpc_test ##
+        file: ./Micser-Py/Grpc_test/Dockerfile ##
         push: true
         tags: ${{ steps.meta-grpc.outputs.tags }}
         labels: ${{ steps.meta-grpc.outputs.labels }}
@@ -98,7 +98,6 @@ jobs:
     needs: [build-and-push-micser-ASP,build-and-push-micser-Py] 
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main'
-    
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
