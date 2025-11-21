@@ -1,0 +1,14 @@
+name: Full Pipeline
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build-aspnet:
+    uses: ./.github/workflows/build-push-asp.yml
+
+  deploy-aspnet:
+    needs: build-aspnet
+    uses: ./.github/workflows/deploy-asp.yml
+    with:
+      image-tag: ${{ needs.build-aspnet.outputs.image-tag }}
