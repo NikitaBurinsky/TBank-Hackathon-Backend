@@ -46,8 +46,8 @@ jobs:
     - name: Build and push gRPC Docker image
       uses: docker/build-push-action@v4
       with:
-        context: . ##
-        file: ./Micser-Py/Grpc_test/Dockerfile ##
+        context: ./Micser-Py/Grpc_test ##
+        file: Dockerfile ##
         push: true
         tags: ${{ steps.meta-grpc.outputs.tags }}
         labels: ${{ steps.meta-grpc.outputs.labels }}
