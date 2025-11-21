@@ -149,11 +149,11 @@ jobs:
 
     - name: Copy nginx-dockerfile
       run: |
-        scp Dockerfile ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }}:~/app/
+        scp Micser-Proxy/Dockerfile ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }}:~/app/
         
     - name: Copy nginx-conf
       run: |
-        scp nginx.conf ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }}:~/app/        
+        scp Micser-Proxy/nginx.conf ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }}:~/app/        
 
     - name: Copy docker-compose.yml to server
       run: |
