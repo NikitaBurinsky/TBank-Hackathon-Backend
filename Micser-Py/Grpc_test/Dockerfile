@@ -17,11 +17,11 @@ RUN apt-get update && apt-get install -y \
 COPY . .
 
 # Генерируем gRPC файлы если нужно (опционально)
-RUN python -m grpc_tools.protoc \
-    -I./protos \
-    --python_out=. \
-    --grpc_python_out=. \
-    ./protos/calc.proto
+#RUN python -m grpc_tools.protoc \
+#    -I./protos \
+#    --python_out=. \
+#    --grpc_python_out=. \
+#    ./protos/calc.proto
 
 # Открываем порт для gRPC
 EXPOSE 5000
