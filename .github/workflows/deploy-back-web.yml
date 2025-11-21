@@ -51,8 +51,6 @@ jobs:
         push: true
         tags: ${{ steps.meta-grpc.outputs.tags }}
         labels: ${{ steps.meta-grpc.outputs.labels }}
-        cache-from: type=gha
-        cache-to: type=gha,mode=max
 
 
 ### ASP ###
@@ -98,6 +96,7 @@ jobs:
 ### DEPLOYMENT ###
   deploy-micser-ASP:
     needs: build-and-push-micser-ASP
+    needs: build-and-push-micser-Py
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main'
     
