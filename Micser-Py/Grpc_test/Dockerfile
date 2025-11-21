@@ -13,8 +13,12 @@ RUN apt-get update && apt-get install -y \
 # Устанавливаем Python зависимости
 #RUN pip install --no-cache-dir -r requirements.txt
 
-# Копируем исходный код
-COPY . server.py
+# Отладочные команды
+RUN echo "=== Before COPY ===" && ls -la
+COPY . .
+RUN echo "=== After COPY ===" && ls -la
+RUN echo "=== All files ===" && find . -type f
+
 
 # Генерируем gRPC файлы если нужно (опционально)
 #RUN python -m grpc_tools.protoc \
