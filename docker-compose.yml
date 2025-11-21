@@ -30,7 +30,7 @@ services:
   micser-1:
     image: ghcr.io/nikitaburinsky/tbank-micser-1:main
     ports:
-      - "8000:5000"
+      - "4000:4000"
     environment:
       - ConnectionStrings__DefaultConnection=Host=postgres;Port=5432;Database=dbase;Username=postgres;Password=redbull
       - ASPNETCORE_ENVIRONMENT=Development

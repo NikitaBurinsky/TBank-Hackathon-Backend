@@ -5,7 +5,7 @@ FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS base
 LABEL org.opencontainers.image.source="https://github.com/NikitaBurinsky/TBank-Hackathon-Backend"
 USER app
 WORKDIR /app
-EXPOSE 5000
+EXPOSE 4000
 EXPOSE 8081
 
 RUN mkdir -p /app/wwwroot/Image
