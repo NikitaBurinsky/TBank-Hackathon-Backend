@@ -51,7 +51,7 @@ jobs:
       uses: docker/build-push-action@v4
       with:
         context: Micser-Python
-        file: Dockerfile ##
+       # file: Micser-Python/Dockerfile ##
         push: true
         tags: ${{ steps.meta-grpc.outputs.tags }}
         labels: ${{ steps.meta-grpc.outputs.labels }}
