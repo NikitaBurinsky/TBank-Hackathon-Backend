@@ -14,7 +14,7 @@ RUN apt-get update && apt-get install -y \
 #RUN pip install --no-cache-dir -r requirements.txt
 
 # Копируем исходный код
-COPY . .
+COPY . server.py
 
 # Генерируем gRPC файлы если нужно (опционально)
 #RUN python -m grpc_tools.protoc \
