@@ -2,7 +2,7 @@
 
 namespace tbank_back_web.Infrastructure.Services
 {
-	public class NutritionCalculator
+	public static class NutritionCalculator
 	{
 		public class NutritionTargets
 		{

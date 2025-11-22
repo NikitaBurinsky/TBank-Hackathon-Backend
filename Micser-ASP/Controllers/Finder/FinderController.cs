@@ -24,7 +24,6 @@ namespace tbank_back_web.Controllers.Finder
 			[FromServices] UserManager<BaseApplicationUser> userManager,
 			FindReceipsRequestModel avaibableProducts,
 			[FromServices] PlannerService planner,
-			[FromServices] NutritionCalculator calculator,
 			[FromServices] ApplicationDbContext db) 
 		{	
 
