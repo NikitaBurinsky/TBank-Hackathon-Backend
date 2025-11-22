@@ -4,7 +4,6 @@ using tbank_back_web.Infrastructure.DbContext;
 public class NutrientsSummarizerService
 {
 	ApplicationDbContext db;
-
 	public NutrientsSummarizerService(ApplicationDbContext db)
 	{
 		this.db = db;

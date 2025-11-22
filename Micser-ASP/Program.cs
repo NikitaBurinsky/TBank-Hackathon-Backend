@@ -31,7 +31,7 @@ internal class Program
 		AddDbContext(builder.Services, builder.Configuration);
 		ConfigureCors(builder.Services);
 		ConfigureCookies(builder.Services);
-
+		
 		var app = builder.Build();
 
 		if (app.Environment.IsDevelopment())
@@ -136,7 +136,7 @@ internal class Program
 		{
 			services.ConfigureApplicationCookie(options =>
 			{
-				options.Cookie.SameSite = SameSiteMode.None; // Разрешает отправку куки с cross-site запросами.
+				options.Cookie.SameSite = SameSiteMode.Lax; // Разрешает отправку куки с cross-site запросами.
 				options.Cookie.Name = "AuthWOW"; // Имя куки
 				options.ExpireTimeSpan = TimeSpan.FromDays(7); // Время жизни
 				options.SlidingExpiration = true; // Обновлять время жизни при активности

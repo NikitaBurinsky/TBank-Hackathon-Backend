@@ -5,23 +5,29 @@ using tbank_back_web.Infrastructure.DbContext;
 public class PlannerService
 {
 	private readonly ApplicationDbContext _context;
+	NutrientsSummarizerService NutrientsSummarizer;
+	private class NutrientsResult
+	{
+		public int totalKcal { get; set; }
+	}
 
 	public PlannerService(ApplicationDbContext context, NutrientsSummarizerService nutrients)
 	{
+		NutrientsSummarizer = nutrients;
 		_context = context;
 	}
 	private IQueryable<IngredientEntity> GetReceiptIngredients(ReceiptEntity receipt)
 	{
 		return _context.Ingredients.Where(e => receipt.IngredientsAmount.Keys.Contains(e.Title)).AsQueryable();
 	}
-	public async Task<(List<ReceiptEntity>, List<IngredientEntity>)> FindReceiptCombinations(
-	List<string> availableIngredients,
-	float targetProtein, float targetFat, float targetCarbs, int targetKcal, int skipDays = 0)
-	{
-		throw new NotImplementedException();	
-	}
-	/*
 
+	public async Task<(List<ReceiptEntity>, List<IngredientEntity>)> FindReceiptCombinations(
+List<string> availableIngredients,
+float targetProtein, float targetFat, float targetCarbs, int targetKcal, int skipDays = 0)
+	{ throw new NotImplementedException(); }
+
+
+	/*
 	public async Task<(List<ReceiptEntity>, List<IngredientEntity>)> FindReceiptCombinations(
 	List<string> availableIngredients,
 	float targetProtein, float targetFat, float targetCarbs, int targetKcal, int skipDays = 0)
@@ -34,7 +40,20 @@ public class PlannerService
 			= new List<(float portionAmount, ReceiptEntity recept)>();
 
 		var firstReceip = allReceipts[Random.Shared.Next()];
-		float firsstPortion = 
+		float firsstPortion = NutrientsSummarizer.GetTotalKcal(GetReceiptIngredients(firstReceip)) / (targetKcal / 4);
+
+
+		var secondReceip = allReceipts[Random.Shared.Next()];
+		float secondPortion = NutrientsSummarizer.GetTotalKcal(GetReceiptIngredients(firstReceip)) / (targetKcal / 4);
+
+		var thirdReceip = allReceipts[Random.Shared.Next()];
+		float thirdPortion = NutrientsSummarizer.GetTotalKcal(GetReceiptIngredients(firstReceip)) / (targetKcal / 4);
+
+		
+
+
+
+
 
 
 
@@ -124,7 +143,7 @@ public class PlannerService
 		return (selectedReceipts, missingIngredients);
 	}
 	*/
-	// Вспомогательный метод для нахождения всех комбинаций из k элементов
+		// Вспомогательный метод для нахождения всех комбинаций из k элементов
 	private List<List<T>> FindCombinations<T>(List<T> items, int k)
 	{
 		var result = new List<List<T>>();
