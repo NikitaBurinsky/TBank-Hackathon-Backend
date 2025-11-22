@@ -11,7 +11,7 @@ public class NutrientsSummarizerService
 
 	public IQueryable<IngredientEntity> GetIngredientEntities(ReceiptEntity receiptEntity)
 	{
-		return db.Ingredients.Where(e => receiptEntity.IngredientsAmount.ContainsKey(e.Title));
+		return db.Ingredients.Where(e => receiptEntity.IngredientsAmount.Keys.Contains(e.Title));
 	}
 
 
@@ -20,7 +20,6 @@ public class NutrientsSummarizerService
 		float allProtein = ingredients.Sum(e => e.Protein).Value;
 		return allProtein / GetAllGramms(ingredients);
 	}
-
 
 	public float GetFatPercentage(IQueryable<IngredientEntity> ingredients) { 
 		return ingredients.Sum(e => e.Fat).Value / GetAllGramms(ingredients);
@@ -36,7 +35,11 @@ public class NutrientsSummarizerService
 		return ingredients.Sum(e => e.Kcal + e.Carbs + e.Fat + e.Protein).Value;
 	}
 
-
+	public float GetFatSumm(ReceiptEntity receipt)
+	=>		GetIngredientEntities(receipt).Sum(e => e.Fat).Value;
+	public int GetKcalSumm(ReceiptEntity receipt) => GetIngredientEntities(receipt).Sum(e => e.Kcal).Value;
+	public float GetProteinSumm(ReceiptEntity receipt) => GetIngredientEntities(receipt).Sum(e => e.Protein).Value;
+	public float GetCarbsSumm(ReceiptEntity receipt) => GetIngredientEntities(receipt).Sum(e => e.Carbs).Value;
 
 
 }

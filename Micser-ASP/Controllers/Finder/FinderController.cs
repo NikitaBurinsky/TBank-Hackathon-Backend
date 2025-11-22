@@ -32,9 +32,15 @@ namespace tbank_back_web.Controllers.Finder
 			}
 			var nres = NutritionCalculator.CalculateDailyNutrition(currentUser);
 
-			var res = await planner.FindReceiptCombinations(avaibableProducts.Titles, nres.TargetProtein, nres.TargetFat, nres.TargetCarbs, nres.TargetKcal);
+			var res = await planner.FindRecipesStochasticAsync(avaibableProducts.Titles,new PlannerService.NutritionTarget
+			{
+				TargetCarbs = nres.TargetCarbs,
+				TargetFat = nres.TargetFat,
+				TargetKcal = nres.TargetKcal,
+				TargetProtein = nres.TargetProtein
+			});
 
-			List<ReceiptResponseModel> receipts = res.Item1.Select(e => new ReceiptResponseModel
+			List<ReceiptResponseModel> receipts = res.Select(e => new ReceiptResponseModel
 			{
 				ingridients = e.IngredientsAmount.ToReceiptComponents(),
 				instructions = e.Instructions,
@@ -43,13 +49,13 @@ namespace tbank_back_web.Controllers.Finder
 
 			return Ok(new FindReceipsResponseModel
 			{
-				ingridientsToBuy = res.Item2.Select(e => new IngredientResponseModel
+				ingridientsToBuy = res.Select(e => new IngredientResponseModel
 				{
-					fat = e.Fat,
-					carbs = e.Carbs,
-					kcal = e.Kcal,
-					protein = e.Protein,
-					title = e.Title,
+					fat = 0,
+					carbs = 0,
+					kcal = 0,
+					protein = 0,
+					title =	null,
 				}).ToList(),
 				brekfast = receipts[0],
 				lunch = receipts[1],
@@ -57,55 +63,6 @@ namespace tbank_back_web.Controllers.Finder
 				snack = receipts[3],
 			});
 		}
-
-		[HttpPost("/plan-month")]
-		public async Task<IActionResult> FindReceipsForMonth(
-		[FromServices] UserManager<BaseApplicationUser> userManager,
-		FindReceipsForMonthRequestModel avaibableProducts,
-		[FromServices] PlannerService planner,
-		[FromServices] ApplicationDbContext db)
-		{
-
-			var currentUser = await userManager.GetUserAsync(User);
-			if (currentUser == null)
-			{
-				return Unauthorized("User not found");
-			}
-			var nres = NutritionCalculator.CalculateDailyNutrition(currentUser);
-			List<FindReceipsResponseModel> responseReceipts = new List<FindReceipsResponseModel>();
-			for (int i = 0; i < avaibableProducts.days; ++i)
-			{
-				var res = await planner.FindReceiptCombinations(avaibableProducts.Titles, nres.TargetProtein, nres.TargetFat, nres.TargetCarbs, nres.TargetKcal, i);
-				List<ReceiptResponseModel> receipts = res.Item1.Select(e => new ReceiptResponseModel
-				{
-					ingridients = e.IngredientsAmount.ToReceiptComponents(),
-					instructions = e.Instructions,
-					title = e.Title
-				}).ToList();
-
-				var receiptResponse = new FindReceipsResponseModel
-				{
-					ingridientsToBuy = res.Item2.Select(e => new IngredientResponseModel
-					{
-						fat = e.Fat,
-						carbs = e.Carbs,
-						kcal = e.Kcal,
-						protein = e.Protein,
-						title = e.Title,
-					}).ToList(),
-					brekfast = receipts[0],
-					lunch = receipts[1],
-					dinner = receipts[2],
-					snack = receipts[3],
-				};
-				responseReceipts.Add(receiptResponse);
-			}
-			return Ok(responseReceipts);
-		}
-
-
-
-
 
 		[AllowAnonymous]
 		[HttpGet("/get-ingridients")]

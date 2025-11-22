@@ -110,37 +110,6 @@
         }
       }
     },
-    "/plan-month": {
-      "post": {
-        "tags": [
-          "Finder"
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/FindReceipsForMonthRequestModel"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/FindReceipsForMonthRequestModel"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/FindReceipsForMonthRequestModel"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Success"
-          }
-        }
-      }
-    },
     "/get-ingridients": {
       "get": {
         "tags": [
@@ -208,23 +177,6 @@
         ],
         "type": "integer",
         "format": "int32"
-      },
-      "FindReceipsForMonthRequestModel": {
-        "type": "object",
-        "properties": {
-          "titles": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            },
-            "nullable": true
-          },
-          "days": {
-            "type": "integer",
-            "format": "int32"
-          }
-        },
-        "additionalProperties": false
       },
       "FindReceipsRequestModel": {
         "type": "object",
