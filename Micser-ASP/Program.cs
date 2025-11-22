@@ -11,6 +11,7 @@ using System.Reflection;
 using Zoobee.Infrastructure.Repositoties.MediaStorage;
 using Zoobee.Web.ProgramConfigurators;
 using static AlalysisService.AnalysisService;
+using tbank_back_web.Program_Configuration.Startup;
 
 internal class Program
 {
@@ -44,11 +45,14 @@ internal class Program
 		app.UseMiddleware<GuestUserMiddleware>();
 		app.MapControllers();
 		app.RolesSeeding();
+		app.IngredientsSeeding();
+		app.ReceiptsSeeding();
 		app.Run();
 
 		static void AddServices(IServiceCollection services)
 		{
 			services.AddScoped<MediaStorageService>();
+			services.AddScoped<JsonSeedingService>();
 		}
 
 		static void AddRepositories(IServiceCollection services)
