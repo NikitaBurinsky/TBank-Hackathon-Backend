@@ -9,6 +9,9 @@ public class PlannerService
 	private class NutrientsResult
 	{
 		public int totalKcal { get; set; }
+		public float totaltFat { get; set; }
+		public float totalCarbs { get; set; }
+		public float totalProtein { get; set; }
 	}
 
 	public PlannerService(ApplicationDbContext context, NutrientsSummarizerService nutrients)
@@ -20,6 +23,9 @@ public class PlannerService
 	{
 		return _context.Ingredients.Where(e => receipt.IngredientsAmount.Keys.Contains(e.Title)).AsQueryable();
 	}
+
+
+
 
 	public async Task<(List<ReceiptEntity>, List<IngredientEntity>)> FindReceiptCombinations(
 List<string> availableIngredients,

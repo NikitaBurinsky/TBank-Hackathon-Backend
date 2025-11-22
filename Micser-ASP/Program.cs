@@ -143,6 +143,14 @@ internal class Program
 				options.Cookie.SecurePolicy = CookieSecurePolicy.Always;
 				options.Cookie.Domain = ".development0.xyz";
 			});
+
+			services.AddAntiforgery(o =>
+			{
+				o.Cookie.Domain = ".development0.xyz";
+				o.Cookie.SecurePolicy = CookieSecurePolicy.Always;
+				o.Cookie.SameSite = SameSiteMode.Lax;
+				o.HeaderName = "X-XSRF-TOKEN";
+			});
 		}
 
 		static void AddAuthorisationIdentity(IServiceCollection services)
