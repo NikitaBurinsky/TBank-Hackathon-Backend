@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("tbank-back-web")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+06bffd21ae74114fc7ba928a6b1c8c3211ca35fa")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c384c43adae92b2fceda26f2d495ee77f04f32c8")]
 [assembly: System.Reflection.AssemblyProductAttribute("tbank-back-web")]
 [assembly: System.Reflection.AssemblyTitleAttribute("tbank-back-web")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

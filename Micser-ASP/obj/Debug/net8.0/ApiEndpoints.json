@@ -40,5 +40,46 @@
       }
     ],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "tbank_back_web.Controllers.Finder.FinderController",
+    "Method": "FindReceips",
+    "RelativePath": "get-all-receips",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "page",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "targetKcal",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "targetProtein",
+        "Type": "System.Single",
+        "IsRequired": false
+      },
+      {
+        "Name": "targetFat",
+        "Type": "System.Single",
+        "IsRequired": false
+      },
+      {
+        "Name": "targetCarbs",
+        "Type": "System.Single",
+        "IsRequired": false
+      },
+      {
+        "Name": "avaibableProducts",
+        "Type": "System.Collections.Generic.List\u00601[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
   }
 ]
