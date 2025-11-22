@@ -11,7 +11,7 @@ namespace tbank_back_web.Controllers.Finder.Models
 		} 
 		public string? title { get; set; }
 		public string? instructions { get; set; }
-		public List<ReceiptComponent> components { get; set; }
+		public List<ReceiptComponent> ingridients { get; set; }
 	}
 
 	public static class DictionaryExtensions

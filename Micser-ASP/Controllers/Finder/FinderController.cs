@@ -30,7 +30,7 @@ namespace tbank_back_web.Controllers.Finder
 
 			List<ReceiptResponseModel> receipts = res.Item1.Select(e => new ReceiptResponseModel
 			{
-				components = e.IngredientsAmount.ToReceiptComponents(),
+				ingridients = e.IngredientsAmount.ToReceiptComponents(),
 				instructions = e.Instructions,
 				title = e.Title
 			}).ToList();
@@ -71,7 +71,7 @@ namespace tbank_back_web.Controllers.Finder
 				protein = e.Protein,
 				title = e.Title,
 				fat = e.Fat,
-				measurmentUnit = e.MeasurementUnit.ToString(),
+				measurementUnit = e.MeasurementUnit.ToString(),
 			}).Skip((page - 1) * 15).Take(15).ToList());
 		}
 
@@ -85,7 +85,7 @@ namespace tbank_back_web.Controllers.Finder
 
 			resultRecepts = db.Receipts.ApplySearchFilters(search, summarizerService).Select(e => new ReceiptResponseModel
 			{
-				components = e.IngredientsAmount.ToReceiptComponents(),
+				ingridients = e.IngredientsAmount.ToReceiptComponents(),
 				instructions = e.Instructions,
 				title = e.Title
 			}).ToList();

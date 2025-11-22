@@ -3,7 +3,7 @@
 	public class IngredientResponseModel
 	{
 		public string? title { get; set; }
-		public string? measurmentUnit { get; set; }
+		public string? measurementUnit { get; set; }
 		public int? kcal { get; set; }
 		public float? protein { get; set; }
 		public float? fat { get; set; }
