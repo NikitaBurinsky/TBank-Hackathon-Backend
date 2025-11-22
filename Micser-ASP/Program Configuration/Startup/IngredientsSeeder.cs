@@ -12,7 +12,11 @@ namespace tbank_back_web.Program_Configuration.Startup
 			using (var scope = app.Services.CreateScope())
 			{
 				var services = scope.ServiceProvider;
+
 				var logger = services.GetRequiredService<ILogger<WebApplication>>();
+
+				try
+				{
 				var seeder = services.GetRequiredService<JsonSeedingService>();
 				var db = services.GetRequiredService<ApplicationDbContext>();
 
@@ -22,8 +26,6 @@ namespace tbank_back_web.Program_Configuration.Startup
 				logger.LogInformation("Readed Ingredients : {@Ingredients}", ingredients);
 				logger.LogInformation("Readed Receips : {@Receips}", ingredients);
 
-				try
-				{
 					db.Ingredients.AddRange(ingredients);
 					await db.SaveChangesAsync();
 

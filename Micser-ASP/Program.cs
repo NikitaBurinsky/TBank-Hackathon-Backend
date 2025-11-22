@@ -45,9 +45,14 @@ internal class Program
 		app.UseAuthorization();
 		app.UseMiddleware<GuestUserMiddleware>();
 		app.MapControllers();
-		app.RolesSeeding();
+		//app.RolesSeeding();
 		app.IngredientsSeeding();
-		app.ReceiptsSeeding();
+		//app.ReceiptsSeeding();
+		using (var scope = app.Services.CreateScope())
+		{
+			var logger = scope.ServiceProvider.GetService<ILogger<WebApplication>>();
+			logger.LogInformation("APPLICATION STARTED");
+		}
 		app.Run();
 
 		static void AddServices(IServiceCollection services)
