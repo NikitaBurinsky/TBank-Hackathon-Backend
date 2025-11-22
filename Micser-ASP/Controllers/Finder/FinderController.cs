@@ -28,6 +28,10 @@ namespace tbank_back_web.Controllers.Finder
 		{	
 
 			var currentUser = await userManager.GetUserAsync(User);
+			if (currentUser == null)
+			{
+				return Unauthorized("User not found");
+			}
 			var nres = NutritionCalculator.CalculateDailyNutrition(currentUser);
 
 			var res = await planner.FindReceipts(avaibableProducts.Titles,nres.TargetProtein,nres.TargetFat, nres.TargetCarbs, nres.TargetKcal);
