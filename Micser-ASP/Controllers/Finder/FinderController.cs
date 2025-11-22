@@ -22,7 +22,7 @@ namespace tbank_back_web.Controllers.Finder
 		[HttpPost("/plan-day")]
 		public async Task<IActionResult> FindReceips(
 			[FromServices] UserManager<BaseApplicationUser> userManager,
-			List<string> avaibableProducts,
+			FindReceipsRequestModel avaibableProducts,
 			[FromServices] PlannerService planner,
 			[FromServices] NutritionCalculator calculator,
 			[FromServices] ApplicationDbContext db) 
@@ -31,7 +31,7 @@ namespace tbank_back_web.Controllers.Finder
 			var currentUser = await userManager.GetUserAsync(User);
 			var nres = NutritionCalculator.CalculateDailyNutrition(currentUser);
 
-			var res = await planner.FindReceipts(avaibableProducts,nres.TargetProtein,nres.TargetFat, nres.TargetCarbs, nres.TargetKcal);
+			var res = await planner.FindReceipts(avaibableProducts.Titles,nres.TargetProtein,nres.TargetFat, nres.TargetCarbs, nres.TargetKcal);
 
 			List<ReceiptResponseModel> receipts = res.Item1.Select(e => new ReceiptResponseModel
 			{
@@ -77,7 +77,7 @@ namespace tbank_back_web.Controllers.Finder
 				title = e.Title,
 				fat = e.Fat,
 				measurementUnit = e.MeasurementUnit.ToString(),
-			}).Skip((page - 1) * 15).Take(15).ToList());
+			}).Skip((page - 1) * 50).Take(50).ToList());
 		}
 
 		[AllowAnonymous]

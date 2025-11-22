@@ -39,8 +39,8 @@ namespace tbank_back_web.Controllers.Finder.Filtration
 			if (!string.IsNullOrWhiteSpace(filters.search))
 			{
 				query = query.Where(e =>
-					e.Title.ToLower().Contains(filters.search.ToLower()) ||
-					e.Instructions.ToLower().Contains(filters.search.ToLower()));
+					e.Title.Contains(filters.search) || 
+					e.Instructions.Contains(filters.search));
 			}
 
 			return query;
