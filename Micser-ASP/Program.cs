@@ -60,6 +60,7 @@ internal class Program
 			services.AddScoped<MediaStorageService>();
 			services.AddScoped<JsonSeedingService>();
 			services.AddScoped<PlannerService>();
+			services.AddScoped<NutrientsSummarizerService>();
 		}
 
 		static void AddRepositories(IServiceCollection services)

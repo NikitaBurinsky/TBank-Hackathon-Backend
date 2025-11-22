@@ -10,7 +10,7 @@ namespace tbank_back_web.Core.Data_Entities.Business
 		{
 			g = 0,
 			ml = 1,
-			pieces = 2
+			pcs = 2
 		}
 		public string? Title { get; set; }
 		public float? Protein { get; set; }

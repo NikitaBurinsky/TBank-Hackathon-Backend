@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using tbank_back_web.Controllers.Finder.Filtration;
 using tbank_back_web.Controllers.Finder.Models;
 using tbank_back_web.Core.Data_Entities.Business;
 using tbank_back_web.Core.Identity.User;
@@ -68,9 +69,35 @@ namespace tbank_back_web.Controllers.Finder
 				protein = e.Protein,
 				title = e.Title,
 				fat = e.Fat,
+				measurmentUnit = e.MeasurementUnit.ToString(),
 			}).Skip((page - 1) * 15).Take(15).ToList());
 		}
 
+		[HttpPost("/search-recipes")]
+		public async Task<IActionResult> SearchRecipes(SearchRecipesRequestModel search,
+			[FromServices] ApplicationDbContext db,
+			[FromServices] NutrientsSummarizerService summarizerService) 
+		{
+			List<ReceiptResponseModel> resultRecepts;
+
+			resultRecepts = db.Receipts.ApplySearchFilters(search, summarizerService).Select(e => new ReceiptResponseModel
+			{
+				components = e.IngredientsAmount.ToReceiptComponents(),
+				instructions = e.Instructions,
+				title = e.Title
+			}).ToList();
+			return Ok(resultRecepts);
+		}
+		public class SearchRecipesRequestModel
+		{
+			public int? kcalMax { get; set; }
+			public int? kcalMin { get; set; }
+			public float? proteinPercMax { get; set; }
+			public float? proteinPercMin { get; set; }
+			public float? fatPercMax { get; set; }
+			public float? fatPercMin { get; set; }
+			public string? search { get; set; }
+		}
 
 
 	}
