@@ -99,3 +99,4 @@ Desktop.ini
 !Dockerfile
 !docker-compose.yml
 !nginx.conf
+*.vsidx
