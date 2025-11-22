@@ -81,7 +81,7 @@ namespace tbank_back_web.Controllers.Finder
 		}
 
 		[AllowAnonymous]
-		[HttpPost("/search-recipes")]
+		[HttpGet("/search-recipes")]
 		public async Task<IActionResult> SearchRecipes(SearchRecipesRequestModel search,
 			[FromServices] ApplicationDbContext db,
 			[FromServices] NutrientsSummarizerService summarizerService)
