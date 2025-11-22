@@ -143,13 +143,11 @@ internal class Program
 				options.ExpireTimeSpan = TimeSpan.FromDays(7); // Âðåìÿ æèçíè
 				options.SlidingExpiration = true; // Îáíîâëÿòü âðåìÿ æèçíè ïðè àêòèâíîñòè
 				options.Cookie.SecurePolicy = CookieSecurePolicy.Always;
-				options.Cookie.Domain = ".development0.xyz";
-				options.Cookie.HttpOnly = false;
+				options.Cookie.HttpOnly = true;
 			});
 
 			services.AddAntiforgery(o =>
 			{
-				o.Cookie.Domain = ".development0.xyz";
 				o.Cookie.SecurePolicy = CookieSecurePolicy.Always;
 				o.Cookie.SameSite = SameSiteMode.None;
 				o.HeaderName = "X-XSRF-TOKEN";
