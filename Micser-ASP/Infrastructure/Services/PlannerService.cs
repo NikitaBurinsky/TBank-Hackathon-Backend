@@ -11,13 +11,13 @@ public class PlannerService
 		_context = context;
 	}
 
-	public async Task<(List<ReceiptEntity>, List<IngredientEntity>)> FindReceipts(
-		List<string> availableIngredients,
-		float targetProtein, float targetFat, float targetCarbs, int targetKcal, int skipDays = 0)
+	public async Task<(List<ReceiptEntity>, List<IngredientEntity>)> FindReceiptCombinations(
+	List<string> availableIngredients,
+	float targetProtein, float targetFat, float targetCarbs, int targetKcal, int skipDays = 0)
 	{
 		// Получаем все рецепты из базы данных
 		var allReceipts = await _context.Receipts
-			.Include(r => r.IngredientsAmount) // Если используется Lazy Loading, это может не понадобиться
+			.Include(r => r.IngredientsAmount)
 			.ToListAsync();
 
 		// Получаем все ингредиенты из базы данных
@@ -26,42 +26,92 @@ public class PlannerService
 		// Словарь для быстрого поиска ингредиентов по названию
 		var ingredientDict = allIngredients.ToDictionary(i => i.Title, i => i);
 
-		// Список для подходящих рецептов
-		var suitableReceipts = new List<(ReceiptEntity receipt, float? protein, float? fat, float? carbs, int? kcal, int missingIngredientsCount)>();
-
-		foreach (var receipt in allReceipts)
+		// Предварительно рассчитываем нутриенты для всех рецептов
+		var receiptsWithNutrition = allReceipts.Select(receipt =>
 		{
-			// Рассчитываем суммарные показатели рецепта
-			var (totalProtein, totalFat, totalCarbs, totalKcal, missingIngredients) = CalculateReceiptNutrition(receipt, ingredientDict);
+			var (protein, fat, carbs, kcal, missingIngredients) = CalculateReceiptNutrition(receipt, ingredientDict);
+			var missingIngredientsCount = receipt.IngredientsAmount
+				.Keys
+				.Count(ingredientName => !availableIngredients.Contains(ingredientName));
 
-			// Проверяем, соответствуют ли показатели целевым значениям (с допуском ±10%)
-			if (IsNutritionMatch((float)totalProtein, (float)totalFat, (float)totalCarbs, (int)totalKcal,
-				targetProtein, targetFat, targetCarbs, targetKcal))
+			return new
 			{
-				// Подсчитываем количество недостающих ингредиентов
-				var missingIngredientsCount = receipt.IngredientsAmount
-					.Keys
-					.Count(ingredientName => !availableIngredients.Contains(ingredientName));
+				Receipt = receipt,
+				Protein = protein ?? 0,
+				Fat = fat ?? 0,
+				Carbs = carbs ?? 0,
+				Kcal = kcal ?? 0,
+				MissingIngredientsCount = missingIngredientsCount
+			};
+		}).ToList();
 
-				suitableReceipts.Add((receipt, totalProtein, totalFat, totalCarbs, totalKcal, missingIngredientsCount));
-			}
-		}
+		// Находим все возможные комбинации из 4 рецептов
+		var combinations = FindCombinations(receiptsWithNutrition, 4);
 
-		// Сортируем по количеству недостающих ингредиентов (от меньшего к большему)
-		int daysReady = suitableReceipts.Count()/4;
-		skipDays = skipDays % daysReady;
-		var topReceipts = suitableReceipts
-			.OrderBy(x => x.missingIngredientsCount)
-			.Skip(skipDays)
-			.Take(4)
-			.Select(x => x.receipt)
+		// Фильтруем комбинации по целевым значениям БЖУ и калорий
+		var suitableCombinations = combinations.Where(comb =>
+		{
+			var totalProtein = comb.Sum(r => r.Protein);
+			var totalFat = comb.Sum(r => r.Fat);
+			var totalCarbs = comb.Sum(r => r.Carbs);
+			var totalKcal = comb.Sum(r => r.Kcal);
+
+			return IsNutritionMatch(totalProtein, totalFat, totalCarbs, (int)totalKcal,
+				targetProtein, targetFat, targetCarbs, targetKcal);
+		}).ToList();
+
+		// Сортируем комбинации по общему количеству недостающих ингредиентов
+		var sortedCombinations = suitableCombinations
+			.OrderBy(comb => comb.Sum(r => r.MissingIngredientsCount))
 			.ToList();
 
+		// Выбираем комбинацию с учетом skipDays
+		if (!sortedCombinations.Any())
+		{
+			return (new List<ReceiptEntity>(), new List<IngredientEntity>());
+		}
 
-		// Находим недостающие ингредиенты для выбранных рецептов
-		var _missingIngredientes = FindMissingIngredients(topReceipts, availableIngredients, ingredientDict);
+		int daysReady = sortedCombinations.Count;
+		skipDays = skipDays % daysReady;
 
-		return (topReceipts, _missingIngredientes);
+		var selectedCombination = sortedCombinations.Skip(skipDays).FirstOrDefault();
+
+		if (selectedCombination == null)
+		{
+			return (new List<ReceiptEntity>(), new List<IngredientEntity>());
+		}
+
+		var selectedReceipts = selectedCombination.Select(r => r.Receipt).ToList();
+
+		// Находим недостающие ингредиенты для выбранной комбинации рецептов
+		var missingIngredients = FindMissingIngredients(selectedReceipts, availableIngredients, ingredientDict);
+
+		return (selectedReceipts, missingIngredients);
+	}
+
+	// Вспомогательный метод для нахождения всех комбинаций из k элементов
+	private List<List<T>> FindCombinations<T>(List<T> items, int k)
+	{
+		var result = new List<List<T>>();
+		var current = new List<T>();
+		GenerateCombinations(items, k, 0, current, result);
+		return result;
+	}
+
+	private void GenerateCombinations<T>(List<T> items, int k, int start, List<T> current, List<List<T>> result)
+	{
+		if (current.Count == k)
+		{
+			result.Add(new List<T>(current));
+			return;
+		}
+
+		for (int i = start; i < items.Count; i++)
+		{
+			current.Add(items[i]);
+			GenerateCombinations(items, k, i + 1, current, result);
+			current.RemoveAt(current.Count - 1);
+		}
 	}
 
 	private (float? protein, float? fat, float? carbs, int? kcal, List<string> missingIngredients)
