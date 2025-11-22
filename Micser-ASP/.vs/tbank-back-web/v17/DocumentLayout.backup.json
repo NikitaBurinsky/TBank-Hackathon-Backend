@@ -243,7 +243,7 @@
               "RelativeDocumentMoniker": "Controllers\\Finder\\FinderController.cs",
               "ToolTip": "C:\\Users\\Formatis\\Documents\\GitHub\\TBank-Hackathon-Backend\\Micser-ASP\\Controllers\\Finder\\FinderController.cs",
               "RelativeToolTip": "Controllers\\Finder\\FinderController.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA8AAAAvAAAAAAAAAA==",
+              "ViewState": "AgIAABwAAAAAAAAAAAAQwEsAAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-22T10:33:03.162Z",
               "EditorCaption": ""
@@ -258,8 +258,7 @@
               "RelativeToolTip": "Core\\Data Entities\\Business\\IngredientEntity.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-22T10:31:07.166Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-22T10:31:07.166Z"
             },
             {
               "$type": "Document",
@@ -271,8 +270,7 @@
               "RelativeToolTip": "Program.cs",
               "ViewState": "AgIAABAAAAAAAAAAAAA8wDgAAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-20T15:01:29.646Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-20T15:01:29.646Z"
             },
             {
               "$type": "Document",
@@ -284,8 +282,7 @@
               "RelativeToolTip": "Core\\Data Entities\\Business\\ReceiptEntity.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-22T10:30:55.626Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-22T10:30:55.626Z"
             },
             {
               "$type": "Document",
@@ -297,8 +294,7 @@
               "RelativeToolTip": "Core\\Identity\\User\\BaseApplicationUser.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-20T15:00:23.11Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-20T15:00:23.11Z"
             },
             {
               "$type": "Document",
@@ -310,8 +306,7 @@
               "RelativeToolTip": "Controllers\\Finder\\Models\\IngredientResponseModel.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-22T12:34:07.373Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-22T12:34:07.373Z"
             },
             {
               "$type": "Document",
@@ -323,8 +318,7 @@
               "RelativeToolTip": "Infrastructure\\DbContext\\ApplicationDbContext.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-22T10:31:15.421Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-22T10:31:15.421Z"
             },
             {
               "$type": "Document",
@@ -336,8 +330,7 @@
               "RelativeToolTip": "appsettings.json",
               "ViewState": "AgIAAAYAAAAAAAAAAAAAAB8AAAAHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-11-20T17:16:02.595Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-20T17:16:02.595Z"
             },
             {
               "$type": "Document",
@@ -349,8 +342,7 @@
               "RelativeToolTip": "Program Configuration\\Startup\\IdentityRolesSeeding.cs",
               "ViewState": "AgIAAAYAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-20T17:13:35.523Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-20T17:13:35.523Z"
             },
             {
               "$type": "Document",
@@ -362,8 +354,7 @@
               "RelativeToolTip": "Program Configuration\\Startup\\ReceiptSeeder.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-22T11:28:17.067Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-22T11:28:17.067Z"
             },
             {
               "$type": "Document",
@@ -375,8 +366,7 @@
               "RelativeToolTip": "Program Configuration\\Startup\\IngredientsSeeder.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACgAAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-22T11:28:26.199Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-22T11:28:26.199Z"
             },
             {
               "$type": "Document",
@@ -388,8 +378,7 @@
               "RelativeToolTip": "Infrastructure\\Services\\JsonSeedingService.cs",
               "ViewState": "AgIAABIAAAAAAAAAAAAYwCMAAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-22T11:45:29.134Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-22T11:45:29.134Z"
             },
             {
               "$type": "Document",
@@ -401,8 +390,7 @@
               "RelativeToolTip": "Controllers\\Autorization\\Models\\RegistrationRequestModel.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAuwAkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-20T14:59:15.899Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-20T14:59:15.899Z"
             },
             {
               "$type": "Document",
@@ -414,8 +402,7 @@
               "RelativeToolTip": "Core\\Identity\\Role\\ApplicationRole.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-22T10:40:18.414Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-22T10:40:18.414Z"
             },
             {
               "$type": "Document",
@@ -427,8 +414,7 @@
               "RelativeToolTip": "Dockerfile",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-11-20T15:06:02.717Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-20T15:06:02.717Z"
             },
             {
               "$type": "Document",
@@ -440,8 +426,7 @@
               "RelativeToolTip": "Infrastructure\\Repositories\\Cooking Repos\\CookingRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-22T10:49:50.27Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-22T10:49:50.27Z"
             },
             {
               "$type": "Document",
@@ -453,8 +438,7 @@
               "RelativeToolTip": "Properties\\launchSettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAACAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-11-21T20:30:06.333Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-21T20:30:06.333Z"
             },
             {
               "$type": "Document",
@@ -466,8 +450,7 @@
               "RelativeToolTip": "Pipeline\\Middlewares\\GuestUserMiddleware.cs",
               "ViewState": "AgIAAAsAAAAAAAAAAAAAwB0AAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-20T14:59:23.138Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-20T14:59:23.138Z"
             },
             {
               "$type": "Document",
