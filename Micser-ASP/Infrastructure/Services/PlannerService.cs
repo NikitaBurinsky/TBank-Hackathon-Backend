@@ -13,7 +13,7 @@ public class PlannerService
 
 	public async Task<(List<ReceiptEntity>, List<IngredientEntity>)> FindReceipts(
 		List<string> availableIngredients,
-		float targetProtein, float targetFat, float targetCarbs, int targetKcal)
+		float targetProtein, float targetFat, float targetCarbs, int targetKcal, int skipDays = 0)
 	{
 		// Получаем все рецепты из базы данных
 		var allReceipts = await _context.Receipts
@@ -48,11 +48,15 @@ public class PlannerService
 		}
 
 		// Сортируем по количеству недостающих ингредиентов (от меньшего к большему)
+		int daysReady = suitableReceipts.Count()/4;
+		skipDays = skipDays % daysReady;
 		var topReceipts = suitableReceipts
 			.OrderBy(x => x.missingIngredientsCount)
+			.Skip(skipDays)
 			.Take(4)
 			.Select(x => x.receipt)
 			.ToList();
+
 
 		// Находим недостающие ингредиенты для выбранных рецептов
 		var _missingIngredientes = FindMissingIngredients(topReceipts, availableIngredients, ingredientDict);

@@ -26,11 +26,19 @@ namespace tbank_back_web.Program_Configuration.Startup
 				logger.LogInformation("Readed Ingredients : {@Ingredients}", ingredients);
 				logger.LogInformation("Readed Receips : {@Receips}", ingredients);
 
-					db.Ingredients.AddRange(ingredients);
+					foreach(var ing in ingredients)
+					{
+						if (!db.Ingredients.Any(e => e.Title.ToLower().Trim() == ing.Title.ToLower().Trim()))
+							await db.Ingredients.AddAsync(ing);
+
+					}
 					await db.SaveChangesAsync();
 
-
-					db.Receipts.AddRange(recepes);
+					foreach (var rec in recepes)
+					{
+						if (!db.Receipts.Any(e => e.Title.ToLower().Trim() == rec.Title.ToLower().Trim()))
+							await db.Receipts.AddAsync(rec);
+					}
 					await db.SaveChangesAsync();
 				}
 				catch (Exception ex)

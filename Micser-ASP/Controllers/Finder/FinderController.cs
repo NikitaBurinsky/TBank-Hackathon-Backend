@@ -2,7 +2,9 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using tbank_back_web.Controllers.Finder.Filtration;
-using tbank_back_web.Controllers.Finder.Models;
+using tbank_back_web.Controllers.Finder.Models.Dto;
+using tbank_back_web.Controllers.Finder.Models.FindReceiptsForDay;
+using tbank_back_web.Controllers.Finder.Models.FindReceiptsForMonth;
 using tbank_back_web.Core.Data_Entities.Business;
 using tbank_back_web.Core.Identity.User;
 using tbank_back_web.Infrastructure.DbContext;
@@ -14,18 +16,14 @@ namespace tbank_back_web.Controllers.Finder
 	[Route("")]
 	public class FinderController : ControllerBase
 	{
-		public class FindReceipsRequestModel
-		{
-			public List<string> Titles { get; set; }
-		}
 
 		[HttpPost("/plan-day")]
 		public async Task<IActionResult> FindReceips(
 			[FromServices] UserManager<BaseApplicationUser> userManager,
 			FindReceipsRequestModel avaibableProducts,
 			[FromServices] PlannerService planner,
-			[FromServices] ApplicationDbContext db) 
-		{	
+			[FromServices] ApplicationDbContext db)
+		{
 
 			var currentUser = await userManager.GetUserAsync(User);
 			if (currentUser == null)
@@ -34,7 +32,7 @@ namespace tbank_back_web.Controllers.Finder
 			}
 			var nres = NutritionCalculator.CalculateDailyNutrition(currentUser);
 
-			var res = await planner.FindReceipts(avaibableProducts.Titles,nres.TargetProtein,nres.TargetFat, nres.TargetCarbs, nres.TargetKcal);
+			var res = await planner.FindReceipts(avaibableProducts.Titles, nres.TargetProtein, nres.TargetFat, nres.TargetCarbs, nres.TargetKcal);
 
 			List<ReceiptResponseModel> receipts = res.Item1.Select(e => new ReceiptResponseModel
 			{
@@ -59,14 +57,56 @@ namespace tbank_back_web.Controllers.Finder
 				snack = receipts[3],
 			});
 		}
-		public class FindReceipsResponseModel
+
+		[HttpPost("/plan-month")]
+		public async Task<IActionResult> FindReceipsForMonth(
+		[FromServices] UserManager<BaseApplicationUser> userManager,
+		FindReceipsForMonthRequestModel avaibableProducts,
+		[FromServices] PlannerService planner,
+		[FromServices] ApplicationDbContext db)
 		{
-			public ReceiptResponseModel brekfast { get; set; }
-			public ReceiptResponseModel lunch { get; set; }
-			public ReceiptResponseModel dinner { get; set; }
-			public ReceiptResponseModel snack { get; set; }
-			public List<IngredientResponseModel> ingridientsToBuy { get; set; }
+
+			var currentUser = await userManager.GetUserAsync(User);
+			if (currentUser == null)
+			{
+				return Unauthorized("User not found");
+			}
+			var nres = NutritionCalculator.CalculateDailyNutrition(currentUser);
+			List<FindReceipsResponseModel> responseReceipts = new List<FindReceipsResponseModel>();
+			for (int i = 0; i < avaibableProducts.days; ++i)
+			{
+				var res = await planner.FindReceipts(avaibableProducts.Titles, nres.TargetProtein, nres.TargetFat, nres.TargetCarbs, nres.TargetKcal, i);
+				List<ReceiptResponseModel> receipts = res.Item1.Select(e => new ReceiptResponseModel
+				{
+					ingridients = e.IngredientsAmount.ToReceiptComponents(),
+					instructions = e.Instructions,
+					title = e.Title
+				}).ToList();
+
+				var receiptResponse = new FindReceipsResponseModel
+				{
+					ingridientsToBuy = res.Item2.Select(e => new IngredientResponseModel
+					{
+						fat = e.Fat,
+						carbs = e.Carbs,
+						kcal = e.Kcal,
+						protein = e.Protein,
+						title = e.Title,
+					}).ToList(),
+					brekfast = receipts[0],
+					lunch = receipts[1],
+					dinner = receipts[2],
+					snack = receipts[3],
+				};
+				responseReceipts.Add(receiptResponse);
+			}
+			return Ok(responseReceipts);
 		}
+
+
+
+
+
 		[AllowAnonymous]
 		[HttpGet("/get-ingridients")]
 		public async Task<IActionResult> GetAllIngridients(
@@ -87,7 +127,7 @@ namespace tbank_back_web.Controllers.Finder
 		[HttpPost("/search-recipes")]
 		public async Task<IActionResult> SearchRecipes(SearchRecipesRequestModel search,
 			[FromServices] ApplicationDbContext db,
-			[FromServices] NutrientsSummarizerService summarizerService) 
+			[FromServices] NutrientsSummarizerService summarizerService)
 		{
 			List<ReceiptResponseModel> resultRecepts;
 
@@ -99,16 +139,7 @@ namespace tbank_back_web.Controllers.Finder
 			}).ToList();
 			return Ok(resultRecepts);
 		}
-		public class SearchRecipesRequestModel
-		{
-			public int? kcalMax { get; set; }
-			public int? kcalMin { get; set; }
-			public float? proteinPercMax { get; set; }
-			public float? proteinPercMin { get; set; }
-			public float? fatPercMax { get; set; }
-			public float? fatPercMin { get; set; }
-			public string? search { get; set; }
-		}
+
 
 
 	}

@@ -44,7 +44,7 @@ internal class Program
 		app.UseAuthentication();
 		app.UseAuthorization();
 		app.MapControllers();
-		//app.RolesSeeding();
+		app.RolesSeeding();
 		app.IngredientsSeeding();
 		//app.ReceiptsSeeding();
 		using (var scope = app.Services.CreateScope())
