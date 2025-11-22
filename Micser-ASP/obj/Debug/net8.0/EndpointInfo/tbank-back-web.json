@@ -79,7 +79,38 @@
         }
       }
     },
-    "/get-all-receips": {
+    "/plan-day": {
+      "post": {
+        "tags": [
+          "Finder"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FindReceipsRequestModel"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FindReceipsRequestModel"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/FindReceipsRequestModel"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/get-ingridients": {
       "get": {
         "tags": [
           "Finder"
@@ -90,66 +121,38 @@
             "in": "query",
             "schema": {
               "type": "integer",
-              "format": "int32"
-            }
-          },
-          {
-            "name": "targetKcal",
-            "in": "query",
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          },
-          {
-            "name": "targetProtein",
-            "in": "query",
-            "schema": {
-              "type": "number",
-              "format": "float"
-            }
-          },
-          {
-            "name": "targetFat",
-            "in": "query",
-            "schema": {
-              "type": "number",
-              "format": "float"
-            }
-          },
-          {
-            "name": "targetCarbs",
-            "in": "query",
-            "schema": {
-              "type": "number",
-              "format": "float"
+              "format": "int32",
+              "default": 1
             }
           }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/search-recipes": {
+      "post": {
+        "tags": [
+          "Finder"
         ],
         "requestBody": {
           "content": {
             "application/json": {
               "schema": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
+                "$ref": "#/components/schemas/SearchRecipesRequestModel"
               }
             },
             "text/json": {
               "schema": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
+                "$ref": "#/components/schemas/SearchRecipesRequestModel"
               }
             },
             "application/*+json": {
               "schema": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
+                "$ref": "#/components/schemas/SearchRecipesRequestModel"
               }
             }
           }
@@ -174,6 +177,19 @@
         ],
         "type": "integer",
         "format": "int32"
+      },
+      "FindReceipsRequestModel": {
+        "type": "object",
+        "properties": {
+          "titles": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
       },
       "LoginRequestModel": {
         "type": "object",
@@ -218,6 +234,46 @@
           },
           "activityLevel": {
             "$ref": "#/components/schemas/ActivityLevelE"
+          }
+        },
+        "additionalProperties": false
+      },
+      "SearchRecipesRequestModel": {
+        "type": "object",
+        "properties": {
+          "kcalMax": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "kcalMin": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "proteinPercMax": {
+            "type": "number",
+            "format": "float",
+            "nullable": true
+          },
+          "proteinPercMin": {
+            "type": "number",
+            "format": "float",
+            "nullable": true
+          },
+          "fatPercMax": {
+            "type": "number",
+            "format": "float",
+            "nullable": true
+          },
+          "fatPercMin": {
+            "type": "number",
+            "format": "float",
+            "nullable": true
+          },
+          "search": {
+            "type": "string",
+            "nullable": true
           }
         },
         "additionalProperties": false

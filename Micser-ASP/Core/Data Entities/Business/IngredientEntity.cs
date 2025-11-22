@@ -6,17 +6,19 @@ namespace tbank_back_web.Core.Data_Entities.Business
 	{
 		[JsonIgnore(Condition = JsonIgnoreCondition.Always)]
 		public Guid Id {  get; set; }
+		[JsonConverter(typeof(JsonStringEnumConverter))]
 		public enum IngredientMeasurementUnits
 		{
 			g = 0,
 			ml = 1,
-			pieces = 2
+			pcs = 2
 		}
-		public string Title { get; set; }
-		public float Protein { get; set; }
-		public float Fat { get; set; }
-		public float Carbs { get; set; }
-		public int Kcal { get; set; }
-		public IngredientMeasurementUnits MeasurementUnit { get; set; }
+		public string? Title { get; set; }
+		public float? Protein { get; set; }
+		public float? Fat { get; set; }
+		public float? Carbs { get; set; }
+		public int? Kcal { get; set; }
+		[JsonConverter(typeof(JsonStringEnumConverter))]
+		public IngredientMeasurementUnits? MeasurementUnit { get; set; }
 	}
 }

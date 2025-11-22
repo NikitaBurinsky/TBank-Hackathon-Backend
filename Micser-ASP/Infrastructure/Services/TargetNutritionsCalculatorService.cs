@@ -2,7 +2,7 @@
 
 namespace tbank_back_web.Infrastructure.Services
 {
-	public class NutritionCalculator
+	public static class NutritionCalculator
 	{
 		public class NutritionTargets
 		{
@@ -25,7 +25,7 @@ namespace tbank_back_web.Infrastructure.Services
 			int targetKcal = (int)Math.Round(tdee);
 
 			// Расчет макронутриентов (стандартные рекомендации)
-			float targetProtein = CalculateProtein(user.Weight, targetKcal);
+			float targetProtein = CalculateProtein((float)user.Weight, targetKcal);
 			float targetFat = CalculateFat(targetKcal);
 			float targetCarbs = CalculateCarbs(targetKcal, targetProtein, targetFat);
 
@@ -43,15 +43,15 @@ namespace tbank_back_web.Infrastructure.Services
 			// Формула Миффлина-Сан Жеора
 			if (user.Gender?.ToLower() == "male" || user.Gender?.ToLower() == "мужской")
 			{
-				return (10f * user.Weight) + (6.25f * user.Heigth) - (5f * user.Age) + 5f;
+				return (10f * (float)user.Weight) + (6.25f * (float)user.Heigth) - (5f * (float)user.Age) + 5f;
 			}
 			else // female или по умолчанию
 			{
-				return (10f * user.Weight) + (6.25f * user.Heigth) - (5f * user.Age) - 161f;
+				return (10f * (float)user.Weight) + (6.25f * (float)user.Heigth) - (5f * (float)user.Age) - 161f;
 			}
 		}
 
-		private static float GetActivityMultiplier(BaseApplicationUser.ActivityLevelE activityLevel)
+		private static float GetActivityMultiplier(BaseApplicationUser.ActivityLevelE? activityLevel)
 		{
 			return activityLevel switch
 			{

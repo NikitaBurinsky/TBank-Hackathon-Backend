@@ -1,17 +1,17 @@
-﻿using static tbank_back_web.Controllers.Finder.Models.ReceiptResponseModel;
+﻿using static tbank_back_web.Controllers.Finder.Models.Dto.ReceiptResponseModel;
 
-namespace tbank_back_web.Controllers.Finder.Models
+namespace tbank_back_web.Controllers.Finder.Models.Dto
 {
 	public class ReceiptResponseModel
 	{
 		public class ReceiptComponent
 		{
-			public string ingridient { get; set; }
+			public string title { get; set; }
 			public int amount { get; set; }
 		} 
-		public string title { get; set; }
-		public string instructions { get; set; }
-		public List<ReceiptComponent> components { get; set; }
+		public string? title { get; set; }
+		public string? instructions { get; set; }
+		public List<ReceiptComponent> ingridients { get; set; }
 	}
 
 	public static class DictionaryExtensions
@@ -21,7 +21,7 @@ namespace tbank_back_web.Controllers.Finder.Models
 			return dictionary?
 				.Select(kvp => new ReceiptComponent
 				{
-					ingridient = kvp.Key,
+					title = kvp.Key,
 					amount = kvp.Value
 				})
 				.ToList()

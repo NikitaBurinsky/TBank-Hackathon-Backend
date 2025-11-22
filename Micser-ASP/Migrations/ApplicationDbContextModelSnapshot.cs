@@ -162,23 +162,22 @@ namespace tbank_back_web.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uuid");
 
-                    b.Property<float>("Carbs")
+                    b.Property<float?>("Carbs")
                         .HasColumnType("real");
 
-                    b.Property<float>("Fat")
+                    b.Property<float?>("Fat")
                         .HasColumnType("real");
 
-                    b.Property<int>("Kcal")
+                    b.Property<int?>("Kcal")
                         .HasColumnType("integer");
 
-                    b.Property<int>("MeasurementUnit")
+                    b.Property<int?>("MeasurementUnit")
                         .HasColumnType("integer");
 
-                    b.Property<float>("Protein")
+                    b.Property<float?>("Protein")
                         .HasColumnType("real");
 
                     b.Property<string>("Title")
-                        .IsRequired()
                         .HasColumnType("text");
 
                     b.HasKey("Id");
@@ -198,11 +197,9 @@ namespace tbank_back_web.Migrations
                         .HasColumnName("IngredientsAmount");
 
                     b.Property<string>("Instructions")
-                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<string>("Title")
-                        .IsRequired()
                         .HasColumnType("text");
 
                     b.HasKey("Id");
@@ -250,10 +247,10 @@ namespace tbank_back_web.Migrations
                     b.Property<int>("AccessFailedCount")
                         .HasColumnType("integer");
 
-                    b.Property<int>("ActivityLevel")
+                    b.Property<int?>("ActivityLevel")
                         .HasColumnType("integer");
 
-                    b.Property<int>("Age")
+                    b.Property<int?>("Age")
                         .HasColumnType("integer");
 
                     b.Property<string>("ConcurrencyStamp")
@@ -268,13 +265,12 @@ namespace tbank_back_web.Migrations
                         .HasColumnType("boolean");
 
                     b.Property<string>("Gender")
-                        .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<float>("Heigth")
+                    b.Property<float?>("Heigth")
                         .HasColumnType("real");
 
-                    b.Property<bool>("IsGuest")
+                    b.Property<bool?>("IsGuest")
                         .HasColumnType("boolean");
 
                     b.Property<bool>("LockoutEnabled")
@@ -311,7 +307,7 @@ namespace tbank_back_web.Migrations
                         .HasMaxLength(256)
                         .HasColumnType("character varying(256)");
 
-                    b.Property<float>("Weight")
+                    b.Property<float?>("Weight")
                         .HasColumnType("real");
 
                     b.HasKey("Id");
