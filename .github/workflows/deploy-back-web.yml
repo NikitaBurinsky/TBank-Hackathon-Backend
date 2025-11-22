@@ -99,7 +99,9 @@ jobs:
 
 ### DEPLOYMENT ###
   deploy-micser-ASP:
-    needs: [build-and-push-micser-ASP,build-and-push-micser-Py] 
+   # needs: [build-and-push-micser-ASP,build-and-push-micser-Py] 
+    needs: build-and-push-micser-ASP
+    
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main'
     steps:
