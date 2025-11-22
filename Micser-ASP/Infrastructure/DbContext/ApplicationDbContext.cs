@@ -3,12 +3,15 @@ using tbank_back_web.Core.Identity.User;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Zoobee.Domain.DataEntities.Media;
+using tbank_back_web.Core.Data_Entities.Business;
 
 namespace tbank_back_web.Infrastructure.DbContext
 {
 	public class ApplicationDbContext : IdentityDbContext<BaseApplicationUser, ApplicationRole, int>
 	{
 		public DbSet<MediaFileEntity> MediaFiles { get; set; }
+		public DbSet<ReceiptEntity> Receipts { get; set; }
+		public DbSet<IngredientEntity> Ingredients { get; set; }
 
 		public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
 		{
