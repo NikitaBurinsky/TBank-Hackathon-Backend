@@ -93,27 +93,27 @@ internal class Program
 
 		static void ConfigureCors(IServiceCollection services)
 		{
-			//продакшн
+			//ГЇГ°Г®Г¤Г ГЄГёГ­
 			services.AddCors(options =>
 			{
 				options.AddPolicy("StrictPolicy", policy =>
 				{
-					policy.WithOrigins("https://tbank-front.vercel.app", "http://localhost") // Только один домен
+					policy.WithOrigins("https://tbank-front.vercel.app", "http://localhost") // Г’Г®Г«ГјГЄГ® Г®Г¤ГЁГ­ Г¤Г®Г¬ГҐГ­
 						  .AllowAnyMethod()
 						  .AllowAnyHeader()
 						  .AllowCredentials();
 				});
 			});
-			//дев
+			//Г¤ГҐГў
 			/*
 			services.AddCors(options =>
 			{
 				options.AddPolicy("AllowAllPolicy", policy =>
 				{
-					policy.SetIsOriginAllowed(e => true)   // Принимает от любого домена
-						  .AllowAnyMethod()   // Разрешает любые HTTP-методы
-						  .AllowAnyHeader()   // Разрешает любые заголовки
-						  .AllowCredentials(); // Разрешает учетные данные
+					policy.SetIsOriginAllowed(e => true)   // ГЏГ°ГЁГ­ГЁГ¬Г ГҐГІ Г®ГІ Г«ГѕГЎГ®ГЈГ® Г¤Г®Г¬ГҐГ­Г 
+						  .AllowAnyMethod()   // ГђГ Г§Г°ГҐГёГ ГҐГІ Г«ГѕГЎГ»ГҐ HTTP-Г¬ГҐГІГ®Г¤Г»
+						  .AllowAnyHeader()   // ГђГ Г§Г°ГҐГёГ ГҐГІ Г«ГѕГЎГ»ГҐ Г§Г ГЈГ®Г«Г®ГўГЄГЁ
+						  .AllowCredentials(); // ГђГ Г§Г°ГҐГёГ ГҐГІ ГіГ·ГҐГІГ­Г»ГҐ Г¤Г Г­Г­Г»ГҐ
 				});
 			});
 			*/
@@ -138,10 +138,10 @@ internal class Program
 		{
 			services.ConfigureApplicationCookie(options =>
 			{
-				options.Cookie.SameSite = SameSiteMode.Lax; // Разрешает отправку куки с cross-site запросами.
-				options.Cookie.Name = "AuthWOW"; // Имя куки
-				options.ExpireTimeSpan = TimeSpan.FromDays(7); // Время жизни
-				options.SlidingExpiration = true; // Обновлять время жизни при активности
+				options.Cookie.SameSite = SameSiteMode.None; // ГђГ Г§Г°ГҐГёГ ГҐГІ Г®ГІГЇГ°Г ГўГЄГі ГЄГіГЄГЁ Г± cross-site Г§Г ГЇГ°Г®Г±Г Г¬ГЁ.
+				options.Cookie.Name = "AuthWOW"; // Г€Г¬Гї ГЄГіГЄГЁ
+				options.ExpireTimeSpan = TimeSpan.FromDays(7); // Г‚Г°ГҐГ¬Гї Г¦ГЁГ§Г­ГЁ
+				options.SlidingExpiration = true; // ГЋГЎГ­Г®ГўГ«ГїГІГј ГўГ°ГҐГ¬Гї Г¦ГЁГ§Г­ГЁ ГЇГ°ГЁ Г ГЄГІГЁГўГ­Г®Г±ГІГЁ
 				options.Cookie.SecurePolicy = CookieSecurePolicy.Always;
 				options.Cookie.Domain = ".development0.xyz";
 				options.Cookie.HttpOnly = false;
@@ -151,7 +151,7 @@ internal class Program
 			{
 				o.Cookie.Domain = ".development0.xyz";
 				o.Cookie.SecurePolicy = CookieSecurePolicy.Always;
-				o.Cookie.SameSite = SameSiteMode.Lax;
+				o.Cookie.SameSite = SameSiteMode.None;
 				o.HeaderName = "X-XSRF-TOKEN";
 			});
 		}
@@ -160,13 +160,13 @@ internal class Program
 		{
 			services.AddIdentity<BaseApplicationUser, ApplicationRole>(options =>
 			{
-				// Отключаем требование подтверждения email
+				// ГЋГІГЄГ«ГѕГ·Г ГҐГ¬ ГІГ°ГҐГЎГ®ГўГ Г­ГЁГҐ ГЇГ®Г¤ГІГўГҐГ°Г¦Г¤ГҐГ­ГЁГї email
 				options.SignIn.RequireConfirmedAccount = false;
 				options.SignIn.RequireConfirmedEmail = false;
 
-				// Настраиваем требования к имени пользователя
-				options.User.RequireUniqueEmail = false; // Важно!
-														 // Настройки пароля (по желанию)
+				// ГЌГ Г±ГІГ°Г ГЁГўГ ГҐГ¬ ГІГ°ГҐГЎГ®ГўГ Г­ГЁГї ГЄ ГЁГ¬ГҐГ­ГЁ ГЇГ®Г«ГјГ§Г®ГўГ ГІГҐГ«Гї
+				options.User.RequireUniqueEmail = false; // Г‚Г Г¦Г­Г®!
+														 // ГЌГ Г±ГІГ°Г®Г©ГЄГЁ ГЇГ Г°Г®Г«Гї (ГЇГ® Г¦ГҐГ«Г Г­ГЁГѕ)
 				options.Password.RequireDigit = false;
 				options.Password.RequiredLength = 3;
 				options.Password.RequireNonAlphanumeric = false;
@@ -189,11 +189,11 @@ internal class Program
 				{
 					var context = services.GetRequiredService<ApplicationDbContext>();
 					context.Database.MigrateAsync();
-					logger.LogInformation("Миграции успешно применены");
+					logger.LogInformation("ГЊГЁГЈГ°Г Г¶ГЁГЁ ГіГ±ГЇГҐГёГ­Г® ГЇГ°ГЁГ¬ГҐГ­ГҐГ­Г»");
 				}
 				catch (Exception ex)
 				{
-					logger.LogError(ex, "Произошла ошибка при применении миграций");
+					logger.LogError(ex, "ГЏГ°Г®ГЁГ§Г®ГёГ«Г  Г®ГёГЁГЎГЄГ  ГЇГ°ГЁ ГЇГ°ГЁГ¬ГҐГ­ГҐГ­ГЁГЁ Г¬ГЁГЈГ°Г Г¶ГЁГ©");
 				}
 			}
 		}
