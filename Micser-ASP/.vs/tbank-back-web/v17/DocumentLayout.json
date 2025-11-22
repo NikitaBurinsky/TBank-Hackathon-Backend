@@ -3,16 +3,32 @@
   "WorkspaceRootPath": "C:\\Users\\Formatis\\Documents\\GitHub\\TBank-Hackathon-Backend\\Micser-ASP\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{57417D39-0727-B99C-D517-6F739155794D}|tbank-back-web.csproj|c:\\users\\formatis\\documents\\github\\tbank-hackathon-backend\\micser-asp\\infrastructure\\services\\recipenutritionssummarizerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{57417D39-0727-B99C-D517-6F739155794D}|tbank-back-web.csproj|solutionrelative:infrastructure\\services\\recipenutritionssummarizerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{57417D39-0727-B99C-D517-6F739155794D}|tbank-back-web.csproj|c:\\users\\formatis\\documents\\github\\tbank-hackathon-backend\\micser-asp\\controllers\\finder\\findercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{57417D39-0727-B99C-D517-6F739155794D}|tbank-back-web.csproj|solutionrelative:controllers\\finder\\findercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{57417D39-0727-B99C-D517-6F739155794D}|tbank-back-web.csproj|c:\\users\\formatis\\documents\\github\\tbank-hackathon-backend\\micser-asp\\controllers\\finder\\filtration\\applyfilterqueryableextension.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{57417D39-0727-B99C-D517-6F739155794D}|tbank-back-web.csproj|solutionrelative:controllers\\finder\\filtration\\applyfilterqueryableextension.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{57417D39-0727-B99C-D517-6F739155794D}|tbank-back-web.csproj|c:\\users\\formatis\\documents\\github\\tbank-hackathon-backend\\micser-asp\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{57417D39-0727-B99C-D517-6F739155794D}|tbank-back-web.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{57417D39-0727-B99C-D517-6F739155794D}|tbank-back-web.csproj|c:\\users\\formatis\\documents\\github\\tbank-hackathon-backend\\micser-asp\\controllers\\finder\\models\\receiptresponsemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{57417D39-0727-B99C-D517-6F739155794D}|tbank-back-web.csproj|solutionrelative:controllers\\finder\\models\\receiptresponsemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{57417D39-0727-B99C-D517-6F739155794D}|tbank-back-web.csproj|c:\\users\\formatis\\documents\\github\\tbank-hackathon-backend\\micser-asp\\controllers\\finder\\models\\ingredientresponsemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{57417D39-0727-B99C-D517-6F739155794D}|tbank-back-web.csproj|solutionrelative:controllers\\finder\\models\\ingredientresponsemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{57417D39-0727-B99C-D517-6F739155794D}|tbank-back-web.csproj|c:\\users\\formatis\\documents\\github\\tbank-hackathon-backend\\micser-asp\\core\\data entities\\business\\ingrediententity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{57417D39-0727-B99C-D517-6F739155794D}|tbank-back-web.csproj|solutionrelative:core\\data entities\\business\\ingrediententity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{57417D39-0727-B99C-D517-6F739155794D}|tbank-back-web.csproj|c:\\users\\formatis\\documents\\github\\tbank-hackathon-backend\\micser-asp\\controllers\\finder\\findercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{57417D39-0727-B99C-D517-6F739155794D}|tbank-back-web.csproj|solutionrelative:controllers\\finder\\findercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{57417D39-0727-B99C-D517-6F739155794D}|tbank-back-web.csproj|c:\\users\\formatis\\documents\\github\\tbank-hackathon-backend\\micser-asp\\infrastructure\\services\\recipenutritionssummarizerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{57417D39-0727-B99C-D517-6F739155794D}|tbank-back-web.csproj|solutionrelative:infrastructure\\services\\recipenutritionssummarizerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{57417D39-0727-B99C-D517-6F739155794D}|tbank-back-web.csproj|c:\\users\\formatis\\documents\\github\\tbank-hackathon-backend\\micser-asp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -21,10 +37,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{57417D39-0727-B99C-D517-6F739155794D}|tbank-back-web.csproj|c:\\users\\formatis\\documents\\github\\tbank-hackathon-backend\\micser-asp\\ingseeding.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{57417D39-0727-B99C-D517-6F739155794D}|tbank-back-web.csproj|solutionrelative:ingseeding.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{57417D39-0727-B99C-D517-6F739155794D}|tbank-back-web.csproj|c:\\users\\formatis\\documents\\github\\tbank-hackathon-backend\\micser-asp\\controllers\\finder\\filtration\\applyfilterqueryableextension.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{57417D39-0727-B99C-D517-6F739155794D}|tbank-back-web.csproj|solutionrelative:controllers\\finder\\filtration\\applyfilterqueryableextension.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{57417D39-0727-B99C-D517-6F739155794D}|tbank-back-web.csproj|c:\\users\\formatis\\documents\\github\\tbank-hackathon-backend\\micser-asp\\infrastructure\\services\\plannerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -39,14 +51,6 @@
       "RelativeMoniker": "D:0:0:{57417D39-0727-B99C-D517-6F739155794D}|tbank-back-web.csproj|solutionrelative:core\\data entities\\business\\receiptentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{57417D39-0727-B99C-D517-6F739155794D}|tbank-back-web.csproj|c:\\users\\formatis\\documents\\github\\tbank-hackathon-backend\\micser-asp\\controllers\\finder\\models\\ingredientresponsemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{57417D39-0727-B99C-D517-6F739155794D}|tbank-back-web.csproj|solutionrelative:controllers\\finder\\models\\ingredientresponsemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{57417D39-0727-B99C-D517-6F739155794D}|tbank-back-web.csproj|c:\\users\\formatis\\documents\\github\\tbank-hackathon-backend\\micser-asp\\controllers\\finder\\models\\receiptresponsemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{57417D39-0727-B99C-D517-6F739155794D}|tbank-back-web.csproj|solutionrelative:controllers\\finder\\models\\receiptresponsemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{57417D39-0727-B99C-D517-6F739155794D}|tbank-back-web.csproj|c:\\users\\formatis\\documents\\github\\tbank-hackathon-backend\\micser-asp\\infrastructure\\services\\jsonseedingservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{57417D39-0727-B99C-D517-6F739155794D}|tbank-back-web.csproj|solutionrelative:infrastructure\\services\\jsonseedingservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -57,10 +61,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{57417D39-0727-B99C-D517-6F739155794D}|tbank-back-web.csproj|c:\\users\\formatis\\documents\\github\\tbank-hackathon-backend\\micser-asp\\core\\identity\\user\\baseapplicationuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{57417D39-0727-B99C-D517-6F739155794D}|tbank-back-web.csproj|solutionrelative:core\\identity\\user\\baseapplicationuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{57417D39-0727-B99C-D517-6F739155794D}|tbank-back-web.csproj|c:\\users\\formatis\\documents\\github\\tbank-hackathon-backend\\micser-asp\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{57417D39-0727-B99C-D517-6F739155794D}|tbank-back-web.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{57417D39-0727-B99C-D517-6F739155794D}|tbank-back-web.csproj|c:\\users\\formatis\\documents\\github\\tbank-hackathon-backend\\micser-asp\\program configuration\\startup\\ingredientsseeder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -181,7 +181,7 @@
       "DocumentGroups": [
         {
           "DockedHeight": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 10,
           "Children": [
             {
               "$type": "Bookmark",
@@ -201,85 +201,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "FinderController.cs",
-              "DocumentMoniker": "C:\\Users\\Formatis\\Documents\\GitHub\\TBank-Hackathon-Backend\\Micser-ASP\\Controllers\\Finder\\FinderController.cs",
-              "RelativeDocumentMoniker": "Controllers\\Finder\\FinderController.cs",
-              "ToolTip": "C:\\Users\\Formatis\\Documents\\GitHub\\TBank-Hackathon-Backend\\Micser-ASP\\Controllers\\Finder\\FinderController.cs",
-              "RelativeToolTip": "Controllers\\Finder\\FinderController.cs",
-              "ViewState": "AgIAADgAAAAAAAAAAAAkwFUAAAAtAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-22T10:33:03.162Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "rseeding.json",
-              "DocumentMoniker": "C:\\Users\\Formatis\\Documents\\GitHub\\TBank-Hackathon-Backend\\Micser-ASP\\rseeding.json",
-              "RelativeDocumentMoniker": "rseeding.json",
-              "ToolTip": "C:\\Users\\Formatis\\Documents\\GitHub\\TBank-Hackathon-Backend\\Micser-ASP\\rseeding.json",
-              "RelativeToolTip": "rseeding.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-11-22T15:06:02.251Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "RecipeNutritionsSummarizerService.cs",
-              "DocumentMoniker": "C:\\Users\\Formatis\\Documents\\GitHub\\TBank-Hackathon-Backend\\Micser-ASP\\Infrastructure\\Services\\RecipeNutritionsSummarizerService.cs",
-              "RelativeDocumentMoniker": "Infrastructure\\Services\\RecipeNutritionsSummarizerService.cs",
-              "ToolTip": "C:\\Users\\Formatis\\Documents\\GitHub\\TBank-Hackathon-Backend\\Micser-ASP\\Infrastructure\\Services\\RecipeNutritionsSummarizerService.cs",
-              "RelativeToolTip": "Infrastructure\\Services\\RecipeNutritionsSummarizerService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAA7AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-22T14:50:56.618Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "ApplyFilterQueryableExtension.cs",
-              "DocumentMoniker": "C:\\Users\\Formatis\\Documents\\GitHub\\TBank-Hackathon-Backend\\Micser-ASP\\Controllers\\Finder\\Filtration\\ApplyFilterQueryableExtension.cs",
-              "RelativeDocumentMoniker": "Controllers\\Finder\\Filtration\\ApplyFilterQueryableExtension.cs",
-              "ToolTip": "C:\\Users\\Formatis\\Documents\\GitHub\\TBank-Hackathon-Backend\\Micser-ASP\\Controllers\\Finder\\Filtration\\ApplyFilterQueryableExtension.cs",
-              "RelativeToolTip": "Controllers\\Finder\\Filtration\\ApplyFilterQueryableExtension.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAuwBIAAAA6AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-22T14:39:58.191Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Formatis\\Documents\\GitHub\\TBank-Hackathon-Backend\\Micser-ASP\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\Formatis\\Documents\\GitHub\\TBank-Hackathon-Backend\\Micser-ASP\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAABQAAAAAAAAAAAAqwC0AAAACAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-20T15:01:29.646Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "IngredientEntity.cs",
-              "DocumentMoniker": "C:\\Users\\Formatis\\Documents\\GitHub\\TBank-Hackathon-Backend\\Micser-ASP\\Core\\Data Entities\\Business\\IngredientEntity.cs",
-              "RelativeDocumentMoniker": "Core\\Data Entities\\Business\\IngredientEntity.cs",
-              "ToolTip": "C:\\Users\\Formatis\\Documents\\GitHub\\TBank-Hackathon-Backend\\Micser-ASP\\Core\\Data Entities\\Business\\IngredientEntity.cs",
-              "RelativeToolTip": "Core\\Data Entities\\Business\\IngredientEntity.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAvAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-22T10:31:07.166Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 9,
               "Title": "PlannerService.cs",
               "DocumentMoniker": "C:\\Users\\Formatis\\Documents\\GitHub\\TBank-Hackathon-Backend\\Micser-ASP\\Infrastructure\\Services\\PlannerService.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Services\\PlannerService.cs",
@@ -292,7 +214,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 8,
               "Title": "ingseeding.json",
               "DocumentMoniker": "C:\\Users\\Formatis\\Documents\\GitHub\\TBank-Hackathon-Backend\\Micser-ASP\\ingseeding.json",
               "RelativeDocumentMoniker": "ingseeding.json",
@@ -305,33 +227,124 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 4,
               "Title": "IngredientResponseModel.cs",
               "DocumentMoniker": "C:\\Users\\Formatis\\Documents\\GitHub\\TBank-Hackathon-Backend\\Micser-ASP\\Controllers\\Finder\\Models\\IngredientResponseModel.cs",
               "RelativeDocumentMoniker": "Controllers\\Finder\\Models\\IngredientResponseModel.cs",
               "ToolTip": "C:\\Users\\Formatis\\Documents\\GitHub\\TBank-Hackathon-Backend\\Micser-ASP\\Controllers\\Finder\\Models\\IngredientResponseModel.cs",
               "RelativeToolTip": "Controllers\\Finder\\Models\\IngredientResponseModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAgAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-22T12:34:07.373Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 3,
               "Title": "ReceiptResponseModel.cs",
               "DocumentMoniker": "C:\\Users\\Formatis\\Documents\\GitHub\\TBank-Hackathon-Backend\\Micser-ASP\\Controllers\\Finder\\Models\\ReceiptResponseModel.cs",
               "RelativeDocumentMoniker": "Controllers\\Finder\\Models\\ReceiptResponseModel.cs",
               "ToolTip": "C:\\Users\\Formatis\\Documents\\GitHub\\TBank-Hackathon-Backend\\Micser-ASP\\Controllers\\Finder\\Models\\ReceiptResponseModel.cs",
               "RelativeToolTip": "Controllers\\Finder\\Models\\ReceiptResponseModel.cs",
-              "ViewState": "AgIAAAEAAAAAAAAAAAAAAAwAAAAQAAAAAAAAAA==",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAAAAYAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-22T12:33:18.403Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 1,
+              "Title": "ApplyFilterQueryableExtension.cs",
+              "DocumentMoniker": "C:\\Users\\Formatis\\Documents\\GitHub\\TBank-Hackathon-Backend\\Micser-ASP\\Controllers\\Finder\\Filtration\\ApplyFilterQueryableExtension.cs",
+              "RelativeDocumentMoniker": "Controllers\\Finder\\Filtration\\ApplyFilterQueryableExtension.cs",
+              "ToolTip": "C:\\Users\\Formatis\\Documents\\GitHub\\TBank-Hackathon-Backend\\Micser-ASP\\Controllers\\Finder\\Filtration\\ApplyFilterQueryableExtension.cs",
+              "RelativeToolTip": "Controllers\\Finder\\Filtration\\ApplyFilterQueryableExtension.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwC4AAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-22T14:39:58.191Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\Formatis\\Documents\\GitHub\\TBank-Hackathon-Backend\\Micser-ASP\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\Users\\Formatis\\Documents\\GitHub\\TBank-Hackathon-Backend\\Micser-ASP\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAACHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-11-20T17:16:02.595Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "FinderController.cs",
+              "DocumentMoniker": "C:\\Users\\Formatis\\Documents\\GitHub\\TBank-Hackathon-Backend\\Micser-ASP\\Controllers\\Finder\\FinderController.cs",
+              "RelativeDocumentMoniker": "Controllers\\Finder\\FinderController.cs",
+              "ToolTip": "C:\\Users\\Formatis\\Documents\\GitHub\\TBank-Hackathon-Backend\\Micser-ASP\\Controllers\\Finder\\FinderController.cs",
+              "RelativeToolTip": "Controllers\\Finder\\FinderController.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAwBIAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-22T10:33:03.162Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "IngredientEntity.cs",
+              "DocumentMoniker": "C:\\Users\\Formatis\\Documents\\GitHub\\TBank-Hackathon-Backend\\Micser-ASP\\Core\\Data Entities\\Business\\IngredientEntity.cs",
+              "RelativeDocumentMoniker": "Core\\Data Entities\\Business\\IngredientEntity.cs",
+              "ToolTip": "C:\\Users\\Formatis\\Documents\\GitHub\\TBank-Hackathon-Backend\\Micser-ASP\\Core\\Data Entities\\Business\\IngredientEntity.cs",
+              "RelativeToolTip": "Core\\Data Entities\\Business\\IngredientEntity.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-22T10:31:07.166Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Formatis\\Documents\\GitHub\\TBank-Hackathon-Backend\\Micser-ASP\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\Formatis\\Documents\\GitHub\\TBank-Hackathon-Backend\\Micser-ASP\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAAqwC0AAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-20T15:01:29.646Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "RecipeNutritionsSummarizerService.cs",
+              "DocumentMoniker": "C:\\Users\\Formatis\\Documents\\GitHub\\TBank-Hackathon-Backend\\Micser-ASP\\Infrastructure\\Services\\RecipeNutritionsSummarizerService.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Services\\RecipeNutritionsSummarizerService.cs",
+              "ToolTip": "C:\\Users\\Formatis\\Documents\\GitHub\\TBank-Hackathon-Backend\\Micser-ASP\\Infrastructure\\Services\\RecipeNutritionsSummarizerService.cs",
+              "RelativeToolTip": "Infrastructure\\Services\\RecipeNutritionsSummarizerService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAABMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-22T14:50:56.618Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "rseeding.json",
+              "DocumentMoniker": "C:\\Users\\Formatis\\Documents\\GitHub\\TBank-Hackathon-Backend\\Micser-ASP\\rseeding.json",
+              "RelativeDocumentMoniker": "rseeding.json",
+              "ToolTip": "C:\\Users\\Formatis\\Documents\\GitHub\\TBank-Hackathon-Backend\\Micser-ASP\\rseeding.json",
+              "RelativeToolTip": "rseeding.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-11-22T15:06:02.251Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
               "Title": "TargetNutritionsCalculatorService.cs",
               "DocumentMoniker": "C:\\Users\\Formatis\\Documents\\GitHub\\TBank-Hackathon-Backend\\Micser-ASP\\Infrastructure\\Services\\TargetNutritionsCalculatorService.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Services\\TargetNutritionsCalculatorService.cs",
@@ -344,7 +357,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 11,
               "Title": "ReceiptEntity.cs",
               "DocumentMoniker": "C:\\Users\\Formatis\\Documents\\GitHub\\TBank-Hackathon-Backend\\Micser-ASP\\Core\\Data Entities\\Business\\ReceiptEntity.cs",
               "RelativeDocumentMoniker": "Core\\Data Entities\\Business\\ReceiptEntity.cs",
@@ -357,7 +370,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "JsonSeedingService.cs",
               "DocumentMoniker": "C:\\Users\\Formatis\\Documents\\GitHub\\TBank-Hackathon-Backend\\Micser-ASP\\Infrastructure\\Services\\JsonSeedingService.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Services\\JsonSeedingService.cs",
@@ -370,7 +383,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 14,
               "Title": "BaseApplicationUser.cs",
               "DocumentMoniker": "C:\\Users\\Formatis\\Documents\\GitHub\\TBank-Hackathon-Backend\\Micser-ASP\\Core\\Identity\\User\\BaseApplicationUser.cs",
               "RelativeDocumentMoniker": "Core\\Identity\\User\\BaseApplicationUser.cs",
@@ -431,19 +444,6 @@
               "ViewState": "AgIAAAkAAAAAAAAAAAAAABwAAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-20T15:00:39.766Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\Formatis\\Documents\\GitHub\\TBank-Hackathon-Backend\\Micser-ASP\\appsettings.json",
-              "RelativeDocumentMoniker": "appsettings.json",
-              "ToolTip": "C:\\Users\\Formatis\\Documents\\GitHub\\TBank-Hackathon-Backend\\Micser-ASP\\appsettings.json",
-              "RelativeToolTip": "appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAAHAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-11-20T17:16:02.595Z",
               "EditorCaption": ""
             },
             {

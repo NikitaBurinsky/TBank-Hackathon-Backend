@@ -14,6 +14,11 @@ namespace tbank_back_web.Controllers.Finder
 	[Route("")]
 	public class FinderController : ControllerBase
 	{
+		public class FindReceipsRequestModel
+		{
+			public List<string> Titles { get; set; }
+		}
+
 		[HttpPost("/plan-day")]
 		public async Task<IActionResult> FindReceips(
 			[FromServices] UserManager<BaseApplicationUser> userManager,
