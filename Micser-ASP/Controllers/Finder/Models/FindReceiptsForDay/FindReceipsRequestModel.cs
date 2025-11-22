@@ -2,5 +2,6 @@
 {
 	public class FindReceipsRequestModel
 	{
+		public List<string> Titles { get; set; }
 	}
 }

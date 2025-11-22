@@ -6,25 +6,60 @@ public class PlannerService
 {
 	private readonly ApplicationDbContext _context;
 
-	public PlannerService(ApplicationDbContext context)
+	public PlannerService(ApplicationDbContext context, NutrientsSummarizerService nutrients)
 	{
 		_context = context;
 	}
+	private IQueryable<IngredientEntity> GetReceiptIngredients(ReceiptEntity receipt)
+	{
+		return _context.Ingredients.Where(e => receipt.IngredientsAmount.Keys.Contains(e.Title)).AsQueryable();
+	}
+	public async Task<(List<ReceiptEntity>, List<IngredientEntity>)> FindReceiptCombinations(
+	List<string> availableIngredients,
+	float targetProtein, float targetFat, float targetCarbs, int targetKcal, int skipDays = 0)
+	{
+		throw new NotImplementedException();	
+	}
+	/*
 
 	public async Task<(List<ReceiptEntity>, List<IngredientEntity>)> FindReceiptCombinations(
 	List<string> availableIngredients,
 	float targetProtein, float targetFat, float targetCarbs, int targetKcal, int skipDays = 0)
 	{
 		// Получаем все рецепты из базы данных
-		var allReceipts = await _context.Receipts
-			.Include(r => r.IngredientsAmount)
+		var allReceipts = await _context.Receipts.Take(50)
 			.ToListAsync();
 
-		// Получаем все ингредиенты из базы данных
-		var allIngredients = await _context.Ingredients.ToListAsync();
+		List<(float portion, ReceiptEntity recept)> recepts 
+			= new List<(float portionAmount, ReceiptEntity recept)>();
 
-		// Словарь для быстрого поиска ингредиентов по названию
-		var ingredientDict = allIngredients.ToDictionary(i => i.Title, i => i);
+		var firstReceip = allReceipts[Random.Shared.Next()];
+		float firsstPortion = 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 		// Предварительно рассчитываем нутриенты для всех рецептов
 		var receiptsWithNutrition = allReceipts.Select(receipt =>
@@ -88,7 +123,7 @@ public class PlannerService
 
 		return (selectedReceipts, missingIngredients);
 	}
-
+	*/
 	// Вспомогательный метод для нахождения всех комбинаций из k элементов
 	private List<List<T>> FindCombinations<T>(List<T> items, int k)
 	{
@@ -159,8 +194,8 @@ public class PlannerService
 	private bool IsNutritionMatch(float protein, float fat, float carbs, int kcal,
 								 float targetProtein, float targetFat, float targetCarbs, int targetKcal)
 	{
-		// Допуск ±10% от целевых значений
-		const float tolerance = 0.1f;
+		// Допуск 20% от целевых значений
+		const float tolerance = 0.2f;
 
 		return Math.Abs(protein - targetProtein) <= targetProtein * tolerance &&
 			   Math.Abs(fat - targetFat) <= targetFat * tolerance &&

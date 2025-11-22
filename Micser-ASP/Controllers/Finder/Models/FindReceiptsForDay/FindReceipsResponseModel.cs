@@ -1,9 +1,7 @@
-﻿namespace tbank_back_web.Controllers.Finder.Models.FindReceiptsForDay
+﻿using tbank_back_web.Controllers.Finder.Models.Dto;
+
+namespace tbank_back_web.Controllers.Finder.Models.FindReceiptsForDay
 {
-	public class FindReceipsRequestModel
-	{
-		public List<string> Titles { get; set; }
-	}
 
 	public class FindReceipsResponseModel
 	{

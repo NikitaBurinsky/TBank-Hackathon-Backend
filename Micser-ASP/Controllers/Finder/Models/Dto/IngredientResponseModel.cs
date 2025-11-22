@@ -1,4 +1,4 @@
-﻿namespace tbank_back_web.Controllers.Finder.Models
+﻿namespace tbank_back_web.Controllers.Finder.Models.Dto
 {
 	public class IngredientResponseModel
 	{

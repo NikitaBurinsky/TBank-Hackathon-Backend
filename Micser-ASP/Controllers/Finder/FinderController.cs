@@ -32,7 +32,7 @@ namespace tbank_back_web.Controllers.Finder
 			}
 			var nres = NutritionCalculator.CalculateDailyNutrition(currentUser);
 
-			var res = await planner.FindReceipts(avaibableProducts.Titles, nres.TargetProtein, nres.TargetFat, nres.TargetCarbs, nres.TargetKcal);
+			var res = await planner.FindReceiptCombinations(avaibableProducts.Titles, nres.TargetProtein, nres.TargetFat, nres.TargetCarbs, nres.TargetKcal);
 
 			List<ReceiptResponseModel> receipts = res.Item1.Select(e => new ReceiptResponseModel
 			{
@@ -75,7 +75,7 @@ namespace tbank_back_web.Controllers.Finder
 			List<FindReceipsResponseModel> responseReceipts = new List<FindReceipsResponseModel>();
 			for (int i = 0; i < avaibableProducts.days; ++i)
 			{
-				var res = await planner.FindReceipts(avaibableProducts.Titles, nres.TargetProtein, nres.TargetFat, nres.TargetCarbs, nres.TargetKcal, i);
+				var res = await planner.FindReceiptCombinations(avaibableProducts.Titles, nres.TargetProtein, nres.TargetFat, nres.TargetCarbs, nres.TargetKcal, i);
 				List<ReceiptResponseModel> receipts = res.Item1.Select(e => new ReceiptResponseModel
 				{
 					ingridients = e.IngredientsAmount.ToReceiptComponents(),

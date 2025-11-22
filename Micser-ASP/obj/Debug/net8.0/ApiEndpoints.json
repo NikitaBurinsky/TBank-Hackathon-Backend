@@ -67,7 +67,23 @@
     "Parameters": [
       {
         "Name": "avaibableProducts",
-        "Type": "tbank_back_web.Controllers.Finder.FinderController\u002BFindReceipsRequestModel",
+        "Type": "tbank_back_web.Controllers.Finder.Models.FindReceiptsForDay.FindReceipsRequestModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "tbank_back_web.Controllers.Finder.FinderController",
+    "Method": "FindReceipsForMonth",
+    "RelativePath": "plan-month",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "avaibableProducts",
+        "Type": "tbank_back_web.Controllers.Finder.Models.FindReceiptsForMonth.FindReceipsForMonthRequestModel",
         "IsRequired": true
       }
     ],
@@ -83,7 +99,7 @@
     "Parameters": [
       {
         "Name": "search",
-        "Type": "tbank_back_web.Controllers.Finder.FinderController\u002BSearchRecipesRequestModel",
+        "Type": "SearchRecipesRequestModel",
         "IsRequired": true
       }
     ],

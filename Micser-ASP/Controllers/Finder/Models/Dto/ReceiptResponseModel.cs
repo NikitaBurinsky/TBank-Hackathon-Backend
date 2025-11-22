@@ -1,6 +1,6 @@
-﻿using static tbank_back_web.Controllers.Finder.Models.ReceiptResponseModel;
+﻿using static tbank_back_web.Controllers.Finder.Models.Dto.ReceiptResponseModel;
 
-namespace tbank_back_web.Controllers.Finder.Models
+namespace tbank_back_web.Controllers.Finder.Models.Dto
 {
 	public class ReceiptResponseModel
 	{

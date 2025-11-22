@@ -141,6 +141,7 @@ internal class Program
 				options.ExpireTimeSpan = TimeSpan.FromDays(7); // Время жизни
 				options.SlidingExpiration = true; // Обновлять время жизни при активности
 				options.Cookie.SecurePolicy = CookieSecurePolicy.Always;
+				options.Cookie.Domain = ".development0.xyz";
 			});
 		}
 
