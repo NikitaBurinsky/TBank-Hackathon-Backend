@@ -6,7 +6,7 @@ namespace tbank_back_web.Controllers.Finder.Models
 	{
 		public class ReceiptComponent
 		{
-			public string ingridient { get; set; }
+			public string title { get; set; }
 			public int amount { get; set; }
 		} 
 		public string? title { get; set; }
@@ -21,7 +21,7 @@ namespace tbank_back_web.Controllers.Finder.Models
 			return dictionary?
 				.Select(kvp => new ReceiptComponent
 				{
-					ingridient = kvp.Key,
+					title = kvp.Key,
 					amount = kvp.Value
 				})
 				.ToList()
