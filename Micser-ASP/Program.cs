@@ -43,7 +43,6 @@ internal class Program
 		app.UseCors("AllowAllPolicy");
 		app.UseAuthentication();
 		app.UseAuthorization();
-		app.UseMiddleware<GuestUserMiddleware>();
 		app.MapControllers();
 		//app.RolesSeeding();
 		app.IngredientsSeeding();

@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using tbank_back_web.Controllers.Finder.Filtration;
 using tbank_back_web.Controllers.Finder.Models;
@@ -58,6 +59,7 @@ namespace tbank_back_web.Controllers.Finder
 			public ReceiptResponseModel snack { get; set; }
 			public List<IngredientResponseModel> ingridientsToBuy { get; set; }
 		}
+		[AllowAnonymous]
 		[HttpGet("/get-ingridients")]
 		public async Task<IActionResult> GetAllIngridients(
 			[FromServices] ApplicationDbContext db, int page = 1)
@@ -73,6 +75,7 @@ namespace tbank_back_web.Controllers.Finder
 			}).Skip((page - 1) * 15).Take(15).ToList());
 		}
 
+		[AllowAnonymous]
 		[HttpPost("/search-recipes")]
 		public async Task<IActionResult> SearchRecipes(SearchRecipesRequestModel search,
 			[FromServices] ApplicationDbContext db,

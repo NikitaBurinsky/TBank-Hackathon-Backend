@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -8,7 +7,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace tbank_back_web.Migrations
 {
     /// <inheritdoc />
-    public partial class init : Migration
+    public partial class init3 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -34,12 +33,12 @@ namespace tbank_back_web.Migrations
                 {
                     Id = table.Column<int>(type: "integer", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    IsGuest = table.Column<bool>(type: "boolean", nullable: false),
-                    Age = table.Column<int>(type: "integer", nullable: false),
-                    Gender = table.Column<string>(type: "text", nullable: false),
-                    Heigth = table.Column<float>(type: "real", nullable: false),
-                    Weight = table.Column<float>(type: "real", nullable: false),
-                    ActivityLevel = table.Column<int>(type: "integer", nullable: false),
+                    IsGuest = table.Column<bool>(type: "boolean", nullable: true),
+                    Age = table.Column<int>(type: "integer", nullable: true),
+                    Gender = table.Column<string>(type: "text", nullable: true),
+                    Heigth = table.Column<float>(type: "real", nullable: true),
+                    Weight = table.Column<float>(type: "real", nullable: true),
+                    ActivityLevel = table.Column<int>(type: "integer", nullable: true),
                     UserName = table.Column<string>(type: "character varying(256)", maxLength: 256, nullable: false),
                     NormalizedUserName = table.Column<string>(type: "character varying(256)", maxLength: 256, nullable: true),
                     Email = table.Column<string>(type: "character varying(256)", maxLength: 256, nullable: true),
@@ -65,12 +64,12 @@ namespace tbank_back_web.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uuid", nullable: false),
-                    Title = table.Column<string>(type: "text", nullable: false),
-                    Protein = table.Column<float>(type: "real", nullable: false),
-                    Fat = table.Column<float>(type: "real", nullable: false),
-                    Carbs = table.Column<float>(type: "real", nullable: false),
-                    Kcal = table.Column<int>(type: "integer", nullable: false),
-                    MeasurementUnit = table.Column<int>(type: "integer", nullable: false)
+                    Title = table.Column<string>(type: "text", nullable: true),
+                    Protein = table.Column<float>(type: "real", nullable: true),
+                    Fat = table.Column<float>(type: "real", nullable: true),
+                    Carbs = table.Column<float>(type: "real", nullable: true),
+                    Kcal = table.Column<int>(type: "integer", nullable: true),
+                    MeasurementUnit = table.Column<int>(type: "integer", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -98,9 +97,9 @@ namespace tbank_back_web.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uuid", nullable: false),
-                    Title = table.Column<string>(type: "text", nullable: false),
-                    Instructions = table.Column<string>(type: "text", nullable: false),
-                    Ingredients = table.Column<List<string>>(type: "text[]", nullable: false)
+                    Title = table.Column<string>(type: "text", nullable: true),
+                    Instructions = table.Column<string>(type: "text", nullable: true),
+                    IngredientsAmount = table.Column<string>(type: "text", nullable: false)
                 },
                 constraints: table =>
                 {
