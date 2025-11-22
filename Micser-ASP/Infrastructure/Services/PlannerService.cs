@@ -38,52 +38,19 @@ public class PlannerService
 	}
 
 
-		public ReceiptEntity FindMatchingRecipeParallel(NutritionTarget target, NutritionTarget tolerances)
-	{
-		using var scope = _serviceProvider.CreateScope();
-		var context = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
-
-		int totalCount = Math.Min(context.Receipts.Count(), 40);
-		int threadCount = 3;
-		int batchSize = (int)Math.Ceiling((double)totalCount / threadCount);
-
-		var result = new ConcurrentBag<ReceiptEntity>();
-
-		Parallel.For(0, threadCount, threadIndex =>
-		{
-			// Создаем новый scope для каждого потока
-			using var threadScope = _serviceProvider.CreateScope();
-			var threadContext = threadScope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
-
-			int start = threadIndex * batchSize;
-			int end = Math.Min(start + batchSize, totalCount);
-
-			for (int i = start; i < end; i++)
-			{
-				var recipe = threadContext.Receipts
-					.Skip(i)
-					.FirstOrDefault();
-
-				if (recipe != null &&
-					Math.Abs(recipe.TotalCarbs - target.TargetCarbs) <= tolerances.TargetCarbs &&
-					Math.Abs(recipe.TotalFat - target.TargetFat) <= tolerances.TargetFat &&
-					Math.Abs(recipe.TotalProtein - target.TargetProtein) <= tolerances.TargetProtein &&
-					Math.Abs(recipe.TotalKcal - target.TargetKcal) <= tolerances.TargetKcal)
-				{
-					result.Add(recipe);
-					return;
-				}
-			}
-		});
-
-		return result.FirstOrDefault();
-	}
+	
 	private ReceiptEntity FindLastWithParameters(NutritionTarget target, NutritionTarget tolerances)
 	{
+	//	return _context.Receipts.FirstOrDefault(e => e.TotalCarbs )
+
+
 		int count = Math.Min(_context.Receipts.Count(), 50);
 		for (int i = 0; i < count; ++i)
 		{
 			ReceiptEntity? e = _context.Receipts.Skip(i).FirstOrDefault(e => true);
+			
+			
+			
 			if (Math.Abs(e.TotalCarbs - target.TargetCarbs) <= tolerances.TargetCarbs &&
 			   Math.Abs(e.TotalFat - target.TargetFat) <= tolerances.TargetFat &&
 			   Math.Abs(e.TotalProtein - target.TargetProtein) <= tolerances.TargetProtein &&
@@ -132,7 +99,7 @@ public class PlannerService
 			lastDelta.TargetCarbs + tolerances.TargetCarbs < 0)
 				continue;
 
-			var lastRecipe = FindMatchingRecipeParallel(lastDelta, tolerances);
+			var lastRecipe = FindLastWithParameters(lastDelta, tolerances);
 			if (lastRecipe == null)
 				continue;
 			recipes.Add(lastRecipe);

@@ -134,29 +134,67 @@
       }
     },
     "/search-recipes": {
-      "post": {
+      "get": {
         "tags": [
           "Finder"
         ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/SearchRecipesRequestModel"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/SearchRecipesRequestModel"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/SearchRecipesRequestModel"
-              }
+        "parameters": [
+          {
+            "name": "kcalMax",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "kcalMin",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "proteinPercMax",
+            "in": "query",
+            "schema": {
+              "type": "number",
+              "format": "float"
+            }
+          },
+          {
+            "name": "proteinPercMin",
+            "in": "query",
+            "schema": {
+              "type": "number",
+              "format": "float"
+            }
+          },
+          {
+            "name": "fatPercMax",
+            "in": "query",
+            "schema": {
+              "type": "number",
+              "format": "float"
+            }
+          },
+          {
+            "name": "fatPercMin",
+            "in": "query",
+            "schema": {
+              "type": "number",
+              "format": "float"
+            }
+          },
+          {
+            "name": "search",
+            "in": "query",
+            "schema": {
+              "type": "string"
             }
           }
-        },
+        ],
         "responses": {
           "200": {
             "description": "Success"
@@ -234,46 +272,6 @@
           },
           "activityLevel": {
             "$ref": "#/components/schemas/ActivityLevelE"
-          }
-        },
-        "additionalProperties": false
-      },
-      "SearchRecipesRequestModel": {
-        "type": "object",
-        "properties": {
-          "kcalMax": {
-            "type": "integer",
-            "format": "int32",
-            "nullable": true
-          },
-          "kcalMin": {
-            "type": "integer",
-            "format": "int32",
-            "nullable": true
-          },
-          "proteinPercMax": {
-            "type": "number",
-            "format": "float",
-            "nullable": true
-          },
-          "proteinPercMin": {
-            "type": "number",
-            "format": "float",
-            "nullable": true
-          },
-          "fatPercMax": {
-            "type": "number",
-            "format": "float",
-            "nullable": true
-          },
-          "fatPercMin": {
-            "type": "number",
-            "format": "float",
-            "nullable": true
-          },
-          "search": {
-            "type": "string",
-            "nullable": true
           }
         },
         "additionalProperties": false
