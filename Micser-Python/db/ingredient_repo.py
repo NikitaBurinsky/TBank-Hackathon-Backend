@@ -2,6 +2,7 @@ from sqlalchemy import select, delete, update
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from db.models import Ingredient
+from config.settings import settings
 
 
 class IngredientRepository:
@@ -20,6 +21,11 @@ class IngredientRepository:
 
     @staticmethod
     async def create(session: AsyncSession, ingredient_data: dict):
+        if not settings.db_write_enabled:
+            raise RuntimeError(
+                "DB writes are disabled (DB_WRITE_ENABLED=false). Enable explicitly to allow create operations."
+            )
+
         ingredient = Ingredient(**ingredient_data)
         session.add(ingredient)
         await session.commit()
@@ -28,6 +34,11 @@ class IngredientRepository:
 
     @staticmethod
     async def update(session: AsyncSession, ingredient_id: int, new_data: dict):
+        if not settings.db_write_enabled:
+            raise RuntimeError(
+                "DB writes are disabled (DB_WRITE_ENABLED=false). Enable explicitly to allow update operations."
+            )
+
         await session.execute(
             update(Ingredient)
             .where(Ingredient.id == ingredient_id)
@@ -37,6 +48,11 @@ class IngredientRepository:
 
     @staticmethod
     async def delete(session: AsyncSession, ingredient_id: int):
+        if not settings.db_write_enabled:
+            raise RuntimeError(
+                "DB writes are disabled (DB_WRITE_ENABLED=false). Enable explicitly to allow delete operations."
+            )
+
         await session.execute(
             delete(Ingredient).where(Ingredient.id == ingredient_id)
         )
