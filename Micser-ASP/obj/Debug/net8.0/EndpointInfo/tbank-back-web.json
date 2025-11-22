@@ -141,6 +141,37 @@
           }
         }
       }
+    },
+    "/search-recipes": {
+      "post": {
+        "tags": [
+          "Finder"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SearchRecipesRequestModel"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SearchRecipesRequestModel"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/SearchRecipesRequestModel"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
     }
   },
   "components": {
@@ -199,6 +230,46 @@
           },
           "activityLevel": {
             "$ref": "#/components/schemas/ActivityLevelE"
+          }
+        },
+        "additionalProperties": false
+      },
+      "SearchRecipesRequestModel": {
+        "type": "object",
+        "properties": {
+          "kcalMax": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "kcalMin": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "proteinPercMax": {
+            "type": "number",
+            "format": "float",
+            "nullable": true
+          },
+          "proteinPercMin": {
+            "type": "number",
+            "format": "float",
+            "nullable": true
+          },
+          "fatPercMax": {
+            "type": "number",
+            "format": "float",
+            "nullable": true
+          },
+          "fatPercMin": {
+            "type": "number",
+            "format": "float",
+            "nullable": true
+          },
+          "search": {
+            "type": "string",
+            "nullable": true
           }
         },
         "additionalProperties": false

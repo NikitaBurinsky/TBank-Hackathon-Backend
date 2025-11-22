@@ -97,7 +97,7 @@ public class PlannerService
 		{
 			IngredientEntity.IngredientMeasurementUnits.g => amount,
 			IngredientEntity.IngredientMeasurementUnits.ml => amount, // для воды и жидкостей 1ml ≈ 1g
-			IngredientEntity.IngredientMeasurementUnits.pieces => amount * 100f, // предполагаем средний вес 100г на штуку
+			IngredientEntity.IngredientMeasurementUnits.pcs => amount * 100f, // предполагаем средний вес 100г на штуку
 			_ => amount
 		};
 	}

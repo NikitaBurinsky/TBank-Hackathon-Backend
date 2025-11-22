@@ -72,5 +72,21 @@
       }
     ],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "tbank_back_web.Controllers.Finder.FinderController",
+    "Method": "SearchRecipes",
+    "RelativePath": "search-recipes",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "search",
+        "Type": "tbank_back_web.Controllers.Finder.FinderController\u002BSearchRecipesRequestModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
   }
 ]

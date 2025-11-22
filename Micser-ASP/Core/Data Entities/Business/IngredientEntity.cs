@@ -6,6 +6,7 @@ namespace tbank_back_web.Core.Data_Entities.Business
 	{
 		[JsonIgnore(Condition = JsonIgnoreCondition.Always)]
 		public Guid Id {  get; set; }
+		[JsonConverter(typeof(JsonStringEnumConverter))]
 		public enum IngredientMeasurementUnits
 		{
 			g = 0,
@@ -17,6 +18,7 @@ namespace tbank_back_web.Core.Data_Entities.Business
 		public float? Fat { get; set; }
 		public float? Carbs { get; set; }
 		public int? Kcal { get; set; }
+		[JsonConverter(typeof(JsonStringEnumConverter))]
 		public IngredientMeasurementUnits? MeasurementUnit { get; set; }
 	}
 }
