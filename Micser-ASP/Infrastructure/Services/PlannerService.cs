@@ -27,7 +27,7 @@ public class PlannerService
 		var ingredientDict = allIngredients.ToDictionary(i => i.Title, i => i);
 
 		// Список для подходящих рецептов
-		var suitableReceipts = new List<(ReceiptEntity receipt, float protein, float fat, float carbs, int kcal, int missingIngredientsCount)>();
+		var suitableReceipts = new List<(ReceiptEntity receipt, float? protein, float? fat, float? carbs, int? kcal, int missingIngredientsCount)>();
 
 		foreach (var receipt in allReceipts)
 		{
@@ -35,7 +35,7 @@ public class PlannerService
 			var (totalProtein, totalFat, totalCarbs, totalKcal, missingIngredients) = CalculateReceiptNutrition(receipt, ingredientDict);
 
 			// Проверяем, соответствуют ли показатели целевым значениям (с допуском ±10%)
-			if (IsNutritionMatch(totalProtein, totalFat, totalCarbs, totalKcal,
+			if (IsNutritionMatch((float)totalProtein, (float)totalFat, (float)totalCarbs, (int)totalKcal,
 				targetProtein, targetFat, targetCarbs, targetKcal))
 			{
 				// Подсчитываем количество недостающих ингредиентов
@@ -60,12 +60,12 @@ public class PlannerService
 		return (topReceipts, _missingIngredientes);
 	}
 
-	private (float protein, float fat, float carbs, int kcal, List<string> missingIngredients)
+	private (float? protein, float? fat, float? carbs, int? kcal, List<string> missingIngredients)
 		CalculateReceiptNutrition(ReceiptEntity receipt, Dictionary<string, IngredientEntity> ingredientDict)
 	{
-		float totalProtein = 0;
-		float totalFat = 0;
-		float totalCarbs = 0;
+		float? totalProtein = 0;
+		float? totalFat = 0;
+		float? totalCarbs = 0;
 		int totalKcal = 0;
 		var missingIngredients = new List<string>();
 
@@ -91,7 +91,7 @@ public class PlannerService
 		return (totalProtein, totalFat, totalCarbs, totalKcal, missingIngredients);
 	}
 
-	private float ConvertToGrams(int amount, IngredientEntity.IngredientMeasurementUnits unit)
+	private float ConvertToGrams(int amount, IngredientEntity.IngredientMeasurementUnits? unit)
 	{
 		return unit switch
 		{

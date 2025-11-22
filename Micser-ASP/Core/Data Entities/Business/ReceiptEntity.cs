@@ -10,8 +10,8 @@ namespace tbank_back_web.Core.Data_Entities.Business
 
 		[JsonIgnore(Condition = JsonIgnoreCondition.Always)]
 		public Guid Id { get; set; }
-		public string Title { get; set; }
-		public string Instructions { get; set; }
+		public string? Title { get; set; }
+		public string? Instructions { get; set; }
 		
 		[NotMapped]
 		public Dictionary<string, int> IngredientsAmount { get; set; } = new();

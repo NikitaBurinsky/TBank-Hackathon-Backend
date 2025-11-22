@@ -9,8 +9,8 @@ namespace tbank_back_web.Controllers.Finder.Models
 			public string ingridient { get; set; }
 			public int amount { get; set; }
 		} 
-		public string title { get; set; }
-		public string instructions { get; set; }
+		public string? title { get; set; }
+		public string? instructions { get; set; }
 		public List<ReceiptComponent> components { get; set; }
 	}
 
