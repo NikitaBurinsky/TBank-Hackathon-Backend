@@ -11,7 +11,6 @@ namespace tbank_back_web.Program_Configuration.Startup
 			using (var scope = app.Services.CreateScope())
 			{
 
-
 			}
 		}
 

@@ -25,6 +25,12 @@ namespace ZooStores.Web.Area.Identity.Autorization
             {
 				Email = registrationRequest.Login,
 				UserName = registrationRequest.Login,
+
+				Weight = registrationRequest.Weight,
+				Heigth = registrationRequest.Heigth,
+				Age = registrationRequest.Age,
+				Gender = registrationRequest.Gender,
+				ActivityLevel = registrationRequest.ActivityLevel
             };
             var res = await _userManager.CreateAsync(newUser, registrationRequest.Password);
             if (res.Succeeded)
