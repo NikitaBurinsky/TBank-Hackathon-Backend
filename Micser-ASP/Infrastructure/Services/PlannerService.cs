@@ -24,7 +24,15 @@ public class PlannerService
 		return _context.Ingredients.Where(e => receipt.IngredientsAmount.Keys.Contains(e.Title)).AsQueryable();
 	}
 
+	private bool IsTooMuchSmth(NutrientsResult nutrients, NutrientsResult target) {
+		if (target.totalKcal < nutrients.totalKcal ||
+			target.totaltFat < nutrients.totaltFat ||
+			target.totalProtein < nutrients.totalProtein ||
+			target.totalCarbs < nutrients.totalCarbs)
+			return true;
 
+		return false;
+	}
 
 
 	public async Task<(List<ReceiptEntity>, List<IngredientEntity>)> FindReceiptCombinations(

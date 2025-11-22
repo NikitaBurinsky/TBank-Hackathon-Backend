@@ -40,7 +40,7 @@ internal class Program
 			app.UseSwaggerUI();
 		}
 		ApplyMigrations(app);
-		app.UseCors("AllowAllPolicy");
+		app.UseCors("StrictPolicy");
 		app.UseAuthentication();
 		app.UseAuthorization();
 		app.MapControllers();
@@ -94,17 +94,18 @@ internal class Program
 		static void ConfigureCors(IServiceCollection services)
 		{
 			//продакшн
-/*			services.AddCors(options =>
+			services.AddCors(options =>
 			{
 				options.AddPolicy("StrictPolicy", policy =>
 				{
-					policy.WithOrigins("https://indev-front.vercel.app") // Только один домен
+					policy.WithOrigins("https://tbank-front.vercel.app", "http://localhost") // Только один домен
 						  .AllowAnyMethod()
 						  .AllowAnyHeader()
 						  .AllowCredentials();
 				});
 			});
-	*/		//дев
+			//дев
+			/*
 			services.AddCors(options =>
 			{
 				options.AddPolicy("AllowAllPolicy", policy =>
@@ -115,6 +116,7 @@ internal class Program
 						  .AllowCredentials(); // Разрешает учетные данные
 				});
 			});
+			*/
 		}
 
 		static void AddGrpsSystems(IServiceCollection services, IConfiguration configuration)
@@ -142,6 +144,7 @@ internal class Program
 				options.SlidingExpiration = true; // Обновлять время жизни при активности
 				options.Cookie.SecurePolicy = CookieSecurePolicy.Always;
 				options.Cookie.Domain = ".development0.xyz";
+				options.Cookie.HttpOnly = false;
 			});
 
 			services.AddAntiforgery(o =>
