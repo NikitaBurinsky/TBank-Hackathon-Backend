@@ -19,7 +19,7 @@ namespace tbank_back_web.Program_Configuration.Startup
 				{
 				var seeder = services.GetRequiredService<JsonSeedingService>();
 				var db = services.GetRequiredService<ApplicationDbContext>();
-
+					var summator = services.GetRequiredService<NutrientsSummarizerService>();
 				var ingredients = await seeder.ReadIngredientsFromJsonAsync();
 				var recepes = await seeder.ReadReceiptsFromJsonAsync();
 
@@ -36,6 +36,10 @@ namespace tbank_back_web.Program_Configuration.Startup
 
 					foreach (var rec in recepes)
 					{
+						rec.TotalProtein = summator.GetProteinSumm(rec);
+						rec.TotalFat = summator.GetFatSumm(rec);
+						rec.TotalKcal = summator.GetKcalSumm(rec);  
+						rec.TotalCarbs = summator.GetCarbsSumm(rec);
 						if (!db.Receipts.Any(e => e.Title.ToLower().Trim() == rec.Title.ToLower().Trim()))
 							await db.Receipts.AddAsync(rec);
 					}

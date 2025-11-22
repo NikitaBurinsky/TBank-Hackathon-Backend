@@ -13,6 +13,18 @@ namespace tbank_back_web.Core.Data_Entities.Business
 		public string? Title { get; set; }
 		public string? Instructions { get; set; }
 
+		[JsonIgnore(Condition = JsonIgnoreCondition.Always)]
+		public int TotalKcal {  get; set; }
+		[JsonIgnore(Condition = JsonIgnoreCondition.Always)]
+		public float TotalProtein {  get; set; }
+		[JsonIgnore(Condition = JsonIgnoreCondition.Always)]
+		public float TotalCarbs {  get; set; }
+		[JsonIgnore(Condition = JsonIgnoreCondition.Always)]
+		public float TotalFat {  get; set; }
+		[JsonIgnore(Condition = JsonIgnoreCondition.Always)]
+		[NotMapped]
+		public float TotalGramms { get => TotalFat + TotalGramms + TotalCarbs + TotalKcal; }
+
 		[NotMapped]
 		public Dictionary<string, int> IngredientsAmount { get; set; } = new();
 
