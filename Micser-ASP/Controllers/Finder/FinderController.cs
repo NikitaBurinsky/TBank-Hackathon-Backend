@@ -57,6 +57,19 @@ namespace tbank_back_web.Controllers.Finder
 			public ReceiptResponseModel snack { get; set; }
 			public List<IngredientResponseModel> ingridientsToBuy { get; set; }
 		}
+		[HttpGet("/get-ingridients")]
+		public async Task<IActionResult> GetAllIngridients(
+			[FromServices] ApplicationDbContext db, int page = 1)
+		{
+			return Ok(db.Ingredients.Select(e => new IngredientResponseModel
+			{
+				carbs = e.Carbs,
+				kcal = e.Kcal,
+				protein = e.Protein,
+				title = e.Title,
+				fat = e.Fat,
+			}).Skip((page - 1) * 15).Take(15).ToList());
+		}
 
 
 
