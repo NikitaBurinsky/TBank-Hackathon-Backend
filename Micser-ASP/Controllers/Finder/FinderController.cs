@@ -102,7 +102,7 @@ namespace tbank_back_web.Controllers.Finder
 			[FromServices] NutrientsSummarizerService summator
 			)
 		{
-			var channel = GrpcChannel.ForAddress("http://2.56.240.190:5000");
+			var channel = GrpcChannel.ForAddress("http://micser-2:5000");
 			var client = new ReceiptService.ReceiptServiceClient(channel);
 			return await GetReceiptAsync(client, recipeQuery, db, summator) ?
 				Ok() : BadRequest();
