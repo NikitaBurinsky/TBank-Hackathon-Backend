@@ -1,9 +1,7 @@
 from openai import OpenAI
 
-LLM_API_KEY = "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"
+LLM_API_KEY = "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"
 LLM_MODEL = "kwaipilot/kat-coder-pro:free"
-
-
 
 
 def reciept(str_rec):

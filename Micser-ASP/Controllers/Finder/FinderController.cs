@@ -25,7 +25,7 @@ namespace tbank_back_web.Controllers.Finder
 	public class FinderController : ControllerBase
 	{
 
-		static async Task<bool> GetReceiptAsync(ReceiptService.ReceiptServiceClient client, string query, ApplicationDbContext db, NutrientsSummarizerService summator)
+		static async Task<string> GetReceiptAsync(ReceiptService.ReceiptServiceClient client, string query, ApplicationDbContext db, NutrientsSummarizerService summator)
 		{
 			try
 			{
@@ -78,19 +78,19 @@ namespace tbank_back_web.Controllers.Finder
 			catch (RpcException ex)
 			{
 				Console.WriteLine($"❌ Ошибка при запросе '{query}': {ex.Status.Detail}");
-				return false;
+				return ex.Message;
 			}
 			catch (JsonException ex)
 			{
 				Console.WriteLine("❌ Ошибка парсинга JSON ответа" + ex.Message);
-				return false;
+				return ex.Message;
 			}
 			catch (Exception ex)
 			{
 				Console.WriteLine(ex.Message);
-				return false;
+				return ex.Message;
 			}
-			return true;
+			return null;
 		}
 
 
@@ -104,8 +104,9 @@ namespace tbank_back_web.Controllers.Finder
 		{
 			var channel = GrpcChannel.ForAddress("http://micser-2:5000");
 			var client = new ReceiptService.ReceiptServiceClient(channel);
-			return await GetReceiptAsync(client, recipeQuery, db, summator) ?
-				Ok() : BadRequest();
+			string res = await GetReceiptAsync(client, recipeQuery, db, summator);
+			return res == null ?
+				Ok() : BadRequest(res);
 		}
 
 		[HttpPost("/plan-day")]
@@ -119,7 +120,7 @@ namespace tbank_back_web.Controllers.Finder
 			var currentUser = await userManager.GetUserAsync(User);
 			if (currentUser == null)
 			{
-				return Unauthorized("User not found");
+				return Unauthorized("-User not found-");
 			}
 			var nres = NutritionCalculator.CalculateDailyNutrition(currentUser);
 
