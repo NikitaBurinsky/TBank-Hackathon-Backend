@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package receipt;
+
+service ReceiptService {
+  // Получить информацию о рецепте по запросу
+  rpc GetReceiptInfo (ReceiptRequest) returns (ReceiptResponse) {}
+}
+
+// Запрос с текстом запроса о рецепте
+message ReceiptRequest {
+  string receiptQuery = 1; // Строка запроса переменной длины
+}
+
+// Ответ с данными о рецепте
+message ReceiptResponse {
+  string ingredientsJson = 1; // JSON с ингредиентами (переменной длины)
+  string receiptJson = 2;     // JSON с рецептом (переменной длины)
+}
