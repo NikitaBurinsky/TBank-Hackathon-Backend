@@ -162,4 +162,3 @@ C:\Users\Formatis\Documents\GitHub\TBank-Hackathon-Backend\Micser-ASP\obj\Debug\
 C:\Users\Formatis\Documents\GitHub\TBank-Hackathon-Backend\Micser-ASP\obj\Debug\net8.0\ref\tbank-back-web.dll
 C:\Users\Formatis\Documents\GitHub\TBank-Hackathon-Backend\Micser-ASP\bin\Debug\net8.0\ingseeding.json
 C:\Users\Formatis\Documents\GitHub\TBank-Hackathon-Backend\Micser-ASP\bin\Debug\net8.0\rseeding.json
-C:\Users\Formatis\Documents\GitHub\TBank-Hackathon-Backend\Micser-ASP\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

@@ -14,6 +14,9 @@ namespace tbank_back_web.Core.Data_Entities.Business
 		public string? Instructions { get; set; }
 
 		[JsonIgnore(Condition = JsonIgnoreCondition.Always)]
+		public long? CreatedAt { get; set; }
+
+		[JsonIgnore(Condition = JsonIgnoreCondition.Always)]
 		public int TotalKcal {  get; set; }
 		[JsonIgnore(Condition = JsonIgnoreCondition.Always)]
 		public float TotalProtein {  get; set; }

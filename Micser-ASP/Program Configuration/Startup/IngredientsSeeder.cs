@@ -40,6 +40,8 @@ namespace tbank_back_web.Program_Configuration.Startup
 						rec.TotalFat = summator.GetFatSumm(rec);
 						rec.TotalKcal = summator.GetKcalSumm(rec);  
 						rec.TotalCarbs = summator.GetCarbsSumm(rec);
+						rec.CreatedAt = DateTime.Now.ToFileTimeUtc();
+
 						if (!db.Receipts.Any(e => e.Title.ToLower().Trim() == rec.Title.ToLower().Trim()))
 							await db.Receipts.AddAsync(rec);
 					}

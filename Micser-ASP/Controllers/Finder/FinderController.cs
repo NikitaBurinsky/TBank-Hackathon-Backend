@@ -99,7 +99,9 @@ namespace tbank_back_web.Controllers.Finder
 		{
 			List<ReceiptResponseModel> resultRecepts;
 
-			resultRecepts = db.Receipts.ApplySearchFilters(search, summarizerService).Select(e => new ReceiptResponseModel
+			resultRecepts = db.Receipts.ApplySearchFilters(search, summarizerService)
+			.OrderByDescending(e => e.CreatedAt)
+			.Select(e => new ReceiptResponseModel
 			{
 				ingridients = e.IngredientsAmount.ToReceiptComponents(),
 				instructions = e.Instructions,
