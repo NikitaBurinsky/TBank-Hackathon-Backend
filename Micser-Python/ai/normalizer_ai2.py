@@ -10,7 +10,7 @@ _SYSTEM_PROMPT = (
     "Only output valid JSON (an array) and nothing else."
 )
 
-def reciept(str_rec):
+def ingredients_nutrition(str_rec):
     client = OpenAI(
         base_url="https://openrouter.ai/api/v1",
         api_key="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",)
