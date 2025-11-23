@@ -43,6 +43,22 @@
   },
   {
     "ContainingType": "tbank_back_web.Controllers.Finder.FinderController",
+    "Method": "CreateRecipeAI",
+    "RelativePath": "create-recipe",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "recipeQuery",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "tbank_back_web.Controllers.Finder.FinderController",
     "Method": "GetAllIngridients",
     "RelativePath": "get-ingridients",
     "HttpMethod": "GET",

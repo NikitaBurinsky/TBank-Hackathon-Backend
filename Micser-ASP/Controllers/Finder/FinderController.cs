@@ -16,6 +16,12 @@ namespace tbank_back_web.Controllers.Finder
 	[Route("")]
 	public class FinderController : ControllerBase
 	{
+		[HttpPost("/create-recipe")]
+		public async Task<IActionResult> CreateRecipeAI(
+			[FromQuery] string recipeQuery)
+		{
+			return Ok();
+		}
 
 		[HttpPost("/plan-day")]
 		public async Task<IActionResult> FindReceips(
@@ -39,6 +45,9 @@ namespace tbank_back_web.Controllers.Finder
 				TargetKcal = nres.TargetKcal,
 				TargetProtein = nres.TargetProtein
 			});
+
+			if (res == null)
+				return BadRequest(null);
 
 			List<ReceiptResponseModel> receipts = res.Select(e => new ReceiptResponseModel
 			{
