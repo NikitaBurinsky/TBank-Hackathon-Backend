@@ -11,7 +11,15 @@
 
 import asyncio
 import grpc
+import os
+import sys
 from concurrent import futures
+
+# Ensure Micser-Python package dir is on sys.path so imports like
+# `service`, `ai`, `db` work when running from the repository root.
+_THIS_DIR = os.path.dirname(__file__)
+if _THIS_DIR not in sys.path:
+    sys.path.insert(0, _THIS_DIR)
 
 import recipe_pb2
 import recipe_pb2_grpc
