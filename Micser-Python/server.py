@@ -29,7 +29,7 @@ class ReceiptServicer(recipe_pb2_grpc.ReceiptServiceServicer):
 		return recipe_pb2.ReceiptResponse(ingredientsJson=ingredients_json, receiptJson=recipe_json)
 
 
-async def serve(host: str = "[::]", port: int = 50051):
+async def serve(host: str = "[::]", port: int = 5000):
 	server = grpc.aio.server()
 	recipe_pb2_grpc.add_ReceiptServiceServicer_to_server(ReceiptServicer(), server)
 	bind_addr = f"{host}:{port}"
