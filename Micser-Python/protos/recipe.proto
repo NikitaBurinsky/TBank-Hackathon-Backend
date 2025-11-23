@@ -3,17 +3,17 @@ syntax = "proto3";
 package receipt;
 
 service ReceiptService {
-  // Получить информацию о рецепте по запросу
+  // РџРѕР»СѓС‡РёС‚СЊ РёРЅС„РѕСЂРјР°С†РёСЋ Рѕ СЂРµС†РµРїС‚Рµ РїРѕ Р·Р°РїСЂРѕСЃСѓ
   rpc GetReceiptInfo (ReceiptRequest) returns (ReceiptResponse) {}
 }
 
-// Запрос с текстом запроса о рецепте
+// Р—Р°РїСЂРѕСЃ СЃ С‚РµРєСЃС‚РѕРј Р·Р°РїСЂРѕСЃР° Рѕ СЂРµС†РµРїС‚Рµ
 message ReceiptRequest {
-  string receiptQuery = 1; // Строка запроса переменной длины
+  string receiptQuery = 1; // РЎС‚СЂРѕРєР° Р·Р°РїСЂРѕСЃР° РїРµСЂРµРјРµРЅРЅРѕР№ РґР»РёРЅС‹
 }
 
-// Ответ с данными о рецепте
+// РћС‚РІРµС‚ СЃ РґР°РЅРЅС‹РјРё Рѕ СЂРµС†РµРїС‚Рµ
 message ReceiptResponse {
-  string ingredientsJson = 1; // JSON с ингредиентами (переменной длины)
-  string receiptJson = 2;     // JSON с рецептом (переменной длины)
+  string ingredientsJson = 1; // JSON СЃ РёРЅРіСЂРµРґРёРµРЅС‚Р°РјРё (РїРµСЂРµРјРµРЅРЅРѕР№ РґР»РёРЅС‹)
+  string receiptJson = 2;     // JSON СЃ СЂРµС†РµРїС‚РѕРј (РїРµСЂРµРјРµРЅРЅРѕР№ РґР»РёРЅС‹)
 }
