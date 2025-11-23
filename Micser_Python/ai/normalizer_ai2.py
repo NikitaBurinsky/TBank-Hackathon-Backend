@@ -1,55 +1,37 @@
 import json
-from typing import Any, List
-from Micser_Python.models.raw_parsed import RawParsedIngredient
+from typing import Optional
+
+from Micser_Python.ai.llm_client import ask, parse_json
 
 
-class AIIngredientNormalizer:
-    def __init__(self, llm_client):
-        self.llm = llm_client
+_SYSTEM_PROMPT = (
+    "You are a nutrition assistant. Given a JSON receipt with `ingridients` (title+amount), "
+    "return a JSON array of objects for each ingredient with keys: \n"
+    "title, measurementUnit, kcal, protein, fat, carbs\n"
+    "measurementUnit should be 'g' or 'ml' or 'pieces'. kcal/protein/fat/carbs are numeric (per 100g/ml).\n"
+    "Only output valid JSON (an array) and nothing else."
+)
 
-    async def normalize(self, ingredients: List[str]) -> Any:
-        """Normalize a list of raw ingredient strings into structured objects.
 
-        Returns a list of dicts with keys: name, amount, unit. Tries to coerce into
-        `RawParsedIngredient` when possible.
-        """
-        instructions = (
-            "Роль: нормализатор ингредиентов. "
-            "Приводи к нижнему регистру, старайся вернуть name, amount (float), unit (string)."
-        )
-        prompt = (
-            f"Список ингредиентов: {ingredients}\n\n"
-            "Верни строго JSON-массив объектов с полями: name, amount, unit. "
-            "Например: [{\"name\": \"овсянка\", \"amount\": 50, \"unit\": \"g\"}]"
-        )
+async def ingredients_nutrition(restricted_receipt_json: str, model: Optional[str] = None) -> str:
+    prompt = (
+        "Input JSON:\n" + restricted_receipt_json + "\n\nProduce the nutrition array as described."
+    )
+    out = await ask(prompt, system=_SYSTEM_PROMPT, model=model)
+    parsed = parse_json(out)
+    if parsed is None:
+        raise RuntimeError('LLM did not return valid JSON for nutrition array')
+    return json.dumps(parsed, ensure_ascii=False, indent=2)
 
-        raw = await self.llm.ask(instructions, prompt)
 
-        try:
-            parsed = self.llm.parse_json(raw)
-        except Exception:
-            try:
-                parsed = json.loads(raw)
-            except Exception as e:
-                raise ValueError(f"Normalizer AI produced non-JSON output: {e}\nRaw: {raw}")
-
-        # Basic validation/coercion
-        if not isinstance(parsed, list):
-            raise ValueError(f"Normalizer output expected a list, got: {type(parsed)} -> {parsed}")
-
-        coerced = []
-        for item in parsed:
-            if isinstance(item, dict) and "name" in item:
-                try:
-                    coerced_item = RawParsedIngredient(
-                        name=item.get("name"),
-                        amount=float(item.get("amount", 0) or 0),
-                        unit=str(item.get("unit", "g")),
-                    )
-                    coerced.append(coerced_item)
-                except Exception:
-                    coerced.append(item)
-            else:
-                coerced.append(item)
-
-        return coerced
+if __name__ == '__main__':
+    import asyncio
+    demo = {
+        "title": "Пшённая каша",
+        "instructions": "...",
+        "ingridients": [
+            {"title": "Пшено (сухое)", "amount": 60},
+            {"title": "Молоко 2.5%", "amount": 200},
+        ]
+    }
+    print(asyncio.run(ingredients_nutrition(json.dumps(demo, ensure_ascii=False))))

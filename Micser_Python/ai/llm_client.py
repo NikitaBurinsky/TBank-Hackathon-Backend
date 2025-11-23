@@ -1,80 +1,72 @@
-from openai import OpenAI
-import asyncio
-import json
+import os
 import re
-from typing import Optional, Any
+import json
+import asyncio
+from typing import Optional
+
+try:
+    import openai
+except Exception:
+    openai = None
 
 
-def _strip_code_blocks(text: str) -> str:
-    """Remove common code fences and surrounding ```json markers."""
-    if not text:
-        return text
-    # remove triple-backtick blocks and single backticks
-    text = re.sub(r"```(?:json)?\n", "", text, flags=re.IGNORECASE)
-    text = text.replace("```", "")
-    text = text.replace("`", "")
-    return text.strip()
+async def ask(prompt: str, system: Optional[str] = None, max_tokens: int = 512, model: Optional[str] = None) -> str:
+    """Ask the LLM for a completion. Async wrapper.
 
-
-class LLMClient:
-    """Light wrapper around OpenAI client using `openai.OpenAI`.
-
-    Provides async `ask` and a `parse_json` helper.
+    - If `OPENAI_API_KEY` is present and `openai` is installed, use OpenAI.
+    - Otherwise raise a clear RuntimeError instructing how to configure an API key.
     """
+    api_key = os.getenv('OPENAI_API_KEY')
+    model = model or os.getenv('LLM_MODEL', 'gpt-4o-mini')
 
-    def __init__(self, api_key: str, model: str = "kwaipilot/kat-coder-pro:free", base_url: Optional[str] = None):
-        # Create OpenAI client instance from new SDK
-        kwargs = {}
-        if base_url:
-            kwargs["base_url"] = base_url
-        self.client = OpenAI(api_key=api_key, **kwargs)
-        self.model = model
+    if not api_key or openai is None:
+        raise RuntimeError(
+            "LLM is not available: set OPENAI_API_KEY environment variable and install openai package."
+        )
 
-    async def ask(self, instructions: str, prompt: str, max_tokens: Optional[int] = 800) -> str:
-        """Ask the configured LLM and return the textual reply.
+    # run OpenAI call in thread since openai-python is sync in many versions
+    def _call():
+        openai.api_key = api_key
+        messages = []
+        if system:
+            messages.append({"role": "system", "content": system})
+        messages.append({"role": "user", "content": prompt})
 
-        Uses `client.chat.completions.create(...)` and runs the blocking call in a
-        thread so it can be awaited from async code.
-        """
+        resp = openai.ChatCompletion.create(
+            model=model,
+            messages=messages,
+            max_tokens=max_tokens,
+            temperature=0.0,
+        )
+        # pick text
+        choices = resp.get('choices') or []
+        if not choices:
+            return ''
+        return choices[0].get('message', {}).get('content', '')
 
-        def _call_sync():
-            messages = [
-                {"role": "system", "content": instructions},
-                {"role": "user", "content": prompt},
-            ]
+    loop = asyncio.get_event_loop()
+    return await loop.run_in_executor(None, _call)
 
-            resp = self.client.chat.completions.create(
-                model=self.model,
-                messages=messages,
-                max_tokens=max_tokens,
-            )
 
-            # Response shape varies by SDK; try common access patterns
-            try:
-                choice = resp.choices[0]
-                msg = getattr(choice, "message", None)
-                if msg is not None:
-                    return getattr(msg, "content", msg.get("content") if isinstance(msg, dict) else str(choice))
-                return getattr(choice, "text", choice.get("text") if isinstance(choice, dict) else str(choice))
-            except Exception:
-                return str(resp)
+def parse_json(text: str):
+    """Extract the first JSON object/array from text and return parsed Python value."""
+    if not text:
+        return None
 
-        loop = asyncio.get_running_loop()
-        text = await loop.run_in_executor(None, _call_sync)
-        return text
-
-    def parse_json(self, text: str) -> Any:
-        """Try to parse JSON from LLM output robustly.
-
-        Strips code fences and attempts json.loads. Raises ValueError on failure.
-        """
-        text = _strip_code_blocks(text)
-        idxs = [i for i in (text.find("{"), text.find("[")) if i != -1]
-        if idxs:
-            first = min(idxs)
-            if first > 0:
-                text = text[first:]
+    # find first { ... } or [ ... ] balancing braces roughly
+    # crude approach: find first { or [ and then attempt json.loads on increasing windows
+    m = re.search(r"([\[{])", text)
+    if not m:
+        return None
+    start = m.start(1)
+    for end in range(len(text), start, -1):
         try:
-            return json.loads(text)
-        except Exception as e:
-            raise ValueError(f"Failed to parse JSON from LLM response: {e}\nRaw: {text}")
+            candidate = text[start:end]
+            return json.loads(candidate)
+        except Exception:
+            continue
+    # fallback: try to directly json.loads whole text
+    try:
+        return json.loads(text)
+    except Exception:
+        return None

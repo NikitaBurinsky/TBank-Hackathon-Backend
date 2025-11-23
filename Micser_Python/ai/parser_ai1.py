@@ -1,44 +1,35 @@
 import json
-from typing import Any
-from Micser_Python.models.raw_parsed import RawParsedRecipe
+from typing import Optional
+
+from Micser_Python.ai.llm_client import ask, parse_json
 
 
-class AIParserRaw:
-    def __init__(self, llm_client):
-        self.llm = llm_client
+_SYSTEM_PROMPT = (
+    "You are a JSON-extraction assistant. Given a free-form recipe text, "
+    "return valid JSON with the following shape:\n"
+    "{\n  \"title\": string,\n  \"instructions\": string,\n  \"ingridients\": [{\"title\": string, \"amount\": number}]\n}\n"
+    "Only output JSON and nothing else. Be strict about keys and types."
+)
 
-    async def parse(self, text: str) -> Any:
-        """Parse raw recipe text into a RawParsedRecipe-like dict.
 
-        Returns parsed JSON dict or raises ValueError when parsing fails.
-        """
-        instructions = (
-            "Роль: минимальный парсер рецептов. "
-            "Извлеки метод приготовления и список сырых ингредиентов."
-        )
-        prompt = (
-            f"Текст рецепта:\n{text}\n\n"
-            "Верни строго JSON с полями: cooking_method (string), raw_ingredients (array of strings)."
-        )
+async def reciept(text: str, model: Optional[str] = None) -> str:
+    """Ask the LLM to convert free-form recipe text into the restricted JSON.
 
-        raw = await self.llm.ask(instructions, prompt)
+    Returns a JSON string (pretty-printed) or raises if parsing failed.
+    """
+    prompt = (
+        "Convert the following recipe text into the JSON shape requested.\n\n" + text
+    )
 
-        # Try to parse JSON using client's helper when available
-        try:
-            parsed = self.llm.parse_json(raw)
-        except Exception:
-            # Fallback: try plain json.loads
-            try:
-                parsed = json.loads(raw)
-            except Exception as e:
-                raise ValueError(f"Parser AI produced non-JSON output: {e}\nRaw: {raw}")
+    out = await ask(prompt, system=_SYSTEM_PROMPT, model=model)
+    parsed = parse_json(out)
+    if parsed is None:
+        raise RuntimeError('LLM did not return valid JSON for recipe')
+    return json.dumps(parsed, ensure_ascii=False, indent=2)
 
-        # Validate minimal shape
-        if not isinstance(parsed, dict) or "cooking_method" not in parsed or "raw_ingredients" not in parsed:
-            raise ValueError(f"Parsed output missing required fields: {parsed}")
 
-        # Optionally coerce into Pydantic model
-        try:
-            return RawParsedRecipe(**parsed)
-        except Exception:
-            return parsed
+if __name__ == '__main__':
+    import asyncio
+
+    demo = """Пшённая каша с тыквой\nПшено 60\nМолоко 200\nСахар 10\nСоль 3\nПшено отварить почти до готовности в воде, затем добавить молоко и довести до мягкости."""
+    print(asyncio.run(reciept(demo)))
