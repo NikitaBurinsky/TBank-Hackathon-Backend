@@ -100,3 +100,6 @@ Desktop.ini
 !docker-compose.yml
 !nginx.conf
 *.vsidx
+
+# Local Python virtualenv
+.venv/
