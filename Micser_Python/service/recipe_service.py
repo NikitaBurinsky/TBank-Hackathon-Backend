@@ -1,8 +1,8 @@
-from models.recipe import RecipeCreate, RecipeDB
-from db.recipe_repo import RecipeRepository
-from service.ingredient_service import IngredientService
-from models.ingredient import IngredientCreate
-from models.raw_parsed import RawParsedIngredient, RawParsedRecipe
+from Micser_Python.models.recipe import RecipeCreate, RecipeDB
+from Micser_Python.db.recipe_repo import RecipeRepository
+from Micser_Python.service.ingredient_service import IngredientService
+from Micser_Python.models.ingredient import IngredientCreate
+from Micser_Python.models.raw_parsed import RawParsedIngredient, RawParsedRecipe
 
 
 class RecipeService:

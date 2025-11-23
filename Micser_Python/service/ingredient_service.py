@@ -1,5 +1,5 @@
-from models.ingredient import IngredientCreate, IngredientDB
-from db.ingredient_repo import IngredientRepository
+from Micser_Python.models.ingredient import IngredientCreate, IngredientDB
+from Micser_Python.db.ingredient_repo import IngredientRepository
 
 
 class IngredientService:

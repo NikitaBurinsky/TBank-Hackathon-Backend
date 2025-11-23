@@ -1,13 +1,3 @@
-# server.py
-# Uploaded file (local path): file:///mnt/data/4288e4f8-12e3-4cc5-b950-ced1c2b7ac1f.png
-#
-# Async gRPC server for RecipeService.
-# Assumes generated recipe_pb2.py and recipe_pb2_grpc.py in PYTHONPATH,
-# and that service.recipe_service.RecipeService contains async methods:
-#   - create(data: dict) -> object with attributes id, title, instructions, ingredients_amount
-#   - get(recipe_id: int) -> object with same attributes
-#
-# Run: python server.py
 
 import asyncio
 import grpc

@@ -1,6 +1,6 @@
 import json
 from typing import Any, List
-from models.raw_parsed import RawParsedIngredient
+from Micser_Python.models.raw_parsed import RawParsedIngredient
 
 
 class AIIngredientNormalizer:

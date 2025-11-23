@@ -1,8 +1,8 @@
 from sqlalchemy import select, delete, update
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from db.models import Recipe
-from config.settings import settings
+from Micser_Python.db.models import Recipe
+from Micser_Python.config.settings import settings
 
 
 class RecipeRepository:

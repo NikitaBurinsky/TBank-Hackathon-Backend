@@ -1,6 +1,6 @@
 import json
 from typing import Any
-from models.raw_parsed import RawParsedRecipe
+from Micser_Python.models.raw_parsed import RawParsedRecipe
 
 
 class AIParserRaw:
