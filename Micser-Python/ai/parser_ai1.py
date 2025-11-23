@@ -1,8 +1,7 @@
 from openai import OpenAI
 
 LLM_API_KEY = "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"
-LLM_MODEL = "kwaipilot/kat-coder-pro:free"
-
+LLM_MODEL = "google/gemma-2-9b-it:free",
 
 def reciept(str_rec):
     client = OpenAI(
@@ -19,7 +18,7 @@ def reciept(str_rec):
     })
 
     response=client.chat.completions.create(
-        model="meta-llama/llama-3.1-8b-instruct:free",
+        model="google/gemma-2-9b-it:free",
         messages=[
             {
                 "role": "user",
