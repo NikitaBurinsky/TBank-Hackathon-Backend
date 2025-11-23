@@ -3,18 +3,22 @@ from openai import OpenAI
 LLM_API_KEY = "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"
 LLM_MODEL = "kwaipilot/kat-coder-pro:free"
 
-_SYSTEM_PROMPT = (
-    "You are a JSON-extraction assistant. Given a free-form recipe text, "
-    "return valid JSON with the following shape:\n"
-    "{\n  \"title\": string,\n  \"instructions\": string,\n  \"ingridients\": [{\"title\": string, \"amount\": number}]\n}\n"
-    "Only output JSON and nothing else. Be strict about keys and types."
-)
+
 
 
 def reciept(str_rec):
     client = OpenAI(
         base_url="https://openrouter.ai/api/v1",
         api_key="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",)
+
+    _SYSTEM_PROMPT = str({
+        "title": "Пшённая каша",
+        "instructions": "...",
+        "ingridients": [
+            {"title": "Пшено (сухое)", "amount": 60},
+            {"title": "Молоко 2.5%", "amount": 200},
+        ]
+    })
 
     response=client.chat.completions.create(
         model="kwaipilot/kat-coder-pro:free",

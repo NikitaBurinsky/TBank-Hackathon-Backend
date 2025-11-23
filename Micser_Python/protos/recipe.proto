@@ -1,28 +1,19 @@
 syntax = "proto3";
-package recipe;
 
+package receipt;
 
-service RecipeService {
-  rpc CreateRecipe (RecipeRequest) returns (RecipeResponse);
-  rpc GetRecipe (GetRecipeRequest) returns (RecipeResponse);
+service ReceiptService {
+  // Получить информацию о рецепте по запросу
+  rpc GetReceiptInfo (ReceiptRequest) returns (ReceiptResponse) {}
 }
 
-
-message RecipeRequest {
-  string title = 1;
-  string instructions = 2;
-  map<string, double> ingredients_amount = 3;
+// Запрос с текстом запроса о рецепте
+message ReceiptRequest {
+  string receiptQuery = 1; // Строка запроса переменной длины
 }
 
-
-message GetRecipeRequest {
-  int32 id = 1;
-}
-
-
-message RecipeResponse {
-  int32 id = 1;
-  string title = 2;
-  string instructions = 3;
-  map<string, double> ingredients_amount = 4;
+// Ответ с данными о рецепте
+message ReceiptResponse {
+  string ingredientsJson = 1; // JSON с ингредиентами (переменной длины)
+  string receiptJson = 2;     // JSON с рецептом (переменной длины)
 }
