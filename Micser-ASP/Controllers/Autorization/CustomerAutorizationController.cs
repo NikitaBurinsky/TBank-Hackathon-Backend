@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Localization;
 using ZooStores.Web.Area.Identity.Autorization.Models;
 
+
 namespace ZooStores.Web.Area.Identity.Autorization
 {
     [ApiController]
@@ -13,6 +14,18 @@ namespace ZooStores.Web.Area.Identity.Autorization
     {
         private readonly UserManager<BaseApplicationUser> _userManager;
         private readonly SignInManager<BaseApplicationUser> _signInManager;
+
+		private bool Validate(RegistrationRequestModel model)
+		{
+			if (model.Heigth < 160 || model.Heigth > 205)
+				return false;
+			if(model.Age < 8 || model.Age > 70)
+				return false;
+			if(model.Weight < 50 || model.Weight > 110)
+				return false;
+			return true;
+		}
+
 		/// <summary>
 		/// По дефолту новому пользователю присваивается роль Customer
 		/// </summary>
@@ -21,6 +34,9 @@ namespace ZooStores.Web.Area.Identity.Autorization
         public async Task<IActionResult> Registration(
             RegistrationRequestModel registrationRequest)
         {
+			if(!Validate(registrationRequest))
+				return BadRequest("Non logical right data");
+
             var newUser = new BaseApplicationUser
             {
 				Email = registrationRequest.Login,

@@ -109,8 +109,5 @@ namespace tbank_back_web.Controllers.Finder
 			}).ToList();
 			return Ok(resultRecepts);
 		}
-
-
-
 	}
 }
