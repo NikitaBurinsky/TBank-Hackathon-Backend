@@ -63,7 +63,7 @@ public class PlannerService
 	}
 
 
-	public async Task<List<ReceiptEntity>> FindRecipesStochasticAsync(List<string> avaibableProducts, NutritionTarget target, int maxAttempts = 50)
+	public async Task<List<ReceiptEntity>> FindRecipesStochasticAsync(List<string> avaibableProducts, NutritionTarget target, int maxAttempts = 150)
 	{
 		List<List<ReceiptEntity>> frt = new List<List<ReceiptEntity>>();
 		for (int attempt = 0; attempt < maxAttempts; attempt++)

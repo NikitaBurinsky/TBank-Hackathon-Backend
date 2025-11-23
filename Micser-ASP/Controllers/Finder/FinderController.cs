@@ -16,6 +16,7 @@ namespace tbank_back_web.Controllers.Finder
 	[Route("")]
 	public class FinderController : ControllerBase
 	{
+		[AllowAnonymous]
 		[HttpPost("/create-recipe")]
 		public async Task<IActionResult> CreateRecipeAI(
 			[FromQuery] string recipeQuery)
@@ -38,7 +39,7 @@ namespace tbank_back_web.Controllers.Finder
 			}
 			var nres = NutritionCalculator.CalculateDailyNutrition(currentUser);
 
-			var res = await planner.FindRecipesStochasticAsync(avaibableProducts.Titles,new PlannerService.NutritionTarget
+			var res = await planner.FindRecipesStochasticAsync(avaibableProducts.Titles, new PlannerService.NutritionTarget
 			{
 				TargetCarbs = nres.TargetCarbs,
 				TargetFat = nres.TargetFat,
