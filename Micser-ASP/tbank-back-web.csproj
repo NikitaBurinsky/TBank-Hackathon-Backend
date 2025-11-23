@@ -12,6 +12,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Protos\recipe.proto" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Google.Protobuf" Version="3.32.1" />
     <PackageReference Include="Grpc.AspNetCore" Version="2.71.0" />
     <PackageReference Include="Grpc.Net.Client" Version="2.71.0" />
@@ -41,11 +45,11 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
   </ItemGroup>
 	<ItemGroup>
-		<Protobuf Include="Protos\AnalysisService.proto" GrpcServices="Client" />
-	</ItemGroup>
-	<ItemGroup>
 	  <Folder Include="Migrations\" />
 	  <Folder Include="wwwroot\" />
+	</ItemGroup>
+	<ItemGroup>
+	  <Protobuf Include="Protos\recipe.proto" GrpcServices="Client" />
 	</ItemGroup>
 
 </Project>

@@ -112,10 +112,8 @@ public class PlannerService
 		if (receipts == null || !receipts.Any() || avaibableProducts == null)
 			return 0;
 
-		// Создаем словарь для суммарного количества каждого ингредиента
 		var totalIngredientsNeeded = new Dictionary<string, int>(StringComparer.OrdinalIgnoreCase);
 
-		// Суммируем количество каждого ингредиента из всех рецептов
 		foreach (var receipt in receipts)
 		{
 			if (receipt?.IngredientsAmount == null)
@@ -137,7 +135,6 @@ public class PlannerService
 			}
 		}
 
-		// Подсчитываем недостающие ингредиенты
 		int missingIngredientsCount = 0;
 
 		foreach (var ingredient in totalIngredientsNeeded)
@@ -145,7 +142,6 @@ public class PlannerService
 			var ingredientName = ingredient.Key;
 			var totalAmountNeeded = ingredient.Value;
 
-			// Проверяем, есть ли этот ингредиент в доступных продуктах
 			if (!avaibableProducts.Any(ap =>
 				string.Equals(ap, ingredientName, StringComparison.OrdinalIgnoreCase)))
 			{
@@ -158,7 +154,6 @@ public class PlannerService
 
 	private async Task<List<ReceiptEntity>> GetRandomRecipesAsync(int count)
 	{
-		// Получаем случайные рецепты из БД
 		var totalCount = await _context.Receipts.CountAsync();
 		var skip = _random.Next(0, Math.Max(0, totalCount - count));
 

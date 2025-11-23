@@ -26,9 +26,6 @@ namespace ZooStores.Web.Area.Identity.Autorization
 			return true;
 		}
 
-		/// <summary>
-		/// По дефолту новому пользователю присваивается роль Customer
-		/// </summary>
 		[AllowAnonymous]
         [HttpPost("registration")]
         public async Task<IActionResult> Registration(

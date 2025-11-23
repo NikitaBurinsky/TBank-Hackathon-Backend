@@ -1,6 +1,10 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using Grpc.Core;
+using Grpc.Net.Client;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Receipt;
+using System.Text.Json;
 using tbank_back_web.Controllers.Finder.Filtration;
 using tbank_back_web.Controllers.Finder.Models.Dto;
 using tbank_back_web.Controllers.Finder.Models.FindReceiptsForDay;
@@ -9,19 +13,99 @@ using tbank_back_web.Core.Data_Entities.Business;
 using tbank_back_web.Core.Identity.User;
 using tbank_back_web.Infrastructure.DbContext;
 using tbank_back_web.Infrastructure.Services;
+using static tbank_back_web.Controllers.Finder.FinderController;
+using static tbank_back_web.Core.Data_Entities.Business.IngredientEntity;
 
 namespace tbank_back_web.Controllers.Finder
 {
+
+
 	[ApiController]
 	[Route("")]
 	public class FinderController : ControllerBase
 	{
+
+		static async Task<bool> GetReceiptAsync(ReceiptService.ReceiptServiceClient client, string query, ApplicationDbContext db, NutrientsSummarizerService summator)
+		{
+			try
+			{
+				Console.WriteLine($"🔍 Поиск рецепта: {query}");
+
+				var request = new ReceiptRequest { ReceiptQuery = query };
+				var response = await client.GetReceiptInfoAsync(request);
+
+				// Парсинг JSON для красивого вывода
+				var ingredientsData = JsonSerializer.Deserialize<List<IngredientResponseModel>>(response.IngredientsJson);
+				var recipeData = JsonSerializer.Deserialize<ReceiptResponseModel>(response.ReceiptJson);
+
+				foreach (var ing in ingredientsData)
+				{
+					if (!db.Ingredients.Any(e => e.Title.ToLower().Trim() == ing.title.ToLower().Trim()))
+						await db.Ingredients.AddAsync(new IngredientEntity
+						{
+							Carbs = ing.carbs,
+							Fat = ing.fat,
+							Kcal = ing.kcal,
+							MeasurementUnit = (IngredientMeasurementUnits)Enum.Parse(typeof(IngredientMeasurementUnits), ing.measurementUnit),
+							Protein = ing.protein,
+							Title = ing.title,
+						});
+
+				}
+				await db.SaveChangesAsync();
+
+				ReceiptEntity rec = new();
+				rec.IngredientsAmount = new Dictionary<string, int>();
+
+				foreach (var ing in recipeData.ingridients)
+				{
+					rec.IngredientsAmount.Add(ing.title, ing.amount);
+				}
+				rec.TotalKcal = summator.GetKcalSumm(rec);
+				rec.TotalProtein = summator.GetProteinSumm(rec);
+				rec.TotalFat = summator.GetFatSumm(rec);
+				rec.TotalCarbs = summator.GetCarbsSumm(rec);
+				rec.CreatedAt = DateTime.Now.ToFileTimeUtc();
+				rec.Instructions = recipeData.instructions;
+				rec.Title = recipeData.title;
+
+					if (!db.Receipts.Any(e => e.Title.ToLower().Trim() == rec.Title.ToLower().Trim()))
+					await db.Receipts.AddAsync(rec);
+				await db.SaveChangesAsync();
+
+				Console.WriteLine(new string('-', 50));
+			}
+			catch (RpcException ex)
+			{
+				Console.WriteLine($"❌ Ошибка при запросе '{query}': {ex.Status.Detail}");
+				return false;
+			}
+			catch (JsonException ex)
+			{
+				Console.WriteLine("❌ Ошибка парсинга JSON ответа" + ex.Message);
+				return false;
+			}
+			catch (Exception ex)
+			{
+				Console.WriteLine(ex.Message);
+				return false;
+			}
+			return true;
+		}
+
+
 		[AllowAnonymous]
 		[HttpPost("/create-recipe")]
 		public async Task<IActionResult> CreateRecipeAI(
-			[FromQuery] string recipeQuery)
+			[FromQuery] string recipeQuery,
+			[FromServices] ApplicationDbContext db,
+			[FromServices] NutrientsSummarizerService summator
+			)
 		{
-			return Ok();
+			var channel = GrpcChannel.ForAddress("http://2.56.240.190:5000");
+			var client = new ReceiptService.ReceiptServiceClient(channel);
+			return await GetReceiptAsync(client, recipeQuery, db, summator) ?
+				Ok() : BadRequest();
 		}
 
 		[HttpPost("/plan-day")]
@@ -65,7 +149,7 @@ namespace tbank_back_web.Controllers.Finder
 					carbs = 0,
 					kcal = 0,
 					protein = 0,
-					title =	null,
+					title = null,
 				}).ToList(),
 				brekfast = receipts[0],
 				lunch = receipts[1],

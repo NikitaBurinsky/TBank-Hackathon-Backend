@@ -10,7 +10,6 @@ using Serilog.Events;
 using System.Reflection;
 using Zoobee.Infrastructure.Repositoties.MediaStorage;
 using Zoobee.Web.ProgramConfigurators;
-using static AlalysisService.AnalysisService;
 using tbank_back_web.Program_Configuration.Startup;
 using tbank_back_web.Infrastructure.Services;
 
