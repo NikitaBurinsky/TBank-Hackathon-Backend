@@ -24,27 +24,17 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0crecipe.proto\x12\x06recipe\"\xb8\x01\n\rRecipeRequest\x12\r\n\x05title\x18\x01 \x01(\t\x12\x14\n\x0cinstructions\x18\x02 \x01(\t\x12H\n\x12ingredients_amount\x18\x03 \x03(\x0b\x32,.recipe.RecipeRequest.IngredientsAmountEntry\x1a\x38\n\x16IngredientsAmountEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x01:\x02\x38\x01\"\x1e\n\x10GetRecipeRequest\x12\n\n\x02id\x18\x01 \x01(\x05\"\xc6\x01\n\x0eRecipeResponse\x12\n\n\x02id\x18\x01 \x01(\x05\x12\r\n\x05title\x18\x02 \x01(\t\x12\x14\n\x0cinstructions\x18\x03 \x01(\t\x12I\n\x12ingredients_amount\x18\x04 \x03(\x0b\x32-.recipe.RecipeResponse.IngredientsAmountEntry\x1a\x38\n\x16IngredientsAmountEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x01:\x02\x38\x01\x32\x8d\x01\n\rRecipeService\x12=\n\x0c\x43reateRecipe\x12\x15.recipe.RecipeRequest\x1a\x16.recipe.RecipeResponse\x12=\n\tGetRecipe\x12\x18.recipe.GetRecipeRequest\x1a\x16.recipe.RecipeResponseb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0crecipe.proto\x12\x07receipt\"&\n\x0eReceiptRequest\x12\x14\n\x0creceiptQuery\x18\x01 \x01(\t\"?\n\x0fReceiptResponse\x12\x17\n\x0fingredientsJson\x18\x01 \x01(\t\x12\x13\n\x0breceiptJson\x18\x02 \x01(\t2W\n\x0eReceiptService\x12\x45\n\x0eGetReceiptInfo\x12\x17.receipt.ReceiptRequest\x1a\x18.receipt.ReceiptResponse\"\x00\x62\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'recipe_pb2', _globals)
 if not _descriptor._USE_C_DESCRIPTORS:
   DESCRIPTOR._loaded_options = None
-  _globals['_RECIPEREQUEST_INGREDIENTSAMOUNTENTRY']._loaded_options = None
-  _globals['_RECIPEREQUEST_INGREDIENTSAMOUNTENTRY']._serialized_options = b'8\001'
-  _globals['_RECIPERESPONSE_INGREDIENTSAMOUNTENTRY']._loaded_options = None
-  _globals['_RECIPERESPONSE_INGREDIENTSAMOUNTENTRY']._serialized_options = b'8\001'
-  _globals['_RECIPEREQUEST']._serialized_start=25
-  _globals['_RECIPEREQUEST']._serialized_end=209
-  _globals['_RECIPEREQUEST_INGREDIENTSAMOUNTENTRY']._serialized_start=153
-  _globals['_RECIPEREQUEST_INGREDIENTSAMOUNTENTRY']._serialized_end=209
-  _globals['_GETRECIPEREQUEST']._serialized_start=211
-  _globals['_GETRECIPEREQUEST']._serialized_end=241
-  _globals['_RECIPERESPONSE']._serialized_start=244
-  _globals['_RECIPERESPONSE']._serialized_end=442
-  _globals['_RECIPERESPONSE_INGREDIENTSAMOUNTENTRY']._serialized_start=153
-  _globals['_RECIPERESPONSE_INGREDIENTSAMOUNTENTRY']._serialized_end=209
-  _globals['_RECIPESERVICE']._serialized_start=445
-  _globals['_RECIPESERVICE']._serialized_end=586
+  _globals['_RECEIPTREQUEST']._serialized_start=25
+  _globals['_RECEIPTREQUEST']._serialized_end=63
+  _globals['_RECEIPTRESPONSE']._serialized_start=65
+  _globals['_RECEIPTRESPONSE']._serialized_end=128
+  _globals['_RECEIPTSERVICE']._serialized_start=130
+  _globals['_RECEIPTSERVICE']._serialized_end=217
 # @@protoc_insertion_point(module_scope)

@@ -25,7 +25,7 @@ if _version_not_supported:
     )
 
 
-class RecipeServiceStub(object):
+class ReceiptServiceStub(object):
     """Missing associated documentation comment in .proto file."""
 
     def __init__(self, channel):
@@ -34,59 +34,44 @@ class RecipeServiceStub(object):
         Args:
             channel: A grpc.Channel.
         """
-        self.CreateRecipe = channel.unary_unary(
-                '/recipe.RecipeService/CreateRecipe',
-                request_serializer=recipe__pb2.RecipeRequest.SerializeToString,
-                response_deserializer=recipe__pb2.RecipeResponse.FromString,
-                _registered_method=True)
-        self.GetRecipe = channel.unary_unary(
-                '/recipe.RecipeService/GetRecipe',
-                request_serializer=recipe__pb2.GetRecipeRequest.SerializeToString,
-                response_deserializer=recipe__pb2.RecipeResponse.FromString,
+        self.GetReceiptInfo = channel.unary_unary(
+                '/receipt.ReceiptService/GetReceiptInfo',
+                request_serializer=recipe__pb2.ReceiptRequest.SerializeToString,
+                response_deserializer=recipe__pb2.ReceiptResponse.FromString,
                 _registered_method=True)
 
 
-class RecipeServiceServicer(object):
+class ReceiptServiceServicer(object):
     """Missing associated documentation comment in .proto file."""
 
-    def CreateRecipe(self, request, context):
-        """Missing associated documentation comment in .proto file."""
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def GetRecipe(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+    def GetReceiptInfo(self, request, context):
+        """Получить информацию о рецепте по запросу
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
 
-def add_RecipeServiceServicer_to_server(servicer, server):
+def add_ReceiptServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
-            'CreateRecipe': grpc.unary_unary_rpc_method_handler(
-                    servicer.CreateRecipe,
-                    request_deserializer=recipe__pb2.RecipeRequest.FromString,
-                    response_serializer=recipe__pb2.RecipeResponse.SerializeToString,
-            ),
-            'GetRecipe': grpc.unary_unary_rpc_method_handler(
-                    servicer.GetRecipe,
-                    request_deserializer=recipe__pb2.GetRecipeRequest.FromString,
-                    response_serializer=recipe__pb2.RecipeResponse.SerializeToString,
+            'GetReceiptInfo': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetReceiptInfo,
+                    request_deserializer=recipe__pb2.ReceiptRequest.FromString,
+                    response_serializer=recipe__pb2.ReceiptResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'recipe.RecipeService', rpc_method_handlers)
+            'receipt.ReceiptService', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
-    server.add_registered_method_handlers('recipe.RecipeService', rpc_method_handlers)
+    server.add_registered_method_handlers('receipt.ReceiptService', rpc_method_handlers)
 
 
  # This class is part of an EXPERIMENTAL API.
-class RecipeService(object):
+class ReceiptService(object):
     """Missing associated documentation comment in .proto file."""
 
     @staticmethod
-    def CreateRecipe(request,
+    def GetReceiptInfo(request,
             target,
             options=(),
             channel_credentials=None,
@@ -99,36 +84,9 @@ class RecipeService(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/recipe.RecipeService/CreateRecipe',
-            recipe__pb2.RecipeRequest.SerializeToString,
-            recipe__pb2.RecipeResponse.FromString,
-            options,
-            channel_credentials,
-            insecure,
-            call_credentials,
-            compression,
-            wait_for_ready,
-            timeout,
-            metadata,
-            _registered_method=True)
-
-    @staticmethod
-    def GetRecipe(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(
-            request,
-            target,
-            '/recipe.RecipeService/GetRecipe',
-            recipe__pb2.GetRecipeRequest.SerializeToString,
-            recipe__pb2.RecipeResponse.FromString,
+            '/receipt.ReceiptService/GetReceiptInfo',
+            recipe__pb2.ReceiptRequest.SerializeToString,
+            recipe__pb2.ReceiptResponse.FromString,
             options,
             channel_credentials,
             insecure,
