@@ -6,7 +6,7 @@ LLM_MODEL = "google/gemma-2-9b-it:free",
 def reciept(str_rec):
     client = OpenAI(
         base_url="https://openrouter.ai/api/v1",
-        api_key="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")
+        api_key="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")
 
     _SYSTEM_PROMPT = str({
         "title": "Пшённая каша",
@@ -18,21 +18,14 @@ def reciept(str_rec):
     })
 
     response=client.chat.completions.create(
-        model="google/gemma-2-9b-it:free",
+        model="tngtech/deepseek-r1t2-chimera:free",
         messages=[
             {
                 "role": "user",
-                "content": f"ты должен привести это {str_rec} к такому формату{_SYSTEM_PROMPT}"
+                "content": f"ты должен привести это {str_rec} к такому формату{_SYSTEM_PROMPT}. НИ В КОЕМ СЛУЧАЕ НЕ ВЫВОДИ ДОПОЛНИТЕЛЬНЫЙ ТЕКСТ по типу (вот ваш Джейсон без лишней информации..) ТОЛЬКО ФОРМАТ КОТОРЫЙ Я ЗАПРОСИЛ ТЕКСТОМ, первый и последний символ это открытие списка Джейсонов и закрытие"
 
             }
 
         ],
     temperature=0)
-    return response.choices[0].message
-
-
-if __name__ == '__main__':
-    import asyncio
-
-    demo = """Пшённая каша с тыквой\nПшено 60\nМолоко 200\nСахар 10\nСоль 3\nПшено отварить почти до готовности в воде, затем добавить молоко и довести до мягкости."""
-    print(asyncio.run(reciept(demo)))
+    return f"[{response.choices[0].message.text.split('[', 1)[1].split(']', 1)[0]}]"

@@ -1,36 +1,54 @@
-
 from openai import OpenAI
 
-
-_SYSTEM_PROMPT = (
-    "You are a nutrition assistant. Given a JSON receipt with `ingridients` (title+amount), "
-    "return a JSON array of objects for each ingredient with keys: \n"
-    "title, measurementUnit, kcal, protein, fat, carbs\n"
-    "measurementUnit should be 'g' or 'ml' or 'pieces'. kcal/protein/fat/carbs are numeric (per 100g/ml).\n"
-    "Only output valid JSON (an array) and nothing else."
-)
-
 def ingredients_nutrition(str_rec):
+    _SYSTEM_PROMPT = ("""[
+{
+    "title": "Хлеб ржаной",
+    "measurementUnit": "g",
+    "kcal": 210,
+    "protein": 6,
+    "fat": 1.1,
+    "carbs": 40
+  },
+{
+    "title": "яйца",
+    "measurementUnit": "pcs",
+    "kcal": 210,
+    "protein": 6,
+    "fat": 1.1,
+    "carbs": 40
+  },
+{
+    "title": "молоко",
+    "measurementUnit": "ml",
+    "kcal": 210,
+    "protein": 6,
+    "fat": 1.1,
+    "carbs": 40
+  },
+]"""
+)
     client = OpenAI(
         base_url="https://openrouter.ai/api/v1",
-        api_key="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",)
+        api_key="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",)
 
     response=client.chat.completions.create(
-        model="google/gemma-2-9b-it:free",
+        model="tngtech/deepseek-r1t2-chimera:free",
         messages=[
             {
                 "role": "user",
-                "content": f"ты должен привести это {str_rec} к такому формату{_SYSTEM_PROMPT}"
+                "content": f"ты должен привести это {str_rec} к такому формату{_SYSTEM_PROMPT} ВАЖНО не выводи ниаких объяснений, только JSON без лишних выделений и тд. НИ В КОЕМ СЛУЧАЕ НЕ ВЫВОДИ ДОПОЛНИТЕЛЬНЫЙ ТЕКСТ по типу (вот ваш Джейсон без лишней информации..) ТОЛЬКО ФОРМАТ КОТОРЫЙ Я ЗАПРОСИЛ ТЕКСТОМ, первый и последний символ это открытие списка Джейсонов и закрытие"
 
             }
 
         ],
     temperature=0)
-    return response.choices[0].message
+    return f"[{response.choices[0].message.text.split('[', 1)[1].split(']', 1)[0]}]"
 
 
-if __name__ == '__main__':
-    import asyncio
+if 1:
+    print("Testing ingredients nutrition normalizer...")
+
     demo = {
         "title": "Пшённая каша",
         "instructions": "...",
@@ -39,4 +57,4 @@ if __name__ == '__main__':
             {"title": "Молоко 2.5%", "amount": 200},
         ]
     }
-    print(asyncio.run(ingredients_nutrition(json.dumps(demo, ensure_ascii=False))))
+    print(ingredients_nutrition(demo))
