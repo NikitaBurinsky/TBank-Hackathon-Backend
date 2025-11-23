@@ -1,7 +1,5 @@
-import json
-from typing import Optional
 
-from Micser_Python.ai.llm_client import ask, parse_json
+from openai import OpenAI
 
 
 _SYSTEM_PROMPT = (
@@ -12,16 +10,23 @@ _SYSTEM_PROMPT = (
     "Only output valid JSON (an array) and nothing else."
 )
 
+def reciept(str_rec):
+    client = OpenAI(
+        base_url="https://openrouter.ai/api/v1",
+        api_key="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",)
 
-async def ingredients_nutrition(restricted_receipt_json: str, model: Optional[str] = None) -> str:
-    prompt = (
-        "Input JSON:\n" + restricted_receipt_json + "\n\nProduce the nutrition array as described."
-    )
-    out = await ask(prompt, system=_SYSTEM_PROMPT, model=model)
-    parsed = parse_json(out)
-    if parsed is None:
-        raise RuntimeError('LLM did not return valid JSON for nutrition array')
-    return json.dumps(parsed, ensure_ascii=False, indent=2)
+    response=client.chat.completions.create(
+        model="kwaipilot/kat-coder-pro:free",
+        messages=[
+            {
+                "role": "user",
+                "content": f"ты должен привести это {str_rec} к такому формату{_SYSTEM_PROMPT}"
+
+            }
+
+        ],
+    temperature=0)
+    return response.choices[0].message
 
 
 if __name__ == '__main__':

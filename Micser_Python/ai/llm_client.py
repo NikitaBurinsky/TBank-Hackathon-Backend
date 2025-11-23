@@ -4,10 +4,8 @@ import json
 import asyncio
 from typing import Optional
 
-try:
-    import openai
-except Exception:
-    openai = None
+LLM_API_KEY = "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"
+LLM_MODEL ="kwaipilot/kat-coder-pro:free"
 
 
 async def ask(prompt: str, system: Optional[str] = None, max_tokens: int = 512, model: Optional[str] = None) -> str:
@@ -16,17 +14,12 @@ async def ask(prompt: str, system: Optional[str] = None, max_tokens: int = 512, 
     - If `OPENAI_API_KEY` is present and `openai` is installed, use OpenAI.
     - Otherwise raise a clear RuntimeError instructing how to configure an API key.
     """
-    api_key = os.getenv('OPENAI_API_KEY')
-    model = model or os.getenv('LLM_MODEL', 'gpt-4o-mini')
-
-    if not api_key or openai is None:
-        raise RuntimeError(
-            "LLM is not available: set OPENAI_API_KEY environment variable and install openai package."
-        )
+    api_key = LLM_API_KEY
+    model = LLM_MODEL
 
     # run OpenAI call in thread since openai-python is sync in many versions
     def _call():
-        openai.api_key = api_key
+        openai.api_key = LLM_API_KEY
         messages = []
         if system:
             messages.append({"role": "system", "content": system})

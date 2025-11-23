@@ -1,8 +1,7 @@
-import json
-from typing import Optional
+from openai import OpenAI
 
-from Micser_Python.ai.llm_client import ask, parse_json
-
+LLM_API_KEY = "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"
+LLM_MODEL = "kwaipilot/kat-coder-pro:free"
 
 _SYSTEM_PROMPT = (
     "You are a JSON-extraction assistant. Given a free-form recipe text, "
@@ -12,20 +11,23 @@ _SYSTEM_PROMPT = (
 )
 
 
-async def reciept(text: str, model: Optional[str] = None) -> str:
-    """Ask the LLM to convert free-form recipe text into the restricted JSON.
+def reciept(str_rec):
+    client = OpenAI(
+        base_url="https://openrouter.ai/api/v1",
+        api_key="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",)
 
-    Returns a JSON string (pretty-printed) or raises if parsing failed.
-    """
-    prompt = (
-        "Convert the following recipe text into the JSON shape requested.\n\n" + text
-    )
+    response=client.chat.completions.create(
+        model="kwaipilot/kat-coder-pro:free",
+        messages=[
+            {
+                "role": "user",
+                "content": f"ты должен привести это {str_rec} к такому формату{_SYSTEM_PROMPT}"
 
-    out = await ask(prompt, system=_SYSTEM_PROMPT, model=model)
-    parsed = parse_json(out)
-    if parsed is None:
-        raise RuntimeError('LLM did not return valid JSON for recipe')
-    return json.dumps(parsed, ensure_ascii=False, indent=2)
+            }
+
+        ],
+    temperature=0)
+    return response.choices[0].message
 
 
 if __name__ == '__main__':
