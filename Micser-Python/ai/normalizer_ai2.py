@@ -13,10 +13,10 @@ _SYSTEM_PROMPT = (
 def ingredients_nutrition(str_rec):
     client = OpenAI(
         base_url="https://openrouter.ai/api/v1",
-        api_key="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",)
+        api_key="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",)
 
     response=client.chat.completions.create(
-        model="kwaipilot/kat-coder-pro:free",
+        model="meta-llama/llama-3.1-8b-instruct:free",
         messages=[
             {
                 "role": "user",
