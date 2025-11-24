@@ -35,7 +35,6 @@ services:
       - ConnectionStrings__DefaultConnection=Host=postgres;Port=5432;Database=dbase;Username=postgres;Password=redbull
       - ASPNETCORE_ENVIRONMENT=Development
     depends_on:
-      - micser-2
       - postgres
     networks:
       tbank-network:
