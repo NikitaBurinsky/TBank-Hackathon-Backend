@@ -172,6 +172,7 @@ jobs:
         fi
     - name: Build nginx proxy
       run: |
+        cd ~/app
         docker-compose build nginx --no-cache 
     - name: Deploy with Docker Compose
       run: |
