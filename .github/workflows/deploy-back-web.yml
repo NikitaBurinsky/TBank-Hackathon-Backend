@@ -170,7 +170,9 @@ jobs:
         if [ -f ".env.example" ]; then
           scp .env.example ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }}:~/app/
         fi
-
+    - name: Build nginx proxy
+      run: |
+        docker-compose build nginx --no-cache 
     - name: Deploy with Docker Compose
       run: |
         ssh ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }} "
