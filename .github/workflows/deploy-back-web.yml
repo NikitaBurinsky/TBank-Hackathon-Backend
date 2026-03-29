@@ -1,5 +1,6 @@
 name: VPSPipeline
-on: push
+on: [push, workflow_dispatch]
+
 env:
   ASP_IMAGE_NAME: tbank-micser-1
   PY_IMAGE_NAME: tbank-micser-2
